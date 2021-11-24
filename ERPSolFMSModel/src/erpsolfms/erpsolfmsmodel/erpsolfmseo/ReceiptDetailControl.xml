@@ -17,8 +17,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_DETAIL_CONTROL"
-    PrimaryKey="true">
+    TableName="RECEIPT_DETAIL_CONTROL">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -30,8 +29,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_DETAIL_CONTROL"
-    PrimaryKey="true">
+    TableName="RECEIPT_DETAIL_CONTROL">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -43,8 +41,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_DETAIL_CONTROL"
-    PrimaryKey="true">
+    TableName="RECEIPT_DETAIL_CONTROL">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -55,40 +52,35 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_DETAIL_CONTROL"
-    PrimaryKey="true"/>
+    TableName="RECEIPT_DETAIL_CONTROL"/>
   <Attribute
     Name="Amount"
     ColumnName="AMOUNT"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_DETAIL_CONTROL"
-    PrimaryKey="true"/>
+    TableName="RECEIPT_DETAIL_CONTROL"/>
   <Attribute
     Name="Lineno"
     ColumnName="LINENO"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_DETAIL_CONTROL"
-    PrimaryKey="true"/>
+    TableName="RECEIPT_DETAIL_CONTROL"/>
   <Attribute
     Name="TaxAmount"
     ColumnName="TAX_AMOUNT"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_DETAIL_CONTROL"
-    PrimaryKey="true"/>
+    TableName="RECEIPT_DETAIL_CONTROL"/>
   <Attribute
     Name="CancelAmount"
     ColumnName="CANCEL_AMOUNT"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_DETAIL_CONTROL"
-    PrimaryKey="true"/>
+    TableName="RECEIPT_DETAIL_CONTROL"/>
   <Attribute
     Name="FcurrAmount"
     Precision="16"
@@ -97,8 +89,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_DETAIL_CONTROL"
-    PrimaryKey="true"/>
+    TableName="RECEIPT_DETAIL_CONTROL"/>
   <Attribute
     Name="FcurrTaxAmount"
     Precision="16"
@@ -107,8 +98,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_DETAIL_CONTROL"
-    PrimaryKey="true"/>
+    TableName="RECEIPT_DETAIL_CONTROL"/>
   <Attribute
     Name="FcurrCancelAmount"
     Precision="16"
@@ -117,8 +107,22 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
+    TableName="RECEIPT_DETAIL_CONTROL"/>
+  <Attribute
+    Name="Receiptdetailseq"
+    ColumnName="RECEIPTDETAILSEQ"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
     TableName="RECEIPT_DETAIL_CONTROL"
     PrimaryKey="true"/>
+  <Attribute
+    Name="Receiptseq"
+    ColumnName="RECEIPTSEQ"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="RECEIPT_DETAIL_CONTROL"/>
   <AccessorAttribute
     Name="ReceiptMasterControl"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.SysC0017666Assoc"
@@ -133,17 +137,7 @@
       <Attr Name="_DBObjectName" Value="RECEIPTDETAILCONTROL_PRIMARY_K"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.ReceiptNo"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Customerid"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Salespersonid"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Pid"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Amount"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Lineno"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.TaxAmount"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.CancelAmount"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.FcurrAmount"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.FcurrTaxAmount"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.FcurrCancelAmount"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Receiptdetailseq"/>
     </AttrArray>
   </Key>
   <Key

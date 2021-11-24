@@ -17,11 +17,10 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="ReceiptMasterControl"/>
-      <Attr Name="_foreignKey" Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.SysC0016322"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.ReceiptNo"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.Receiptseq"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
@@ -31,11 +30,10 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="ReceiptDetailControl"/>
-      <Attr Name="_foreignKey" Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.SysC0017666"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.ReceiptNo"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Receiptseq"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

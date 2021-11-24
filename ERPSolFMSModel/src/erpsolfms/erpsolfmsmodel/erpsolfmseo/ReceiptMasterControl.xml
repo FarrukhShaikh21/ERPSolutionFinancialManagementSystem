@@ -24,8 +24,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_MASTER_CONTROL"
-    PrimaryKey="true">
+    TableName="RECEIPT_MASTER_CONTROL">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -597,6 +596,14 @@
       <Attr Name="_DisplaySize" Value="12"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="Receiptseq"
+    ColumnName="RECEIPTSEQ"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="RECEIPT_MASTER_CONTROL"
+    PrimaryKey="true"/>
   <AccessorAttribute
     Name="ReceiptDetailControl"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.SysC0017666Assoc"
@@ -611,7 +618,7 @@
       <Attr Name="_DBObjectName" Value="SYS_C0016322"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.ReceiptNo"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.Receiptseq"/>
     </AttrArray>
   </Key>
 </Entity>

@@ -76,6 +76,7 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
         VoucherCheqNo,
         Supplierid,
         PaymentCodeRef,
+        Receiptseq,
         ReceiptDetailControl;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -99,6 +100,8 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
             return vals;
         }
     }
+
+
     public static final int RECEIPTNO = AttributesEnum.ReceiptNo.index();
     public static final int DOCTYPEID = AttributesEnum.DocTypeId.index();
     public static final int CUSTOMERID = AttributesEnum.Customerid.index();
@@ -153,6 +156,7 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
     public static final int VOUCHERCHEQNO = AttributesEnum.VoucherCheqNo.index();
     public static final int SUPPLIERID = AttributesEnum.Supplierid.index();
     public static final int PAYMENTCODEREF = AttributesEnum.PaymentCodeRef.index();
+    public static final int RECEIPTSEQ = AttributesEnum.Receiptseq.index();
     public static final int RECEIPTDETAILCONTROL = AttributesEnum.ReceiptDetailControl.index();
 
     /**
@@ -160,6 +164,14 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      */
     public ReceiptMasterControlImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl");
+    }
+
 
     /**
      * Gets the attribute value for ReceiptNo, using the alias name ReceiptNo.
@@ -1026,26 +1038,36 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for Receiptseq, using the alias name Receiptseq.
+     * @return the value of Receiptseq
+     */
+    public BigDecimal getReceiptseq() {
+        return (BigDecimal) getAttributeInternal(RECEIPTSEQ);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Receiptseq.
+     * @param value value to set the Receiptseq
+     */
+    public void setReceiptseq(BigDecimal value) {
+        setAttributeInternal(RECEIPTSEQ, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getReceiptDetailControl() {
         return (RowIterator) getAttributeInternal(RECEIPTDETAILCONTROL);
     }
 
+
     /**
-     * @param receiptNo key constituent
+     * @param receiptseq key constituent
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(String receiptNo) {
-        return new Key(new Object[] { receiptNo });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl");
+    public static Key createPrimaryKey(BigDecimal receiptseq) {
+        return new Key(new Object[] { receiptseq });
     }
 
     /**
