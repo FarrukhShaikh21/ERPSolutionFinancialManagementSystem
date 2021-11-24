@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ERPSolFMSAppModule"
+  Version="12.1.3.10.47"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="ReceiptDetailControlView1"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlView"/>
+  <ViewUsage
+    Name="ReceiptMasterControlView1"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView"/>
+  <ViewUsage
+    Name="ReceiptDetailControlView2"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlView"/>
+  <ViewLinkUsage
+    Name="SysC0017666Link1"
+    ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"
+    SrcViewUsageName="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule.ReceiptMasterControlView1"
+    DstViewUsageName="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule.ReceiptDetailControlView2"
+    Reversed="false"/>
+</AppModule>
