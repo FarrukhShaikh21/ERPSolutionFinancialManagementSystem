@@ -320,7 +320,16 @@
     SQLType="DATE"
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="RECEIPT_MASTER_CONTROL"/>
+    TableName="RECEIPT_MASTER_CONTROL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.RecDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Salespersonid"
     Precision="20"
@@ -653,6 +662,26 @@
       <Item
         Value="Customerid"/>
     </Dependencies>
+  </Attribute>
+  <Attribute
+    Name="txtSalesPersonName"
+    Precision="80"
+    ColumnName="TXT_SALES_PERSON_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[SoSalesPersons?.Name]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.txtSalesPersonName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="ReceiptDetailControl"

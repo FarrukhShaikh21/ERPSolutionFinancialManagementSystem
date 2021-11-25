@@ -172,4 +172,8 @@
       <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.AllCustomerSalesperson.CustLineno"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
 </Entity>

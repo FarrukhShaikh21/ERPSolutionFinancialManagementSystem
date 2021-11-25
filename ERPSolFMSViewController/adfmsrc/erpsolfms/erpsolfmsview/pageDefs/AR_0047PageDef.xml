@@ -5,6 +5,71 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="ReceiptMasterControlCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
+              id="ReceiptMasterControlCRUDIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <listOfValues IterBinding="ReceiptMasterControlCRUDIterator" StaticList="false" Uses="LovtxtCustomerName"
+                  id="txtCustomerName"/>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Customerid">
+      <AttrNames>
+        <Item Value="Customerid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Locationid">
+      <AttrNames>
+        <Item Value="Locationid"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Remarks">
+      <AttrNames>
+        <Item Value="Remarks"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ReceiptMasterControlCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ReceiptMasterControlCRUDIterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolFMSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolFMSAppModuleDataControl"/>
+    <action IterBinding="ReceiptMasterControlCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ReceiptMasterControlCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="RefVoucherNo">
+      <AttrNames>
+        <Item Value="RefVoucherNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ReceiptNo">
+      <AttrNames>
+        <Item Value="ReceiptNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="DocDate">
+      <AttrNames>
+        <Item Value="DocDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="RecDate">
+      <AttrNames>
+        <Item Value="RecDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Rmode">
+      <AttrNames>
+        <Item Value="Rmode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ChequeNo">
+      <AttrNames>
+        <Item Value="ChequeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ChequeDate">
+      <AttrNames>
+        <Item Value="ChequeDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
 </pageDefinition>
