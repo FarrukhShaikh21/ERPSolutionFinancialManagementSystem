@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_ADF_CUSTOMERID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="SoSalesPersons"
     Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.SoSalesPersons"/>
@@ -103,6 +107,122 @@
     EntityAttrName="EbsSalespersonId"
     EntityUsage="SoSalesPersons"
     AliasName="EBS_SALESPERSON_ID"/>
+  <ViewCriteria
+    Name="SoSalesPersonsByCustomerVC"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="SoSalesPersonsViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="SoSalesPersonsViewCriteria_SoSalesPersonsViewCriteria_row_0_AllCustomerSalespersonView"
+        ViewAttribute="AllCustomerSalespersonView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllCustomerSalespersonViewNestedCriteria"
+          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomerSalespersonView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllCustomerSalespersonViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="Customerid"
+              ViewAttribute="Customerid"
+              Operator="="
+              Conjunction="AND"
+              Value=":P_ADF_CUSTOMERID"
+              UpperColumns="0"
+              IsBindVarValue="true"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="SoSalesPersonsDefaultSalesPersonVC"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="SoSalesPersonsViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="SoSalesPersonsViewCriteria_SoSalesPersonsViewCriteria_row_0_AllCustomerSalespersonView"
+        ViewAttribute="AllCustomerSalespersonView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllCustomerSalespersonViewNestedCriteria"
+          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomerSalespersonView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllCustomerSalespersonViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="Customerid"
+              ViewAttribute="Customerid"
+              Operator="="
+              Conjunction="AND"
+              Value=":P_ADF_CUSTOMERID"
+              UpperColumns="0"
+              IsBindVarValue="true"
+              Required="Optional"/>
+            <ViewCriteriaItem
+              Name="DefaultPerson"
+              ViewAttribute="DefaultPerson"
+              Operator="="
+              Conjunction="AND"
+              Value="Y"
+              UpperColumns="0"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ReceiptMasterControlView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonsReceiptMasterControlSalesPersonIdLink"
