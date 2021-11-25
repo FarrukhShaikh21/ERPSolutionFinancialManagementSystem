@@ -517,4 +517,9 @@
     EntityAttrName="Customerseq"
     EntityUsage="AllCustomers"
     AliasName="CUSTOMERSEQ"/>
+  <ViewLinkAccessor
+    Name="ReceiptMasterControlView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllCustomersReceiptControlMasterCustomerIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

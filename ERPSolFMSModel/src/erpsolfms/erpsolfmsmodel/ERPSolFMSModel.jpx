@@ -22,12 +22,28 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="erpsolfmsassoc"
+    PackageName="erpsolfms.erpsolfmsmodel.erpsolfmsassoc"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="erpsolfmseo"
     PackageName="erpsolfms.erpsolfmsmodel.erpsolfmseo"
     ObjectType="JboPackage">
     <DesignTime>
       <Attr Name="_EO" Value="true"/>
       <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="erpsolfmslink"
+    PackageName="erpsolfms.erpsolfmsmodel.erpsolfmslink"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
     </DesignTime>
   </Containee>
   <Containee

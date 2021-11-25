@@ -951,6 +951,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="ALL_CUSTOMERS"/>
+  <AccessorAttribute
+    Name="ReceiptMasterControl"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllCustomersReceiptControlMasterCustomerIdAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllCustomersReceiptControlMasterCustomerIdAssoc.ReceiptMasterControl"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllCustomersReceiptControlMasterCustomerIdAssoc.AllCustomers"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ChkAllCustRestGift">
     <DesignTime>

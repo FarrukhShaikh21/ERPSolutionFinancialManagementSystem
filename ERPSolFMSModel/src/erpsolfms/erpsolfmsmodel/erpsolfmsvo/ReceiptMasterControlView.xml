@@ -348,4 +348,10 @@
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllCustomersView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllCustomersReceiptControlMasterCustomerIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>
