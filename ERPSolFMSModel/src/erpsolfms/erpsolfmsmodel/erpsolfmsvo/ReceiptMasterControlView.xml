@@ -455,4 +455,10 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllBankBranchesView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllBankBranchesReceiptMasterControlBranchidLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

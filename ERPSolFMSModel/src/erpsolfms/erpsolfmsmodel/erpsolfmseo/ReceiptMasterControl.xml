@@ -704,6 +704,13 @@
     AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.SoSalesPersonsReceiptMasterControlSalesPersonIdAssoc.ReceiptMasterControl"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="AllBankBranches"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllBankBranchesReceiptMasterControlBranchidAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllBankBranchesReceiptMasterControlBranchidAssoc.AllBankBranches"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllBankBranchesReceiptMasterControlBranchidAssoc.ReceiptMasterControl"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="SysC0016322"
     PrimaryKey="true">

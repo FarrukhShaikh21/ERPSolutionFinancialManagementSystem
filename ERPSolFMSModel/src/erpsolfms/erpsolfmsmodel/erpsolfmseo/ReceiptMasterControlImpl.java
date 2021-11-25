@@ -84,7 +84,8 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
         txtSalesPersonName,
         ReceiptDetailControl,
         AllCustomers,
-        SoSalesPersons;
+        SoSalesPersons,
+        AllBankBranches;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -169,6 +170,7 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
     public static final int RECEIPTDETAILCONTROL = AttributesEnum.ReceiptDetailControl.index();
     public static final int ALLCUSTOMERS = AttributesEnum.AllCustomers.index();
     public static final int SOSALESPERSONS = AttributesEnum.SoSalesPersons.index();
+    public static final int ALLBANKBRANCHES = AttributesEnum.AllBankBranches.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1131,6 +1133,21 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setSoSalesPersons(EntityImpl value) {
         setAttributeInternal(SOSALESPERSONS, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getAllBankBranches() {
+        return (EntityImpl) getAttributeInternal(ALLBANKBRANCHES);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setAllBankBranches(EntityImpl value) {
+        setAttributeInternal(ALLBANKBRANCHES, value);
     }
 
 
