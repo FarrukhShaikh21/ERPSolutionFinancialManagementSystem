@@ -19,9 +19,6 @@
   <ViewUsage
     Name="AllBankBranchesASB"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView"/>
-  <ViewUsage
-    Name="SoSalesPersonsASB"
-    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"/>
   <ViewLinkUsage
     Name="SysC0017666Link1"
     ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"

@@ -108,4 +108,9 @@
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonsReceiptMasterControlSalesPersonIdLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllCustomerSalespersonView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonAllCustSalesPersonsSalespersonIDLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

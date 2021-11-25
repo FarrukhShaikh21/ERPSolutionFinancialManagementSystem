@@ -107,4 +107,10 @@
     EntityAttrName="CustOldid"
     EntityUsage="AllCustomerSalesperson"
     AliasName="CUST_OLDID"/>
+  <ViewLinkAccessor
+    Name="SoSalesPersonsView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonAllCustSalesPersonsSalespersonIDLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>
