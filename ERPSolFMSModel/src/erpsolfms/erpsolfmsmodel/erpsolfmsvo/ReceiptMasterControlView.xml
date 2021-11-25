@@ -13,6 +13,35 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccAllCustomersView"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtCustomerName"
+    ListVOName="AccAllCustomersView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCustomerName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Customerid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CustomerName"/>
+      <Item Value="Customerid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CustomerName"/>
+      <Item Value="Customerid"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="AllCustomersViewFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="ReceiptMasterControl"
     Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl"/>
@@ -343,6 +372,28 @@
     EntityAttrName="PaymentCodeRef"
     EntityUsage="ReceiptMasterControl"
     AliasName="PAYMENT_CODE_REF"/>
+  <ViewAttribute
+    Name="txtCustomerName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCustomerName"
+    EntityUsage="ReceiptMasterControl"
+    AliasName="TXT_CUSTOMER_NAME"
+    LOVName="LovtxtCustomerName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Receiptseq"
+    PrecisionRule="true"
+    EntityAttrName="Receiptseq"
+    EntityUsage="ReceiptMasterControl"
+    AliasName="RECEIPTSEQ"/>
   <ViewLinkAccessor
     Name="ReceiptDetailControlView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"
@@ -351,6 +402,12 @@
   <ViewLinkAccessor
     Name="AllCustomersView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllCustomersReceiptControlMasterCustomerIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SoSalesPersonsView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonsReceiptMasterControlSalesPersonIdLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

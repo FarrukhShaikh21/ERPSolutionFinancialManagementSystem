@@ -517,6 +517,48 @@
     EntityAttrName="Customerseq"
     EntityUsage="AllCustomers"
     AliasName="CUSTOMERSEQ"/>
+  <ViewCriteria
+    Name="AllCustomersViewFindVC"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AllCustomersViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Customerid"
+        ViewAttribute="Customerid"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="CustomerName"
+        ViewAttribute="CustomerName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ReceiptMasterControlView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllCustomersReceiptControlMasterCustomerIdLink"

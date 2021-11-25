@@ -80,8 +80,10 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
         Supplierid,
         PaymentCodeRef,
         Receiptseq,
+        txtCustomerName,
         ReceiptDetailControl,
-        AllCustomers;
+        AllCustomers,
+        SoSalesPersons;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -161,8 +163,10 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
     public static final int SUPPLIERID = AttributesEnum.Supplierid.index();
     public static final int PAYMENTCODEREF = AttributesEnum.PaymentCodeRef.index();
     public static final int RECEIPTSEQ = AttributesEnum.Receiptseq.index();
+    public static final int TXTCUSTOMERNAME = AttributesEnum.txtCustomerName.index();
     public static final int RECEIPTDETAILCONTROL = AttributesEnum.ReceiptDetailControl.index();
     public static final int ALLCUSTOMERS = AttributesEnum.AllCustomers.index();
+    public static final int SOSALESPERSONS = AttributesEnum.SoSalesPersons.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1059,6 +1063,22 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
     }
 
     /**
+     * Gets the attribute value for txtCustomerName, using the alias name txtCustomerName.
+     * @return the value of txtCustomerName
+     */
+    public String gettxtCustomerName() {
+        return (String) getAttributeInternal(TXTCUSTOMERNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtCustomerName.
+     * @param value value to set the txtCustomerName
+     */
+    public void settxtCustomerName(String value) {
+        setAttributeInternal(TXTCUSTOMERNAME, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getReceiptDetailControl() {
@@ -1078,6 +1098,21 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setAllCustomers(EntityImpl value) {
         setAttributeInternal(ALLCUSTOMERS, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getSoSalesPersons() {
+        return (EntityImpl) getAttributeInternal(SOSALESPERSONS);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setSoSalesPersons(EntityImpl value) {
+        setAttributeInternal(SOSALESPERSONS, value);
     }
 
 

@@ -1053,4 +1053,8 @@
       <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.AllCustomers.MktRegionid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
 </Entity>
