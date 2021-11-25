@@ -83,7 +83,7 @@
     Name="ReceiptDate"
     ColumnName="RECEIPT_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="RECEIPT_MASTER_CONTROL"/>
   <Attribute
@@ -114,14 +114,14 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="RECEIPT_MASTER_CONTROL"/>
   <Attribute
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="RECEIPT_MASTER_CONTROL"/>
   <Attribute
@@ -310,7 +310,7 @@
     Name="RecDate"
     ColumnName="REC_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="RECEIPT_MASTER_CONTROL"/>
   <Attribute
@@ -419,7 +419,7 @@
     Name="DocDate"
     ColumnName="DOC_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="RECEIPT_MASTER_CONTROL"/>
   <Attribute
@@ -600,7 +600,7 @@
     Name="Receiptseq"
     ColumnName="RECEIPTSEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="RECEIPT_MASTER_CONTROL"
     PrimaryKey="true"/>

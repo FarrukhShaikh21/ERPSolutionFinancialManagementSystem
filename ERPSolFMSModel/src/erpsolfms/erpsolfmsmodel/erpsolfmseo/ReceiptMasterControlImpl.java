@@ -1,5 +1,6 @@
 package erpsolfms.erpsolfmsmodel.erpsolfmseo;
 
+import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel;
 import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl;
 
 import java.math.BigDecimal;
@@ -9,6 +10,7 @@ import java.sql.Timestamp;
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
+import oracle.jbo.domain.Date;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.TransactionEvent;
 // ---------------------------------------------------------------------
@@ -257,15 +259,15 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for ReceiptDate, using the alias name ReceiptDate.
      * @return the value of ReceiptDate
      */
-    public Timestamp getReceiptDate() {
-        return (Timestamp) getAttributeInternal(RECEIPTDATE);
+    public Date getReceiptDate() {
+        return (Date) getAttributeInternal(RECEIPTDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ReceiptDate.
      * @param value value to set the ReceiptDate
      */
-    public void setReceiptDate(Timestamp value) {
+    public void setReceiptDate(Date value) {
         setAttributeInternal(RECEIPTDATE, value);
     }
 
@@ -305,15 +307,15 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for CreatedDate, using the alias name CreatedDate.
      * @return the value of CreatedDate
      */
-    public Timestamp getCreatedDate() {
-        return (Timestamp) getAttributeInternal(CREATEDDATE);
+    public Date getCreatedDate() {
+        return (Date) getAttributeInternal(CREATEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedDate.
      * @param value value to set the CreatedDate
      */
-    public void setCreatedDate(Timestamp value) {
+    public void setCreatedDate(Date value) {
         setAttributeInternal(CREATEDDATE, value);
     }
 
@@ -321,15 +323,15 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for ModifiedDate, using the alias name ModifiedDate.
      * @return the value of ModifiedDate
      */
-    public Timestamp getModifiedDate() {
-        return (Timestamp) getAttributeInternal(MODIFIEDDATE);
+    public Date getModifiedDate() {
+        return (Date) getAttributeInternal(MODIFIEDDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ModifiedDate.
      * @param value value to set the ModifiedDate
      */
-    public void setModifiedDate(Timestamp value) {
+    public void setModifiedDate(Date value) {
         setAttributeInternal(MODIFIEDDATE, value);
     }
 
@@ -593,15 +595,15 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for RecDate, using the alias name RecDate.
      * @return the value of RecDate
      */
-    public Timestamp getRecDate() {
-        return (Timestamp) getAttributeInternal(RECDATE);
+    public Date getRecDate() {
+        return (Date) getAttributeInternal(RECDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for RecDate.
      * @param value value to set the RecDate
      */
-    public void setRecDate(Timestamp value) {
+    public void setRecDate(Date value) {
         setAttributeInternal(RECDATE, value);
     }
 
@@ -769,15 +771,15 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for DocDate, using the alias name DocDate.
      * @return the value of DocDate
      */
-    public Timestamp getDocDate() {
-        return (Timestamp) getAttributeInternal(DOCDATE);
+    public Date getDocDate() {
+        return (Date) getAttributeInternal(DOCDATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for DocDate.
      * @param value value to set the DocDate
      */
-    public void setDocDate(Timestamp value) {
+    public void setDocDate(Date value) {
         setAttributeInternal(DOCDATE, value);
     }
 
@@ -1041,15 +1043,15 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for Receiptseq, using the alias name Receiptseq.
      * @return the value of Receiptseq
      */
-    public BigDecimal getReceiptseq() {
-        return (BigDecimal) getAttributeInternal(RECEIPTSEQ);
+    public Integer getReceiptseq() {
+        return (Integer) getAttributeInternal(RECEIPTSEQ);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Receiptseq.
      * @param value value to set the Receiptseq
      */
-    public void setReceiptseq(BigDecimal value) {
+    public void setReceiptseq(Integer value) {
         setAttributeInternal(RECEIPTSEQ, value);
     }
 
@@ -1066,7 +1068,7 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal receiptseq) {
+    public static Key createPrimaryKey(Integer receiptseq) {
         return new Key(new Object[] { receiptseq });
     }
 
@@ -1075,7 +1077,14 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      * @param attributeList list of attribute names/values to initialize the row
      */
     protected void create(AttributeList attributeList) {
-        super.create(attributeList);
+  
+            setERPSolPKColumnName("Receiptseq");
+            setERPSolPKSeqName("RECEIPT_MASTER_CONTROL_SEQ");
+//        //        setERPISGenertePK("NO");
+        //        SequenceImpl seq = new SequenceImpl("SO_SALES_ORDER_SEQ", getDBTransaction());
+        //        setSalesorderseq(seq.getSequenceNumber());
+            super.create(attributeList);
+        
     }
 
     /**
@@ -1098,7 +1107,15 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation==DML_INSERT) {
+           String pkValue=" SALESORDER_ID('"+ERPSolGlobClassModel.doGetUserCompanyCode()+"','"+ERPSolGlobClassModel.doGetUserLocationCode()+"','B',TO_DATE('"+getReceiptDate()+"','YYYY-MM-DD'))";
+           System.out.println(pkValue + "pk value");
+           String result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+           populateAttributeAsChanged(RECEIPTNO, result);
+
+       }
         super.doDML(operation, e);
     }
+    
 }
 
