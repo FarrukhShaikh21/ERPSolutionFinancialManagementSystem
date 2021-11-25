@@ -683,6 +683,31 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtBankBranchName"
+    Precision="80"
+    ColumnName="TXT_BANK_BRANCH_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="RECEIPT_MASTER_CONTROL"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllBankBranches?.BranchName]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="Branchid"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.txtBankBranchName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="ReceiptDetailControl"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.SysC0017666Assoc"

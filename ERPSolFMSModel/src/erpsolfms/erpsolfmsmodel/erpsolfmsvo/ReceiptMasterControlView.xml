@@ -21,6 +21,20 @@
     Name="AccSoSalesPersonsView"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllBankBranchesView"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AllBankBranchesByLocationVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView.AllBankBranchesByLocationVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_LOCATIONID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Locationid==null?"0":Locationid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtCustomerName"
     ListVOName="AccAllCustomersView"
@@ -69,6 +83,35 @@
       <Item Value="Salespersonid"/>
     </AttrArray>
     <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtBankBranchName"
+    ListVOName="AccAllBankBranchesView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtBankBranchName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Branchid"/>
+      <Item Value="Bankid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="BranchName"/>
+      <Item Value="Branchid"/>
+      <Item Value="Bankid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="BranchName"/>
+      <Item Value="AccountName"/>
+      <Item Value="AccountNo"/>
+      <Item Value="Branchid"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="AllBankBranchesFindVC"/>
   </ListBinding>
   <EntityUsage
     Name="ReceiptMasterControl"
@@ -431,6 +474,22 @@
     EntityUsage="ReceiptMasterControl"
     AliasName="TXT_SALES_PERSON_NAME"
     LOVName="LovtxtSalesPersonName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtBankBranchName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtBankBranchName"
+    EntityUsage="ReceiptMasterControl"
+    AliasName="TXT_BANK_BRANCH_NAME"
+    LOVName="LovtxtBankBranchName">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

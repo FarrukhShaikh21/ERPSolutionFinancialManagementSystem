@@ -152,8 +152,22 @@
                         </af:gridCell>
                       </af:gridRow>
                       <af:gridRow marginTop="5px" height="auto" id="gr7">
-                        <af:gridCell marginStart="5px" width="15%" id="gc16" valign="middle"/>
-                        <af:gridCell marginStart="5px" width="35%" id="gc17" valign="middle"/>
+                        <af:gridCell marginStart="5px" width="15%" id="gc16" valign="middle" halign="center">
+                          <af:outputLabel value="#{bindings.txtBankBranchName1.hints.label}" id="ol11"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="35%" id="gc17" valign="middle">
+                          <af:inputComboboxListOfValues id="txtBankBranchNameId"
+                                                        popupTitle="Search and Select: #{bindings.txtBankBranchName.hints.label}"
+                                                        value="#{bindings.txtBankBranchName.inputValue}"
+                                                        label="#{bindings.txtBankBranchName.hints.label}"
+                                                        model="#{bindings.txtBankBranchName.listOfValuesModel}"
+                                                        required="#{bindings.txtBankBranchName.hints.mandatory}"
+                                                        columns="#{bindings.txtBankBranchName.hints.displayWidth}"
+                                                        shortDesc="#{bindings.txtBankBranchName.hints.tooltip}"
+                                                        simple="true">
+                            <f:validator binding="#{bindings.txtBankBranchName.validator}"/>
+                          </af:inputComboboxListOfValues>
+                        </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc18" valign="middle" halign="center">
                           <af:outputLabel value="#{bindings.ChequeNo.hints.label}" id="ol8"/>
                         </af:gridCell>

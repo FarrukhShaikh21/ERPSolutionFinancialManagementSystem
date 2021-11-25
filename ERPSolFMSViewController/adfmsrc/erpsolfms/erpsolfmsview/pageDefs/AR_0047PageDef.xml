@@ -71,5 +71,12 @@
         <Item Value="ChequeDate"/>
       </AttrNames>
     </attributeValues>
+    <listOfValues IterBinding="ReceiptMasterControlCRUDIterator" StaticList="false" Uses="LovtxtBankBranchName"
+                  id="txtBankBranchName"/>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="txtBankBranchName1">
+      <AttrNames>
+        <Item Value="txtBankBranchName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_ADF_LOCATIONID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="AllBankBranches"
     Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.AllBankBranches"/>
@@ -150,6 +154,92 @@
     EntityAttrName="CashBank"
     EntityUsage="AllBankBranches"
     AliasName="CASH_BANK"/>
+  <ViewCriteria
+    Name="AllBankBranchesFindVC"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AllBankBranchesViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="BranchName"
+        ViewAttribute="BranchName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="AllBankBranchesViewCriteria_AllBankBranchesViewCriteria_row_0_AccountNo"
+        ViewAttribute="AccountNo"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="AllBankBranchesViewCriteria_AllBankBranchesViewCriteria_row_0_AccountName"
+        ViewAttribute="AccountName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="AllBankBranchesByLocationVC"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AllBankBranchesViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Locationid"
+        ViewAttribute="Locationid"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_LOCATIONID"
+        UpperColumns="0"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ReceiptMasterControlView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllBankBranchesReceiptMasterControlBranchidLink"

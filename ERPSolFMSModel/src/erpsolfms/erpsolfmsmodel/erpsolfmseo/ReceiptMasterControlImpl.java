@@ -82,6 +82,7 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
         Receiptseq,
         txtCustomerName,
         txtSalesPersonName,
+        txtBankBranchName,
         ReceiptDetailControl,
         AllCustomers,
         SoSalesPersons,
@@ -167,6 +168,7 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
     public static final int RECEIPTSEQ = AttributesEnum.Receiptseq.index();
     public static final int TXTCUSTOMERNAME = AttributesEnum.txtCustomerName.index();
     public static final int TXTSALESPERSONNAME = AttributesEnum.txtSalesPersonName.index();
+    public static final int TXTBANKBRANCHNAME = AttributesEnum.txtBankBranchName.index();
     public static final int RECEIPTDETAILCONTROL = AttributesEnum.ReceiptDetailControl.index();
     public static final int ALLCUSTOMERS = AttributesEnum.AllCustomers.index();
     public static final int SOSALESPERSONS = AttributesEnum.SoSalesPersons.index();
@@ -1096,6 +1098,22 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      */
     public void settxtSalesPersonName(String value) {
         setAttributeInternal(TXTSALESPERSONNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for txtBankBranchName, using the alias name txtBankBranchName.
+     * @return the value of txtBankBranchName
+     */
+    public String gettxtBankBranchName() {
+        return (String) getAttributeInternal(TXTBANKBRANCHNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtBankBranchName.
+     * @param value value to set the txtBankBranchName
+     */
+    public void settxtBankBranchName(String value) {
+        setAttributeInternal(TXTBANKBRANCHNAME, value);
     }
 
     /**
