@@ -18,7 +18,6 @@
   </DesignTime>
   <Attribute
     Name="ReceiptNo"
-    IsNotNull="true"
     Precision="15"
     ColumnName="RECEIPT_NO"
     SQLType="VARCHAR"
@@ -439,6 +438,8 @@
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="RECEIPT_MASTER_CONTROL">
+    <TransientExpression
+      trustMode="trusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -690,7 +691,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_MASTER_CONTROL"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression

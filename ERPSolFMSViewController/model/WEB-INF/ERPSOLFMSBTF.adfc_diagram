@@ -53,7 +53,7 @@
       <property
          name="fromOutcome">ACT-ERP-GOTO-FMS-MAIN</property>
       <property
-         name="sdm:polyPoints">L50,403.24734,51.545895,275.10422,152.09766,R50</property>
+         name="sdm:polyPoints">L50,405.0,51.5459,273.35156,152.09766,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -63,7 +63,7 @@
       <property
          name="fromOutcome">ERP-GOTO-FMS-MAIN</property>
       <property
-         name="sdm:polyPoints">B50,232.35156,207.85031,282.9261,257.44824,L50</property>
+         name="sdm:polyPoints">B50,232.35156,206.09766,284.6787,257.44824,L50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall7">
@@ -95,7 +95,7 @@
       <property
          name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
       <property
-         name="sdm:polyPoints">R50,476.75266,-75.55176,587.0,139.49442,T50</property>
+         name="sdm:polyPoints">R50,475.0,-75.55176,587.0,141.24707,T50</property>
    </ControlFlowCase>
    <View
       id="View10">
@@ -120,6 +120,21 @@
       <property
          name="fromOutcome">ERP-ACT-AR-0047</property>
       <property
-         name="sdm:polyPoints">B50,587.0,250.99973,549.2526,304.44824,R50</property>
+         name="sdm:polyPoints">L50,546.0,195.24707,506.5,250.44824,T50</property>
    </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn12">
+      <property
+         name="activityId">RETURN-FROM-FMS</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>RETURN-FROM-FMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  RETURN-FROM-FMS&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">28.24707</property>
+      <property
+         name="x">145.0</property>
+   </TaskFlowReturn>
 </SDM>

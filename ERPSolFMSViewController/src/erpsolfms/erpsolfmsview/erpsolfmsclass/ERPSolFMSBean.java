@@ -89,20 +89,20 @@ public class ERPSolFMSBean {
         return ERPSolStrUserStoreCode;
     }
 
-    public List<SelectItem> doERPSolGetAutoSuggestedStoreValues(String pStringValues) {
+    public List<SelectItem> doERPSolGetAutoSuggestedBranchValues(String pStringValues) {
 //public static List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
         //public List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
         System.out.println("a");
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
-        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("SoSalesOrderViewCRUDIterator");
+        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
         System.out.println("c");
         String ERPLocid=""+ERPSolib.getCurrentRow().getAttribute("Locationid");
         System.out.println("d");
         System.out.println(ERPLocid);//ERPSolGlobalViewBean.
-        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllStoresAutoSuggestRO",
-                                                            "LOCATIONID='"+ERPLocid+"' AND UPPER(CONCAT(STOREID,STORE_NAME))", "StoreName", "Storeid", 10);
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllBankBranchesAutoSuggestRO",
+                                                            "LOCATIONID='"+ERPLocid+"' AND UPPER(CONCAT(Branch_Name,Branchid))", "BranchName", "Branchid", 10);
         return ResultList;
         
     }
@@ -114,7 +114,7 @@ public class ERPSolFMSBean {
         System.out.println("a");
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
-        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("SoSalesOrderViewCRUDIterator");
+        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
         System.out.println("c");
         String ERPLocid=""+ERPSolib.getCurrentRow().getAttribute("Locationid");
         System.out.println("d");
@@ -132,7 +132,7 @@ public class ERPSolFMSBean {
         System.out.println("a");
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
-        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("SoSalesOrderViewCRUDIterator");
+        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
         System.out.println("c");
         String ERPCustomerId=""+ERPSolib.getCurrentRow().getAttribute("Customerid");
         System.out.println("d");
@@ -150,7 +150,7 @@ public class ERPSolFMSBean {
         System.out.println("a");
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
-        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("SoSalesOrderViewCRUDIterator");
+        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
         System.out.println("c");
         String ERPLocid=""+ERPSolib.getCurrentRow().getAttribute("Locationid");
         System.out.println("d");

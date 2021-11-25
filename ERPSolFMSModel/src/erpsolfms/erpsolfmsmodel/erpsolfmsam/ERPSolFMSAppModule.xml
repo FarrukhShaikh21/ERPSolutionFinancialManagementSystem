@@ -14,10 +14,10 @@
     Name="ReceiptDetailControlDetCRUD"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlView"/>
   <ViewUsage
-    Name="AllCustomersASB"
+    Name="AllCustomersAutoSuggestRO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView"/>
   <ViewUsage
-    Name="AllBankBranchesASB"
+    Name="AllBankBranchesAutoSuggestRO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView"/>
   <ViewLinkUsage
     Name="SysC0017666Link1"

@@ -82,4 +82,16 @@
     EntityAttrName="FcurrCancelAmount"
     EntityUsage="ReceiptDetailControl"
     AliasName="FCURR_CANCEL_AMOUNT"/>
+  <ViewAttribute
+    Name="Receiptdetailseq"
+    PrecisionRule="true"
+    EntityAttrName="Receiptdetailseq"
+    EntityUsage="ReceiptDetailControl"
+    AliasName="RECEIPTDETAILSEQ"/>
+  <ViewLinkAccessor
+    Name="SoSalesPersonsView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonsReceiptDetailControlSalespersonIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

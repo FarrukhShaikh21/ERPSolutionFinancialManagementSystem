@@ -186,6 +186,13 @@
     AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.SoSalesPersonAllCustSalesPersonsSalespersonIDAssoc.SoSalesPersons"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ReceiptDetailControl"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.SoSalesPersonsReceiptDetailControlSalespersonIdAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.SoSalesPersonsReceiptDetailControlSalespersonIdAssoc.ReceiptDetailControl"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.SoSalesPersonsReceiptDetailControlSalespersonIdAssoc.SoSalesPersons"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpksoSalesPersons"
     PrimaryKey="true">

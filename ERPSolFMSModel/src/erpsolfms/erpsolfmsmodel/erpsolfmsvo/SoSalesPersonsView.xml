@@ -233,4 +233,9 @@
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonAllCustSalesPersonsSalespersonIDLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ReceiptDetailControlView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonsReceiptDetailControlSalespersonIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

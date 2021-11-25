@@ -1186,6 +1186,9 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
   
             setERPSolPKColumnName("Receiptseq");
             setERPSolPKSeqName("RECEIPT_MASTER_CONTROL_SEQ");
+            setCompanyid(ERPSolGlobClassModel.doGetUserCompanyCode());
+        setLocationid(ERPSolGlobClassModel.doGetUserLocationCode());
+
 //        //        setERPISGenertePK("NO");
         //        SequenceImpl seq = new SequenceImpl("SO_SALES_ORDER_SEQ", getDBTransaction());
         //        setSalesorderseq(seq.getSequenceNumber());
@@ -1214,7 +1217,7 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      */
     protected void doDML(int operation, TransactionEvent e) {
         if (operation==DML_INSERT) {
-           String pkValue=" SALESORDER_ID('"+ERPSolGlobClassModel.doGetUserCompanyCode()+"','"+ERPSolGlobClassModel.doGetUserLocationCode()+"','B',TO_DATE('"+getReceiptDate()+"','YYYY-MM-DD'))";
+           String pkValue=" SALESORDER_ID('"+ERPSolGlobClassModel.doGetUserCompanyCode()+"','"+ERPSolGlobClassModel.doGetUserLocationCode()+"','B',TO_DATE('"+getDocDate()+"','YYYY-MM-DD'))";
            System.out.println(pkValue + "pk value");
            String result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
            populateAttributeAsChanged(RECEIPTNO, result);

@@ -59,6 +59,11 @@
     <view id="AR_0047">
       <page>/AR_0047.jsf</page>
     </view>
+    <task-flow-return id="RETURN-FROM-FMS">
+      <outcome>
+        <name>RETURN-FROM-FMS</name>
+      </outcome>
+    </task-flow-return>
     <control-flow-rule id="__1">
       <from-activity-id>doERPSolFMSSessionGlobals</from-activity-id>
       <control-flow-case id="__2">
