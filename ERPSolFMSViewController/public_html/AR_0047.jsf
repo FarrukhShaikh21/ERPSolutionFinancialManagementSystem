@@ -5,14 +5,14 @@
     <af:messages id="m1"/>
     <af:form id="f1">
       <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached">
-        <af:dialog id="d2" title="Do you want to Supervise this transaction? (#{bindings.Salesorderid.inputValue})"
-                   dialogListener="#{pageFlowScope.ERPSolSCMPageFlowBean.doERPSolDialogConfirm}" type="yesNo">
+        <af:dialog id="d2" title="Do you want to Supervise this transaction? (#{bindings.ReceiptNo.inputValue})"
+                   dialogListener="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolDialogConfirm}" type="yesNo">
           <f:facet name="buttonBar"/>
         </af:dialog>
       </af:popup>
       <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
         <f:facet name="erptempmain">
-          <af:panelHeader text="Sale Order" id="ph1" partialTriggers="::d2 b2 b1 b6 b5">
+          <af:panelHeader text="Control Receipt" id="ph1" partialTriggers="::d2 b2 b1 b6 b5">
             <f:facet name="context"/>
             <f:facet name="menuBar"/>
             <f:facet name="toolbar"/>
@@ -37,14 +37,15 @@
                                inlineStyle="border-color:#b8d6f3; outline-width:thin; border-width:thin thin thin thin;">
                     <f:facet name="toolbar">
                       <af:toolbar id="t1">
-                        <af:button actionListener="#{bindings.doSuperviseSaleOrder.execute}" text="doSuperviseSaleOrder"
-                                   disabled="#{!bindings.doSuperviseSaleOrder.enabled}" id="b10" rendered="false"/>
+                        <af:button actionListener="#{bindings.doSuperviseControlReceipt.execute}"
+                                   text="doSuperviseControlReceipt"
+                                   disabled="#{!bindings.doSuperviseControlReceipt.enabled}" id="b11" rendered="false"/>
                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete Receipt"
-                                   disabled="#{bindings.Posted.inputValue=='Y'}" id="b2"/>
+                                   disabled="#{bindings.Submit.inputValue=='Y'}" id="b2"/>
                         <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Receipt"
                                    disabled="#{!bindings.CreateInsert.enabled}" id="b1"/>
                         <af:button actionListener="#{bindings.Rollback.execute}" text="Undo Changes" immediate="true"
-                                   id="b6" disabled="#{bindings.Posted.inputValue=='Y'}">
+                                   id="b6" disabled="#{bindings.Submit.inputValue=='Y'}">
                           <af:resetActionListener/>
                         </af:button>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
@@ -52,11 +53,11 @@
                         <af:button actionListener="#{bindings.Next.execute}" text="Next"
                                    disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b7"/>
                         <af:button actionListener="#{bindings.Commit.execute}" text="Save Transaction" id="b5"
-                                   disabled="#{bindings.Posted.inputValue=='Y'}"/>
+                                   disabled="#{bindings.Submit.inputValue=='Y'}"/>
                         <af:spacer width="50" height="10" id="s6"/>
                         <af:button text="Supervise Transaction" id="b9"
                                    visible="#{pageFlowScope.ERPSolTempBean.LERPSolAllowSubmit=='Y'}"
-                                   disabled="#{bindings.Posted.inputValue=='Y'}">
+                                   disabled="#{bindings.Submit.inputValue=='Y'}">
                           <af:showPopupBehavior popupId="::p1" triggerType="action"/>
                         </af:button>
                       </af:toolbar>
@@ -67,6 +68,13 @@
                           <af:outputLabel value="#{bindings.ReceiptNo.hints.label}" id="ol5"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc3" valign="middle">
+                          <af:inputText value="#{bindings.Submit.inputValue}" label="#{bindings.Submit.hints.label}"
+                                        required="#{bindings.Submit.hints.mandatory}"
+                                        columns="#{bindings.Submit.hints.displayWidth}"
+                                        maximumLength="#{bindings.Submit.hints.precision}"
+                                        shortDesc="#{bindings.Submit.hints.tooltip}" id="it11" rendered="false">
+                            <f:validator binding="#{bindings.Submit.validator}"/>
+                          </af:inputText>
                           <af:inputText value="#{bindings.ReceiptNo.inputValue}" simple="true"
                                         required="#{bindings.ReceiptNo.hints.mandatory}"
                                         columns="#{bindings.ReceiptNo.hints.displayWidth}"
@@ -253,9 +261,9 @@
                     <f:facet name="toolbar">
                       <af:toolbar id="t3">
                         <af:button actionListener="#{bindings.Delete1.execute}" text="Delete Receipt Line"
-                                   disabled="#{!bindings.Delete1.enabled}" id="b4"/>
+                                   disabled="#{bindings.Submit.inputValue=='Y'}" id="b4"/>
                         <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add Receipt Line"
-                                   disabled="#{!bindings.CreateInsert1.enabled}" id="b3"/>
+                                   disabled="#{bindings.Submit.inputValue=='Y'}" id="b3"/>
                       </af:toolbar>
                     </f:facet>
                     <f:facet name="statusbar"/>

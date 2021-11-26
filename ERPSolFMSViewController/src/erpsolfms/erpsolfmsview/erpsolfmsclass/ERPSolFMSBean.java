@@ -172,8 +172,13 @@ public class ERPSolFMSBean {
     }   
     public void doERPSolDialogConfirm(DialogEvent erpsolde) {
         if (erpsolde.getOutcome()==DialogEvent.Outcome.yes) {
-            OperationBinding binding = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSuperviseSaleOrder");
-            binding.execute();
+            OperationBinding ob = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("Commit");
+            ob.execute();
+            if (!ob.getErrors().isEmpty()) {
+                return ;
+           }
+             ob = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSuperviseControlReceipt");
+            ob.execute();
         }
     }
 

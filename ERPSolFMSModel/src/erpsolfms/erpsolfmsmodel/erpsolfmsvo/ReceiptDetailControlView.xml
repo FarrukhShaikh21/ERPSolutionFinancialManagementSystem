@@ -12,7 +12,13 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlViewRowImpl"
+  ComponentClass="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlViewImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewAccessor
     Name="AccSoSalesPersonsView"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"
@@ -80,8 +86,7 @@
     EntityAttrName="Lineno"
     EntityUsage="ReceiptDetailControl"
     AliasName="LINENO">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[getRowSet().getRowCount()+1]]></TransientExpression>
+    <TransientExpression><![CDATA[getRowSet().getRowCount()+1]]></TransientExpression>
   </ViewAttribute>
   <ViewAttribute
     Name="TaxAmount"
@@ -144,6 +149,12 @@
   <ViewLinkAccessor
     Name="SoSalesPersonsView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonsReceiptDetailControlSalespersonIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ReceiptMasterControlView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

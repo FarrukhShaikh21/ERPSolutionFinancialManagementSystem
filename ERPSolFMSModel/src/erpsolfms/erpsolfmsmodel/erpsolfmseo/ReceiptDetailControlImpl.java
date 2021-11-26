@@ -387,6 +387,10 @@ public class ReceiptDetailControlImpl extends ERPSolGlobalsEntityImpl {
         if (operation==DML_INSERT) {
             populateAttributeAsChanged(RECEIPTNO, getReceiptMasterControl().getAttribute("ReceiptNo"));
        }
+        if (operation!=DML_DELETE) {
+           populateAttributeAsChanged(AMOUNT,getFcurrAmount());
+           populateAttributeAsChanged(TAXAMOUNT,getFcurrTaxAmount());
+       }
         super.doDML(operation, e);
     }
   

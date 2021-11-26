@@ -93,5 +93,15 @@
         <Item Value="ReceiptDate"/>
       </AttrNames>
     </attributeValues>
+    <methodAction id="doSuperviseControlReceipt" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSuperviseControlReceipt" IsViewObjectMethod="true"
+                  DataControl="ERPSolFMSAppModuleDataControl"
+                  InstanceName="data.ERPSolFMSAppModuleDataControl.ReceiptMasterControlCRUD"
+                  ReturnName="data.ERPSolFMSAppModuleDataControl.methodResults.doSuperviseControlReceipt_ERPSolFMSAppModuleDataControl_ReceiptMasterControlCRUD_doSuperviseControlReceipt_result"/>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Submit">
+      <AttrNames>
+        <Item Value="Submit"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
