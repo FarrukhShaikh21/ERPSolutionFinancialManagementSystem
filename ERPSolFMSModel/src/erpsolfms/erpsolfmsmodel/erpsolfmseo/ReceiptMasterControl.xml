@@ -10,7 +10,8 @@
   DBObjectName="RECEIPT_MASTER_CONTROL"
   AliasName="ReceiptMasterControl"
   BindingStyle="OracleName"
-  RowClass="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControlImpl">
+  RowClass="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControlImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
     <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
@@ -360,7 +361,7 @@
     Name="Pid"
     ColumnName="PID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="RECEIPT_MASTER_CONTROL"/>
   <Attribute
@@ -668,7 +669,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[AllCustomers?.CustomerName]]></TransientExpression>
+      trustMode="trusted"><![CDATA[AllCustomers?.CustomerName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -692,7 +693,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[SoSalesPersons?.Name]]></TransientExpression>
+      trustMode="trusted"><![CDATA[SoSalesPersons?.Name]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -712,7 +713,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[AllBankBranches?.BranchName]]></TransientExpression>
+      trustMode="trusted"><![CDATA[AllBankBranches?.BranchName]]></TransientExpression>
     <Dependencies>
       <Item
         Value="Branchid"/>
@@ -786,6 +787,22 @@
       <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.Salespersonid"/>
     </AttrArray>
   </Key>
+  <validation:ExpressionValidationBean
+    Name="ReceiptMasterControlSPBR"
+    OperandType="EXPR"
+    Inverse="false">
+    <validation:MsgIds>
+      <validation:Item
+        Value="ERP_SOL_SPID"/>
+    </validation:MsgIds>
+    <validation:TransientExpression
+      trustMode="trusted"><![CDATA[if(Salespersonid ==null)
+{
+adf.error.raise("ERP_SOL_SPID");
+return false;
+}
+return true;]]></validation:TransientExpression>
+  </validation:ExpressionValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>

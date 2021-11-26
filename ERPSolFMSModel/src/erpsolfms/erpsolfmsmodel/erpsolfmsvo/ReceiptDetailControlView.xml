@@ -23,6 +23,14 @@
     Name="AccSoSalesPersonsView"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccAllCustomerSalespersonPID"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomerSalespersonView"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AllCustomerSalespersonCustSpWiseVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomerSalespersonView.AllCustomerSalespersonCustSpWiseVC"/>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtSalesPersonName"
     ListVOName="AccSoSalesPersonsView"

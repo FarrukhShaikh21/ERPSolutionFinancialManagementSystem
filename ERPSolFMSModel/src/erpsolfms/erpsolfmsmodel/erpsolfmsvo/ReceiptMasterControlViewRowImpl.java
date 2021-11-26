@@ -17,6 +17,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
 public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
 
+
     public static final int ENTITY_RECEIPTMASTERCONTROL = 0;
 
     /**
@@ -88,7 +89,8 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
         AccAllCustomersView,
         AccSoSalesPersonsView,
         AccAllBankBranchesView,
-        AccSoSalesPersonsViewDefaultVC;
+        AccSoSalesPersonsViewDefaultVC,
+        AccAllCustomerSalespersonPid;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -112,6 +114,7 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
 
     public static final int RECEIPTNO = AttributesEnum.ReceiptNo.index();
     public static final int DOCTYPEID = AttributesEnum.DocTypeId.index();
@@ -179,6 +182,7 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
     public static final int ACCSOSALESPERSONSVIEW = AttributesEnum.AccSoSalesPersonsView.index();
     public static final int ACCALLBANKBRANCHESVIEW = AttributesEnum.AccAllBankBranchesView.index();
     public static final int ACCSOSALESPERSONSVIEWDEFAULTVC = AttributesEnum.AccSoSalesPersonsViewDefaultVC.index();
+    public static final int ACCALLCUSTOMERSALESPERSONPID = AttributesEnum.AccAllCustomerSalespersonPid.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -240,6 +244,15 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
      */
     public void setCustomerid(String value) {
         setAttributeInternal(CUSTOMERID, value);
+        try {
+            getAccSoSalesPersonsViewDefaultVC().setNamedWhereClauseParam("P_ADF_CUSTOMERID", value);
+            getAccSoSalesPersonsViewDefaultVC().executeQuery();
+            setSalespersonid((String) getAccSoSalesPersonsViewDefaultVC().first().getAttribute("Salespersonid"));
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+        
     }
 
     /**
@@ -640,21 +653,30 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
      */
     public void setSalespersonid(String value) {
         setAttributeInternal(SALESPERSONID, value);
+        try {
+            getAccAllCustomerSalespersonPid().setNamedWhereClauseParam("P_ADF_CUSTOMERID", getCustomerid());
+            getAccAllCustomerSalespersonPid().setNamedWhereClauseParam("P_ADF_SALESPERSONID", value);
+            getAccAllCustomerSalespersonPid().executeQuery();
+            setPid((Integer) getAccAllCustomerSalespersonPid().first().getAttribute("Id"));
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }      
     }
 
     /**
      * Gets the attribute value for PID using the alias name Pid.
      * @return the PID
      */
-    public BigDecimal getPid() {
-        return (BigDecimal) getAttributeInternal(PID);
+    public Integer getPid() {
+        return (Integer) getAttributeInternal(PID);
     }
 
     /**
      * Sets <code>value</code> as attribute value for PID using the alias name Pid.
      * @param value value to set the PID
      */
-    public void setPid(BigDecimal value) {
+    public void setPid(Integer value) {
         setAttributeInternal(PID, value);
     }
 
@@ -1198,6 +1220,14 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
     public RowSet getAccSoSalesPersonsViewDefaultVC() {
         return (RowSet) getAttributeInternal(ACCSOSALESPERSONSVIEWDEFAULTVC);
     }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccAllCustomerSalespersonPid.
+     */
+    public RowSet getAccAllCustomerSalespersonPid() {
+        return (RowSet) getAttributeInternal(ACCALLCUSTOMERSALESPERSONPID);
+    }
+
     @Override
     public boolean isAttributeUpdateable(int i) {
         // TODO Implement this method

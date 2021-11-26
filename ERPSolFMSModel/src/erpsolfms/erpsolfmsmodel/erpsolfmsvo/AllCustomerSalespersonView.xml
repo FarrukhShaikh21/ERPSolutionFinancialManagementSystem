@@ -13,6 +13,14 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_ADF_CUSTOMERID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_ADF_SALESPERSONID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="AllCustomerSalesperson"
     Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.AllCustomerSalesperson"/>
@@ -107,6 +115,52 @@
     EntityAttrName="CustOldid"
     EntityUsage="AllCustomerSalesperson"
     AliasName="CUST_OLDID"/>
+  <ViewCriteria
+    Name="AllCustomerSalespersonCustSpWiseVC"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomerSalespersonView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="AllCustomerSalespersonViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Customerid"
+        ViewAttribute="Customerid"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_CUSTOMERID"
+        UpperColumns="0"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Salespersonid"
+        ViewAttribute="Salespersonid"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_SALESPERSONID"
+        UpperColumns="0"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="SoSalesPersonsView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonAllCustSalesPersonsSalespersonIDLink"

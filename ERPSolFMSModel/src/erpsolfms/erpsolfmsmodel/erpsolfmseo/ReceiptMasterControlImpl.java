@@ -640,15 +640,15 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for Pid, using the alias name Pid.
      * @return the value of Pid
      */
-    public BigDecimal getPid() {
-        return (BigDecimal) getAttributeInternal(PID);
+    public Integer getPid() {
+        return (Integer) getAttributeInternal(PID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Pid.
      * @param value value to set the Pid
      */
-    public void setPid(BigDecimal value) {
+    public void setPid(Integer value) {
         setAttributeInternal(PID, value);
     }
 

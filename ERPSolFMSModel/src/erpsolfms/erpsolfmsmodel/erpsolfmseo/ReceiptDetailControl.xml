@@ -58,7 +58,7 @@
     Name="Pid"
     ColumnName="PID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="RECEIPT_DETAIL_CONTROL"/>
   <Attribute
@@ -146,6 +146,14 @@
       <Item
         Value="Salespersonid"/>
     </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.txtSalesPersonName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <AccessorAttribute
     Name="ReceiptMasterControl"
@@ -193,4 +201,8 @@
       <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Salespersonid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
 </Entity>
