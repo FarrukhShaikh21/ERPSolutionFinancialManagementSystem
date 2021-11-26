@@ -92,7 +92,16 @@
     SQLType="DATE"
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="RECEIPT_MASTER_CONTROL"/>
+    TableName="RECEIPT_MASTER_CONTROL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.ReceiptDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Createdby"
     Precision="20"
@@ -138,7 +147,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_MASTER_CONTROL">
+    TableName="RECEIPT_MASTER_CONTROL"
+    DefaultValue="C">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
@@ -150,7 +160,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_MASTER_CONTROL">
+    TableName="RECEIPT_MASTER_CONTROL"
+    DefaultValue="IN">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
@@ -200,7 +211,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_MASTER_CONTROL">
+    TableName="RECEIPT_MASTER_CONTROL"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -212,7 +224,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_MASTER_CONTROL">
+    TableName="RECEIPT_MASTER_CONTROL"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -224,7 +237,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_MASTER_CONTROL">
+    TableName="RECEIPT_MASTER_CONTROL"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -260,7 +274,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_MASTER_CONTROL">
+    TableName="RECEIPT_MASTER_CONTROL"
+    DefaultValue="B">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -366,7 +381,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_MASTER_CONTROL"/>
+    TableName="RECEIPT_MASTER_CONTROL"
+    DefaultValue="0"/>
   <Attribute
     Name="TaxAmount"
     ColumnName="TAX_AMOUNT"
@@ -426,7 +442,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_MASTER_CONTROL">
+    TableName="RECEIPT_MASTER_CONTROL"
+    DefaultValue="W">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -438,8 +455,7 @@
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="RECEIPT_MASTER_CONTROL">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <TransientExpression><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -456,7 +472,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_MASTER_CONTROL">
+    TableName="RECEIPT_MASTER_CONTROL"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -538,7 +555,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_MASTER_CONTROL">
+    TableName="RECEIPT_MASTER_CONTROL"
+    DefaultValue="1">
     <Properties>
       <SchemaBasedProperties>
         <LABEL

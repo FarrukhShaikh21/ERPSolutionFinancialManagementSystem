@@ -7,6 +7,8 @@
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
     <iterator Binds="ReceiptMasterControlCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
               id="ReceiptMasterControlCRUDIterator"/>
+    <iterator Binds="ReceiptDetailControlDetCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
+              id="ReceiptDetailControlDetCRUDIterator" ChangeEventPolicy="none"/>
   </executables>
   <bindings>
     <listOfValues IterBinding="ReceiptMasterControlCRUDIterator" StaticList="false" Uses="LovtxtCustomerName"
@@ -51,16 +53,6 @@
         <Item Value="DocDate"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="RecDate">
-      <AttrNames>
-        <Item Value="RecDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Rmode">
-      <AttrNames>
-        <Item Value="Rmode"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ChequeNo">
       <AttrNames>
         <Item Value="ChequeNo"/>
@@ -73,9 +65,32 @@
     </attributeValues>
     <listOfValues IterBinding="ReceiptMasterControlCRUDIterator" StaticList="false" Uses="LovtxtBankBranchName"
                   id="txtBankBranchName"/>
-    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="txtBankBranchName1">
+    <tree IterBinding="ReceiptDetailControlDetCRUDIterator" id="ReceiptDetailControlDetCRUD">
+      <nodeDefinition DefName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlView"
+                      Name="ReceiptDetailControlDetCRUD0">
+        <AttrNames>
+          <Item Value="Lineno"/>
+          <Item Value="ReceiptNo"/>
+          <Item Value="Customerid"/>
+          <Item Value="txtSalesPersonName"/>
+          <Item Value="Salespersonid"/>
+          <Item Value="FcurrTaxAmount"/>
+          <Item Value="FcurrAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ReceiptDetailControlDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ReceiptDetailControlDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ReceiptMode">
       <AttrNames>
-        <Item Value="txtBankBranchName"/>
+        <Item Value="ReceiptMode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="ReceiptDate">
+      <AttrNames>
+        <Item Value="ReceiptDate"/>
       </AttrNames>
     </attributeValues>
   </bindings>

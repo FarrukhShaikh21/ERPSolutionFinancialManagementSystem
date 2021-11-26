@@ -39,6 +39,8 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ReceiptMasterControl?.Customerid]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="Salespersonid"
@@ -118,7 +120,7 @@
     Name="Receiptdetailseq"
     ColumnName="RECEIPTDETAILSEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="RECEIPT_DETAIL_CONTROL"
     PrimaryKey="true"/>
@@ -129,6 +131,22 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="RECEIPT_DETAIL_CONTROL"/>
+  <Attribute
+    Name="txtSalesPersonName"
+    Precision="80"
+    ColumnName="TXT_SALES_PERSON_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[SoSalesPersons?.Name]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="Salespersonid"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="ReceiptMasterControl"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.SysC0017666Assoc"

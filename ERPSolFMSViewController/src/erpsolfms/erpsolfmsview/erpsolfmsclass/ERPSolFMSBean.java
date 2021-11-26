@@ -191,47 +191,7 @@ public class ERPSolFMSBean {
         getERPSolImeiPopup().show(ERPSolHints);
         return null;
     }
-    public void erpSolSoImeiBox(ValueChangeEvent erpvce) {
-        System.out.println("1");
-        DCBindingContainer bc = (DCBindingContainer) ERPSolGlobalViewBean.doGetERPBindings();
-        System.out.println("2");
-        DCDataControl dc = bc.getDataControl();
-        System.out.println("3");
-        String ERPSolPlsql="begin ?:=PKG_SALE_ORDER.FUNC_IMEI_BOX_VALIDATION('"+getERPSolSalesOrderId()+"','"+erpvce.getNewValue()+"','"+getERPSolScanType()+"','"+getERPSolProductId()+"'); end;";
-        System.out.println("4");
-        DBTransaction erpsoldbt=(DBTransaction)dc.getApplicationModule().getTransaction();
-        System.out.println("5");
-        CallableStatement cs = erpsoldbt.createCallableStatement(ERPSolPlsql, DBTransaction.DEFAULT);
-        try {
-                     System.out.println("6");
-                     cs.registerOutParameter(1, Types.VARCHAR);
-                     System.out.println("7");
-                     cs.executeUpdate();
-                     System.out.println("8");
-                     ERPSolPlsql=cs.getString(1);
-                     System.out.println("9");
-                     if (ERPSolPlsql.equals("ERPSOLSUCCESS"))
-                     {  
-                         
-                         erpsoldbt.commit();
-                     dc.getApplicationModule().findViewObject("SoSalesOrderImeiDetCRUD").executeQuery();
-                     }
-                     else {
-                         FacesContext.getCurrentInstance().addMessage(null , new FacesMessage(ERPSolPlsql));
-                //                throw new JboException(ERPSolPlsql);
-                     }
-                 } catch (SQLException e) {
-                     
-                 }
-                 finally{
-                    try {
-                        cs.close();
-                    } catch (SQLException e) {
-                    }
-                }
-        
-        
-    }
+  
 
     public void setERPSolScanType(String ERPSolScanType) {
         this.ERPSolScanType = ERPSolScanType;

@@ -33,6 +33,7 @@ public class ReceiptDetailControlImpl extends ERPSolGlobalsEntityImpl {
         FcurrCancelAmount,
         Receiptdetailseq,
         Receiptseq,
+        txtSalesPersonName,
         ReceiptMasterControl,
         SoSalesPersons;
         private static AttributesEnum[] vals = null;
@@ -72,6 +73,7 @@ public class ReceiptDetailControlImpl extends ERPSolGlobalsEntityImpl {
     public static final int FCURRCANCELAMOUNT = AttributesEnum.FcurrCancelAmount.index();
     public static final int RECEIPTDETAILSEQ = AttributesEnum.Receiptdetailseq.index();
     public static final int RECEIPTSEQ = AttributesEnum.Receiptseq.index();
+    public static final int TXTSALESPERSONNAME = AttributesEnum.txtSalesPersonName.index();
     public static final int RECEIPTMASTERCONTROL = AttributesEnum.ReceiptMasterControl.index();
     public static final int SOSALESPERSONS = AttributesEnum.SoSalesPersons.index();
 
@@ -269,15 +271,15 @@ public class ReceiptDetailControlImpl extends ERPSolGlobalsEntityImpl {
      * Gets the attribute value for Receiptdetailseq, using the alias name Receiptdetailseq.
      * @return the value of Receiptdetailseq
      */
-    public BigDecimal getReceiptdetailseq() {
-        return (BigDecimal) getAttributeInternal(RECEIPTDETAILSEQ);
+    public Integer getReceiptdetailseq() {
+        return (Integer) getAttributeInternal(RECEIPTDETAILSEQ);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Receiptdetailseq.
      * @param value value to set the Receiptdetailseq
      */
-    public void setReceiptdetailseq(BigDecimal value) {
+    public void setReceiptdetailseq(Integer value) {
         setAttributeInternal(RECEIPTDETAILSEQ, value);
     }
 
@@ -295,6 +297,22 @@ public class ReceiptDetailControlImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setReceiptseq(BigDecimal value) {
         setAttributeInternal(RECEIPTSEQ, value);
+    }
+
+    /**
+     * Gets the attribute value for txtSalesPersonName, using the alias name txtSalesPersonName.
+     * @return the value of txtSalesPersonName
+     */
+    public String gettxtSalesPersonName() {
+        return (String) getAttributeInternal(TXTSALESPERSONNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtSalesPersonName.
+     * @param value value to set the txtSalesPersonName
+     */
+    public void settxtSalesPersonName(String value) {
+        setAttributeInternal(TXTSALESPERSONNAME, value);
     }
 
     /**
@@ -331,7 +349,7 @@ public class ReceiptDetailControlImpl extends ERPSolGlobalsEntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal receiptdetailseq) {
+    public static Key createPrimaryKey(Integer receiptdetailseq) {
         return new Key(new Object[] { receiptdetailseq });
     }
 
@@ -366,6 +384,9 @@ public class ReceiptDetailControlImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        if (operation==DML_INSERT) {
+            populateAttributeAsChanged(RECEIPTNO, getReceiptMasterControl().getAttribute("ReceiptNo"));
+       }
         super.doDML(operation, e);
     }
   

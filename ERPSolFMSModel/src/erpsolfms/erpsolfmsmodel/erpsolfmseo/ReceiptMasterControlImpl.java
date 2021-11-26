@@ -1221,6 +1221,7 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
            System.out.println(pkValue + "pk value");
            String result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
            populateAttributeAsChanged(RECEIPTNO, result);
+           populateAttributeAsChanged(DOCTYPEID, getReceiptMode().equals("C")?"SRCT":"SRBT");
 
        }
         super.doDML(operation, e);

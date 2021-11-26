@@ -13,6 +13,34 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccSoSalesPersonsView"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtSalesPersonName"
+    ListVOName="AccSoSalesPersonsView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtSalesPersonName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Salespersonid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+      <Item Value="Salespersonid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+      <Item Value="Salespersonid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="ReceiptDetailControl"
     Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl"/>
@@ -51,7 +79,10 @@
     PrecisionRule="true"
     EntityAttrName="Lineno"
     EntityUsage="ReceiptDetailControl"
-    AliasName="LINENO"/>
+    AliasName="LINENO">
+    <TransientExpression
+      trustMode="trusted"><![CDATA[getRowSet().getRowCount()+1]]></TransientExpression>
+  </ViewAttribute>
   <ViewAttribute
     Name="TaxAmount"
     PrecisionRule="true"
@@ -88,6 +119,28 @@
     EntityAttrName="Receiptdetailseq"
     EntityUsage="ReceiptDetailControl"
     AliasName="RECEIPTDETAILSEQ"/>
+  <ViewAttribute
+    Name="txtSalesPersonName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtSalesPersonName"
+    EntityUsage="ReceiptDetailControl"
+    AliasName="TXT_SALES_PERSON_NAME"
+    LOVName="LovtxtSalesPersonName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Receiptseq"
+    PrecisionRule="true"
+    EntityAttrName="Receiptseq"
+    EntityUsage="ReceiptDetailControl"
+    AliasName="RECEIPTSEQ"/>
   <ViewLinkAccessor
     Name="SoSalesPersonsView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonsReceiptDetailControlSalespersonIdLink"
