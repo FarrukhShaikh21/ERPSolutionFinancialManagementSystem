@@ -60,6 +60,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.Customerid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Companyid"
@@ -86,6 +92,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.Locationid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ReceiptDate"
@@ -153,6 +165,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.ReceiptMode_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ReceiptType"
@@ -178,6 +196,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.RefVoucherNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="TotalAmount"
@@ -197,6 +221,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.ChequeNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ChequeDate"
@@ -204,7 +234,14 @@
     SQLType="DATE"
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="RECEIPT_MASTER_CONTROL"/>
+    TableName="RECEIPT_MASTER_CONTROL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.ChequeDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Submit"
     Precision="1"
@@ -668,8 +705,7 @@
     ColumnType="VARCHAR2"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[AllCustomers?.CustomerName]]></TransientExpression>
+    <TransientExpression><![CDATA[AllCustomers?.CustomerName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -692,8 +728,7 @@
     ColumnType="VARCHAR2"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[SoSalesPersons?.Name]]></TransientExpression>
+    <TransientExpression><![CDATA[SoSalesPersons?.Name]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -712,8 +747,7 @@
     ColumnType="VARCHAR2"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[AllBankBranches?.BranchName]]></TransientExpression>
+    <TransientExpression><![CDATA[AllBankBranches?.BranchName]]></TransientExpression>
     <Dependencies>
       <Item
         Value="Branchid"/>
@@ -795,8 +829,7 @@
       <validation:Item
         Value="ERP_SOL_SPID"/>
     </validation:MsgIds>
-    <validation:TransientExpression
-      trustMode="trusted"><![CDATA[if(Salespersonid ==null)
+    <validation:TransientExpression><![CDATA[if(Salespersonid ==null)
 {
 adf.error.raise("ERP_SOL_SPID");
 return false;

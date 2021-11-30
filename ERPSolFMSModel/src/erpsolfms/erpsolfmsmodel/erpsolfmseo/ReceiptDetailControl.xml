@@ -41,6 +41,12 @@
     </DesignTime>
     <TransientExpression
       trustMode="untrusted"><![CDATA[ReceiptMasterControl?.Customerid]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Customerid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Salespersonid"
@@ -53,6 +59,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Salespersonid_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Pid"
@@ -74,7 +86,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_DETAIL_CONTROL"/>
+    TableName="RECEIPT_DETAIL_CONTROL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.Lineno_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="TaxAmount"
     ColumnName="TAX_AMOUNT"
@@ -97,7 +116,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_DETAIL_CONTROL"/>
+    TableName="RECEIPT_DETAIL_CONTROL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.FcurrAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="FcurrTaxAmount"
     Precision="16"
@@ -106,7 +132,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="RECEIPT_DETAIL_CONTROL"/>
+    TableName="RECEIPT_DETAIL_CONTROL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.FcurrTaxAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="FcurrCancelAmount"
     Precision="16"
@@ -148,10 +181,10 @@
     </Dependencies>
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.txtSalesPersonName_LABEL"/>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.txtSalesPersonName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
