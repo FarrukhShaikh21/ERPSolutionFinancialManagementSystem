@@ -91,11 +91,11 @@
       islink="true"
       id="ControlFlowCase9"
       from="WildcardControlFlowRule8"
-      to="MethodCall7">
+      to="MethodCall16">
       <property
          name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
       <property
-         name="sdm:polyPoints">R50,475.0,-75.55176,587.0,141.24707,T50</property>
+         name="sdm:polyPoints">R50,475.0,-75.55176,689.5,54.396484,T50</property>
    </ControlFlowCase>
    <View
       id="View10">
@@ -137,4 +137,80 @@
       <property
          name="x">145.0</property>
    </TaskFlowReturn>
+   <TaskFlowReturn
+      id="TaskFlowReturn13">
+      <property
+         name="activityId">ACT-ERP-SOL-LOGOUT</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ACT-ERP-SOL-LOGOUT&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  ACT-ERP-SOL-LOGOUT&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">-10.75293</property>
+      <property
+         name="x">-79.0</property>
+   </TaskFlowReturn>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule14">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">-134.70117</property>
+      <property
+         name="x">51.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase15"
+      from="WildcardControlFlowRule14"
+      to="TaskFlowReturn13">
+      <property
+         name="fromOutcome">ACT-ERP-SOL-LOGOUT</property>
+      <property
+         name="sdm:polyPoints">L50,15.0,-134.55176,-79.0,-65.103516,T50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall16">
+      <property
+         name="activityId">RollbackBeformFormFMS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>RollbackBeformFormFMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">108.74707</property>
+      <property
+         name="x">689.5</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase17"
+      from="MethodCall16"
+      to="MethodCall7">
+      <property
+         name="fromOutcome">ACTStartERPSolutionTaskFlow</property>
+      <property
+         name="sdm:polyPoints">L50,648.5,108.396484,628.0,195.24707,R50</property>
+   </ControlFlowCase>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule18">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">-172.70117</property>
+      <property
+         name="x">215.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase19"
+      from="WildcardControlFlowRule18"
+      to="TaskFlowReturn12">
+      <property
+         name="fromOutcome">ACT-ERP-GOTO-MODLE-SELECTION</property>
+      <property
+         name="sdm:polyPoints">B50,215.0,-130.05176,145.0,-26.103516,T50</property>
+   </ControlFlowCase>
 </SDM>
