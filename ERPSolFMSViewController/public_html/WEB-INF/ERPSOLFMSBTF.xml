@@ -75,6 +75,9 @@
         <fixed-outcome>ACTStartERPSolutionTaskFlow</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="AR_0047_SEARCH">
+      <page>/AR_0047_SEARCH.jsf</page>
+    </view>
     <control-flow-rule id="__1">
       <from-activity-id>doERPSolFMSSessionGlobals</from-activity-id>
       <control-flow-case id="__2">
@@ -122,6 +125,27 @@
       <control-flow-case id="__20">
         <from-outcome>ACT-ERP-GOTO-MODLE-SELECTION</from-outcome>
         <to-activity-id>RETURN-FROM-FMS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__21">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__22">
+        <from-outcome>ACT-ERP-EXIT-FORM</from-outcome>
+        <to-activity-id>ERPSolFMSMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__23">
+      <from-activity-id>AR_0047</from-activity-id>
+      <control-flow-case id="__24">
+        <from-outcome>ERP-ACT-AR-0047-SEARCH</from-outcome>
+        <to-activity-id>AR_0047_SEARCH</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__25">
+      <from-activity-id>AR_0047_SEARCH</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome>ERP-ACT_BACK_AR-0047-SEARCH</from-outcome>
+        <to-activity-id>AR_0047</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
