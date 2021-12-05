@@ -2,6 +2,86 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="AR_0047_SEARCH.jsf" id="d1">
-        <af:form id="f1"></af:form>
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelHeader text="ReceiptMasterControl" id="ph1">
+                <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.ReceiptMasterControlViewFindVCQuery.queryDescriptor}"
+                              model="#{bindings.ReceiptMasterControlViewFindVCQuery.queryModel}"
+                              queryListener="#{bindings.ReceiptMasterControlViewFindVCQuery.processQuery}"
+                              queryOperationListener="#{bindings.ReceiptMasterControlViewFindVCQuery.processQueryOperation}"
+                              resultComponentId="::resId1" saveQueryMode="hidden"/>
+                    <af:table value="#{bindings.ReceiptMasterControlCRUD.collectionModel}" var="row"
+                              rows="#{bindings.ReceiptMasterControlCRUD.rangeSize}"
+                              emptyText="#{bindings.ReceiptMasterControlCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.ReceiptMasterControlCRUD.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.ReceiptMasterControlCRUD.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.ReceiptMasterControlCRUD.rangeSize}"
+                              id="resId1" columnStretching="last">
+                        <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.ReceiptNo.label}"
+                                   id="resId1c1">
+                            <af:outputText value="#{row.ReceiptNo}"
+                                           shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.ReceiptNo.tooltip}"
+                                           id="ot1" rendered="false"/>
+                            <af:link text="#{row.ReceiptNo}" id="l1" partialSubmit="true"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.DocDate.label}" id="resId1c2">
+                            <af:outputText value="#{row.DocDate}"
+                                           shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.DocDate.tooltip}"
+                                           id="ot2">
+                                <af:convertDateTime pattern="#{bindings.ReceiptMasterControlCRUD.hints.DocDate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.Locationid.label}"
+                                   id="resId1c3">
+                            <af:outputText value="#{row.Locationid}"
+                                           shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.Locationid.tooltip}"
+                                           id="ot3"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.Customerid.label}"
+                                   id="resId1c4">
+                            <af:outputText value="#{row.Customerid}"
+                                           shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.Customerid.tooltip}"
+                                           id="ot4"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.txtCustomerName.label}"
+                                   id="resId1c5">
+                            <af:outputText value="#{row.txtCustomerName}"
+                                           shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.txtCustomerName.tooltip}"
+                                           id="ot5"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.txtSalesPersonName.label}"
+                                   id="resId1c6">
+                            <af:outputText value="#{row.txtSalesPersonName}"
+                                           shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.txtSalesPersonName.tooltip}"
+                                           id="ot6"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.txtBankBranchName.label}"
+                                   id="resId1c7">
+                            <af:outputText value="#{row.txtBankBranchName}"
+                                           shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.txtBankBranchName.tooltip}"
+                                           id="ot7"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.Submit.label}" id="resId1c8">
+                            <af:outputText value="#{row.Submit}"
+                                           shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.Submit.tooltip}"
+                                           id="ot8"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.Remarks.label}" id="resId1c9">
+                            <af:outputText value="#{row.Remarks}"
+                                           shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.Remarks.tooltip}"
+                                           id="ot9"/>
+                        </af:column>
+                    </af:table>
+                </af:panelGroupLayout>
+                <f:facet name="toolbar">
+                    <af:toolbar id="t1">
+                        <af:button text="Back To Receipt" id="b1" action="ERP-ACT_BACK_AR-0047-SEARCH"/>
+                    </af:toolbar>
+                </f:facet>
+            </af:panelHeader>
+        </af:form>
     </af:document>
 </f:view>
