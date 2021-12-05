@@ -9,6 +9,8 @@
     <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@RollbackBeformFormFMS"
           usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef"/>
     <page path="/AR_0047_SEARCH.jsf" usageId="erpsolfms_erpsolfmsview_AR_0047_SEARCHPageDef"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@RollbackCloseFormFMS"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolfms_erpsolfmsview_AR_0047PageDef" path="erpsolfms.erpsolfmsview.pageDefs.AR_0047PageDef"/>
@@ -20,6 +22,8 @@
           path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef"/>
     <page id="erpsolfms_erpsolfmsview_AR_0047_SEARCHPageDef"
           path="erpsolfms.erpsolfmsview.pageDefs.AR_0047_SEARCHPageDef"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef1"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef1"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolFMSAppModuleDataControl" Package="erpsolfms.erpsolfmsmodel.erpsolfmsam"

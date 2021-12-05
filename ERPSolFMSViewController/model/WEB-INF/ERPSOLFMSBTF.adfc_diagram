@@ -226,11 +226,11 @@
       islink="true"
       id="ControlFlowCase21"
       from="WildcardControlFlowRule20"
-      to="View3">
+      to="MethodCall25">
       <property
          name="fromOutcome">ACT-ERP-EXIT-FORM</property>
       <property
-         name="sdm:polyPoints">R50,25.0,206.74707,282.9583,260.94824,L54</property>
+         name="sdm:polyPoints">R50,25.0,206.74707,127.5,287.09766,T50</property>
    </ControlFlowCase>
    <View
       id="View22">
@@ -266,5 +266,28 @@
          name="fromOutcome">ERP-ACT_BACK_AR-0047-SEARCH</property>
       <property
          name="sdm:polyPoints">R54,389.48187,393.94824,465.5,307.94824,L54</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall25">
+      <property
+         name="activityId">RollbackCloseFormFMS</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>RollbackCloseFormFMS&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">341.44824</property>
+      <property
+         name="x">127.5</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase26"
+      from="MethodCall25"
+      to="View3">
+      <property
+         name="fromOutcome">ACT-ERP-EXIT-FORM</property>
+      <property
+         name="sdm:polyPoints">R50,168.5,341.09766,284.6787,260.94824,L54</property>
    </ControlFlowCase>
 </SDM>

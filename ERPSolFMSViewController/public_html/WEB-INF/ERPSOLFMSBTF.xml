@@ -78,6 +78,12 @@
     <view id="AR_0047_SEARCH">
       <page>/AR_0047_SEARCH.jsf</page>
     </view>
+    <method-call id="RollbackCloseFormFMS">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>ACT-ERP-EXIT-FORM</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__1">
       <from-activity-id>doERPSolFMSSessionGlobals</from-activity-id>
       <control-flow-case id="__2">
@@ -131,7 +137,7 @@
       <from-activity-id>*</from-activity-id>
       <control-flow-case id="__22">
         <from-outcome>ACT-ERP-EXIT-FORM</from-outcome>
-        <to-activity-id>ERPSolFMSMain</to-activity-id>
+        <to-activity-id>RollbackCloseFormFMS</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__23">
@@ -146,6 +152,13 @@
       <control-flow-case id="__26">
         <from-outcome>ERP-ACT_BACK_AR-0047-SEARCH</from-outcome>
         <to-activity-id>AR_0047</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__27">
+      <from-activity-id>RollbackCloseFormFMS</from-activity-id>
+      <control-flow-case id="__28">
+        <from-outcome>ACT-ERP-EXIT-FORM</from-outcome>
+        <to-activity-id>ERPSolFMSMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
