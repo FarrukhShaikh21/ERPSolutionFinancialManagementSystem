@@ -44,6 +44,12 @@ public class ReceiptMasterControlViewImpl extends ViewObjectImpl implements Rece
             System.out.println(e.getMessage()+ "this is message");
             throw new JboException("Unable to supervise ");
         }
+        finally{
+            try {
+                cs.close();
+            } catch (SQLException e) {
+            }
+        }
     }    
 }
 
