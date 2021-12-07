@@ -7,6 +7,8 @@
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
     <iterator Binds="ArNoteMasterCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
               id="ArNoteMasterCRUDIterator"/>
+    <iterator Binds="ArNoteDetailDetCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
+              id="ArNoteDetailDetCRUDIterator"/>
   </executables>
   <bindings>
     <action IterBinding="ArNoteMasterCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
@@ -67,5 +69,21 @@
         <Item Value="Remarks"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="ArNoteDetailDetCRUDIterator" id="ArNoteDetailDetCRUD">
+      <nodeDefinition DefName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteDetailView" Name="ArNoteDetailDetCRUD0">
+        <AttrNames>
+          <Item Value="ItemRefId"/>
+          <Item Value="txtItemName"/>
+          <Item Value="txtCOADescription"/>
+          <Item Value="GlCode"/>
+          <Item Value="Costcenter"/>
+          <Item Value="FcurrAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ArNoteDetailDetCRUDIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ArNoteDetailDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

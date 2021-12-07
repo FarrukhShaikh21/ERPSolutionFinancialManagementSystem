@@ -47,6 +47,14 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="erpsolfmsqvo"
+    PackageName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="erpsolfmsvo"
     PackageName="erpsolfms.erpsolfmsmodel.erpsolfmsvo"
     ObjectType="JboPackage">

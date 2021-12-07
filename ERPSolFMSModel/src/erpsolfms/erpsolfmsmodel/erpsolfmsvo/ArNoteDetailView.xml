@@ -21,6 +21,10 @@
       Name="InItemsViewActiveVC"
       FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.InItemsView.InItemsViewActiveVC"/>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccVWChartOfAccountQVO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWChartOfAccountQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtItemName"
     ListVOName="AccInItemsView"
@@ -35,15 +39,42 @@
     <AttrArray Name="DerivedAttrNames">
       <Item Value="ItemRefId"/>
       <Item Value="Itemid"/>
+      <Item Value="ModelNo"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ModelNo"/>
       <Item Value="ItemRefId"/>
       <Item Value="Itemid"/>
+      <Item Value="ModelNo"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ModelNo"/>
       <Item Value="ItemRefId"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="InItemsViewFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtCOADescription"
+    ListVOName="AccVWChartOfAccountQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCOADescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="GlCode"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Glcode"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -214,10 +245,51 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtCOADescription"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LovtxtCOADescription">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[VWChartOfAccountQVO?.Description]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteDetailView.txtCOADescription_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="GlCode"/>
+    </Dependencies>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="InItemsView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.InItemsARNoteDetailItemIdLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="VWChartOfAccountQVO"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VWGLChartOfAcctARNoteDetailGLCodeLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

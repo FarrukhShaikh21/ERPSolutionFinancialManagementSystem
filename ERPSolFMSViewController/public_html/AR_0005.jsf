@@ -241,6 +241,86 @@
                       </af:toolbar>
                     </f:facet>
                     <f:facet name="statusbar"/>
+                    <af:table value="#{bindings.ArNoteDetailDetCRUD.collectionModel}" var="row"
+                              rows="#{bindings.ArNoteDetailDetCRUD.rangeSize}"
+                              emptyText="#{bindings.ArNoteDetailDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.ArNoteDetailDetCRUD.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.ArNoteDetailDetCRUD.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.ArNoteDetailDetCRUD.rangeSize}" id="t2"
+                              partialTriggers="::b4 ::b3">
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}" id="c1" width="100">
+                        <af:inputText value="#{row.bindings.ItemRefId.inputValue}"
+                                      label="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}"
+                                      required="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.mandatory}"
+                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.displayWidth}"
+                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.precision}"
+                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.tooltip}" id="it2"
+                                      readOnly="true">
+                          <f:validator binding="#{row.bindings.ItemRefId.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.label}" id="c2"
+                                 width="200">
+                        <af:inputComboboxListOfValues id="txtItemNameId"
+                                                      popupTitle="Search and Select: #{bindings.ArNoteDetailDetCRUD.hints.txtItemName.label}"
+                                                      value="#{row.bindings.txtItemName.inputValue}"
+                                                      model="#{row.bindings.txtItemName.listOfValuesModel}"
+                                                      required="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.mandatory}"
+                                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.displayWidth}"
+                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.tooltip}">
+                          <f:validator binding="#{row.bindings.txtItemName.validator}"/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedModelValues}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.label}" id="c3"
+                                 width="200">
+                        <af:inputComboboxListOfValues id="txtCOADescriptionId"
+                                                      popupTitle="Search and Select: #{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.label}"
+                                                      value="#{row.bindings.txtCOADescription.inputValue}"
+                                                      model="#{row.bindings.txtCOADescription.listOfValuesModel}"
+                                                      required="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.mandatory}"
+                                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.displayWidth}"
+                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.tooltip}">
+                          <f:validator binding="#{row.bindings.txtCOADescription.validator}"/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCOAValues}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.label}" id="c4" width="150">
+                        <af:inputText value="#{row.bindings.GlCode.inputValue}"
+                                      label="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.label}"
+                                      required="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.mandatory}"
+                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.displayWidth}"
+                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.precision}"
+                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.tooltip}" id="it3"
+                                      readOnly="true">
+                          <f:validator binding="#{row.bindings.GlCode.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.label}" id="c5">
+                        <af:inputText value="#{row.bindings.Costcenter.inputValue}"
+                                      label="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.label}"
+                                      required="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.mandatory}"
+                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.displayWidth}"
+                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.precision}"
+                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.tooltip}" id="it5"
+                                      readOnly="true">
+                          <f:validator binding="#{row.bindings.Costcenter.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.label}" id="c6">
+                        <af:inputText value="#{row.bindings.FcurrAmount.inputValue}"
+                                      label="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.label}"
+                                      required="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.mandatory}"
+                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.displayWidth}"
+                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.precision}"
+                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.tooltip}" id="it6">
+                          <f:validator binding="#{row.bindings.FcurrAmount.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.ArNoteDetailDetCRUD.hints.FcurrAmount.format}"/>
+                        </af:inputText>
+                      </af:column>
+                    </af:table>
                   </af:panelCollection>
                 </af:gridCell>
               </af:gridRow>

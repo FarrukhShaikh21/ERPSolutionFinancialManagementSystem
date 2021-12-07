@@ -170,6 +170,17 @@ public class ERPSolFMSBean {
         return ResultList;
         
     }   
+  
+    public List<SelectItem> doERPSolGetAutoSuggestedCOAValues(String pStringValues) {
+    //public static List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
+        //public List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
+        List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VWChartOfAccountAutoSuggestRO"," UPPER(CONCAT(GLCODE,Description))", "Description", "GLCODE", 10);
+        return ResultList;
+        
+    }   
+    
+    
     public void doERPSolDialogConfirm(DialogEvent erpsolde) {
         if (erpsolde.getOutcome()==DialogEvent.Outcome.yes) {
             OperationBinding ob = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("Commit");
