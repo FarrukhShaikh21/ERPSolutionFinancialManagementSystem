@@ -9,14 +9,20 @@
   DBObjectType="table"
   DBObjectName="AR_NOTE_DETAIL"
   AliasName="ArNoteDetail"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetailImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="SeqNo"
     IsNotNull="true"
     Precision="15"
     ColumnName="SEQ_NO"
     SQLType="VARCHAR"
-    Type="java.lang.String"
+    Type="java.lang.Integer"
     ColumnType="VARCHAR2"
     TableName="AR_NOTE_DETAIL">
     <DesignTime>
@@ -101,14 +107,14 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="AR_NOTE_DETAIL"/>
   <Attribute
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="AR_NOTE_DETAIL"/>
   <Attribute
@@ -247,7 +253,7 @@
     IsNotNull="true"
     ColumnName="NOTEDETAILSEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="AR_NOTE_DETAIL"
     PrimaryKey="true"/>
@@ -256,9 +262,33 @@
     IsNotNull="true"
     ColumnName="NOTEMASTERSEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="AR_NOTE_DETAIL"/>
+  <Attribute
+    Name="txtItemName"
+    Precision="80"
+    ColumnName="TXT_ITEM_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[InItems?.ModelNo]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.txtItemName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="Itemid"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="ArNoteMaster"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkArNoteDetNotemasterAssoc"
@@ -329,4 +359,8 @@
       <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.Itemid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
 </Entity>

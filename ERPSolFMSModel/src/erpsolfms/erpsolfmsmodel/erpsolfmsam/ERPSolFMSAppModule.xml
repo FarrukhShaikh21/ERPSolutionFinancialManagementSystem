@@ -28,6 +28,13 @@
   <ViewUsage
     Name="ArNoteDetailDetCRUD"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteDetailView"/>
+  <ViewUsage
+    Name="InItemsAutoSuggestRO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.InItemsView">
+    <ViewCriteriaUsage
+      Name="InItemsViewActiveVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.InItemsView.InItemsViewActiveVC"/>
+  </ViewUsage>
   <ViewLinkUsage
     Name="SysC0017666Link1"
     ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"

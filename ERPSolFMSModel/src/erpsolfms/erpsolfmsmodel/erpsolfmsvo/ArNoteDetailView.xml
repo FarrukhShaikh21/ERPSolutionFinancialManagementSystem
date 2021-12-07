@@ -13,6 +13,40 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccInItemsView"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.InItemsView"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="InItemsViewActiveVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.InItemsView.InItemsViewActiveVC"/>
+  </ViewAccessor>
+  <ListBinding
+    Name="LovtxtItemName"
+    ListVOName="AccInItemsView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtItemName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="ItemRefId"/>
+      <Item Value="Itemid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ModelNo"/>
+      <Item Value="ItemRefId"/>
+      <Item Value="Itemid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ModelNo"/>
+      <Item Value="ItemRefId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="ArNoteDetail"
     Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail"/>
@@ -164,6 +198,22 @@
     EntityAttrName="Notemasterseq"
     EntityUsage="ArNoteDetail"
     AliasName="NOTEMASTERSEQ"/>
+  <ViewAttribute
+    Name="txtItemName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtItemName"
+    EntityUsage="ArNoteDetail"
+    AliasName="TXT_ITEM_NAME"
+    LOVName="LovtxtItemName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="InItemsView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.InItemsARNoteDetailItemIdLink"

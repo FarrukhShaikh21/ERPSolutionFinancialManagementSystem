@@ -18,11 +18,10 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="InItems"/>
-      <Attr Name="_foreignKey" Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.InItems.XpkinItems"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.InItems.Itemid"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.InItems.ItemRefId"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
@@ -32,11 +31,10 @@
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="ArNoteDetail"/>
-      <Attr Name="_foreignKey" Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.fk_ArNoteDetail"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.Itemid"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.ItemRefId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>
