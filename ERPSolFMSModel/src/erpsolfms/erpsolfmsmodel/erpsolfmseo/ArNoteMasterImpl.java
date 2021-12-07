@@ -871,6 +871,11 @@ public class ArNoteMasterImpl extends ERPSolGlobalsEntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+
+        String pkValue=" AR_note_ID('"+ERPSolGlobClassModel.doGetUserCompanyCode()+"','"+ERPSolGlobClassModel.doGetUserLocationCode()+"','B',TO_DATE('"+getDocDate()+"','YYYY-MM-DD'))";
+        System.out.println(pkValue + "pk value");
+        String result= ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+        populateAttributeAsChanged(NOTECODE, result);
         super.doDML(operation, e);
     }
 }

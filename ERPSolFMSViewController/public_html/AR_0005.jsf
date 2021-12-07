@@ -169,8 +169,10 @@
                                                         required="#{bindings.txtSalesPersonName.hints.mandatory}"
                                                         columns="#{bindings.txtSalesPersonName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtSalesPersonName.hints.tooltip}"
-                                                        simple="true" contentStyle="width:100%">
+                                                        simple="true" contentStyle="width:100%"
+                                                        partialTriggers="iclov1">
                             <f:validator binding="#{bindings.txtSalesPersonName.validator}"/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedSalesPersonValues}"/>
                           </af:inputComboboxListOfValues>
                         </af:gridCell>
                       </af:gridRow>
@@ -239,93 +241,6 @@
                       </af:toolbar>
                     </f:facet>
                     <f:facet name="statusbar"/>
-                    <af:table value="#{bindings.ReceiptDetailControlDetCRUD.collectionModel}" var="row"
-                              rows="#{bindings.ReceiptDetailControlDetCRUD.rangeSize}"
-                              emptyText="#{bindings.ReceiptDetailControlDetCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
-                              rowBandingInterval="0"
-                              selectedRowKeys="#{bindings.ReceiptDetailControlDetCRUD.collectionModel.selectedRow}"
-                              selectionListener="#{bindings.ReceiptDetailControlDetCRUD.collectionModel.makeCurrent}"
-                              rowSelection="single" fetchSize="#{bindings.ReceiptDetailControlDetCRUD.rangeSize}"
-                              id="t2" styleClass="AFStretchWidth" partialTriggers="::b3 ::b4">
-                      <af:column headerText="#{bindings.ReceiptDetailControlDetCRUD.hints.Lineno.label}" id="c1"
-                                 width="70">
-                        <af:inputText value="#{row.bindings.Lineno.inputValue}"
-                                      label="#{bindings.ReceiptDetailControlDetCRUD.hints.Lineno.label}"
-                                      required="#{bindings.ReceiptDetailControlDetCRUD.hints.Lineno.mandatory}"
-                                      columns="#{bindings.ReceiptDetailControlDetCRUD.hints.Lineno.displayWidth}"
-                                      maximumLength="#{bindings.ReceiptDetailControlDetCRUD.hints.Lineno.precision}"
-                                      shortDesc="#{bindings.ReceiptDetailControlDetCRUD.hints.Lineno.tooltip}" id="it5"
-                                      readOnly="true">
-                          <f:validator binding="#{row.bindings.Lineno.validator}"/>
-                          <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.ReceiptDetailControlDetCRUD.hints.Lineno.format}"/>
-                        </af:inputText>
-                      </af:column>
-                      <af:column headerText="#{bindings.ReceiptDetailControlDetCRUD.hints.Customerid.label}" id="c3"
-                                 width="100" displayIndex="-1">
-                        <af:inputText value="#{row.bindings.Customerid.inputValue}"
-                                      label="#{bindings.ReceiptDetailControlDetCRUD.hints.Customerid.label}"
-                                      required="#{bindings.ReceiptDetailControlDetCRUD.hints.Customerid.mandatory}"
-                                      columns="#{bindings.ReceiptDetailControlDetCRUD.hints.Customerid.displayWidth}"
-                                      maximumLength="#{bindings.ReceiptDetailControlDetCRUD.hints.Customerid.precision}"
-                                      shortDesc="#{bindings.ReceiptDetailControlDetCRUD.hints.Customerid.tooltip}"
-                                      id="it7" readOnly="true">
-                          <f:validator binding="#{row.bindings.Customerid.validator}"/>
-                        </af:inputText>
-                      </af:column>
-                      <af:column headerText="#{bindings.ReceiptDetailControlDetCRUD.hints.txtSalesPersonName.label}"
-                                 id="c4" width="200">
-                        <af:inputComboboxListOfValues id="txtSalesPersonNameId"
-                                                      popupTitle="Search and Select: #{bindings.ReceiptDetailControlDetCRUD.hints.txtSalesPersonName.label}"
-                                                      value="#{row.bindings.txtSalesPersonName.inputValue}"
-                                                      model="#{row.bindings.txtSalesPersonName.listOfValuesModel}"
-                                                      required="#{bindings.ReceiptDetailControlDetCRUD.hints.txtSalesPersonName.mandatory}"
-                                                      columns="#{bindings.ReceiptDetailControlDetCRUD.hints.txtSalesPersonName.displayWidth}"
-                                                      shortDesc="#{bindings.ReceiptDetailControlDetCRUD.hints.txtSalesPersonName.tooltip}"
-                                                      autoSubmit="true" contentStyle="width:80%">
-                          <f:validator binding="#{row.bindings.txtSalesPersonName.validator}"/>
-                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedSalesPersonValues}"/>
-                        </af:inputComboboxListOfValues>
-                      </af:column>
-                      <af:column headerText="#{bindings.ReceiptDetailControlDetCRUD.hints.Salespersonid.label}" id="c5">
-                        <af:inputText value="#{row.bindings.Salespersonid.inputValue}"
-                                      label="#{bindings.ReceiptDetailControlDetCRUD.hints.Salespersonid.label}"
-                                      required="#{bindings.ReceiptDetailControlDetCRUD.hints.Salespersonid.mandatory}"
-                                      columns="#{bindings.ReceiptDetailControlDetCRUD.hints.Salespersonid.displayWidth}"
-                                      maximumLength="#{bindings.ReceiptDetailControlDetCRUD.hints.Salespersonid.precision}"
-                                      shortDesc="#{bindings.ReceiptDetailControlDetCRUD.hints.Salespersonid.tooltip}"
-                                      id="it9" readOnly="true">
-                          <f:validator binding="#{row.bindings.Salespersonid.validator}"/>
-                        </af:inputText>
-                      </af:column>
-                      <af:column headerText="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.label}" id="c2">
-                        <af:inputText value="#{row.bindings.FcurrAmount.inputValue}"
-                                      label="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.label}"
-                                      required="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.mandatory}"
-                                      columns="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.displayWidth}"
-                                      maximumLength="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.precision}"
-                                      shortDesc="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.tooltip}"
-                                      id="it6">
-                          <f:validator binding="#{row.bindings.FcurrAmount.validator}"/>
-                          <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.format}"/>
-                        </af:inputText>
-                      </af:column>
-                      <af:column headerText="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.label}"
-                                 id="c6">
-                        <af:inputText value="#{row.bindings.FcurrTaxAmount.inputValue}"
-                                      label="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.label}"
-                                      required="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.mandatory}"
-                                      columns="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.displayWidth}"
-                                      maximumLength="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.precision}"
-                                      shortDesc="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.tooltip}"
-                                      id="it10">
-                          <f:validator binding="#{row.bindings.FcurrTaxAmount.validator}"/>
-                          <af:convertNumber groupingUsed="false"
-                                            pattern="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.format}"/>
-                        </af:inputText>
-                      </af:column>
-                    </af:table>
                   </af:panelCollection>
                 </af:gridCell>
               </af:gridRow>

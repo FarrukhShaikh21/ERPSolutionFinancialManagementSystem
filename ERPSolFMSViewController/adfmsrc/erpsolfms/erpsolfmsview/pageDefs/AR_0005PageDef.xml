@@ -62,5 +62,10 @@
         <Item Value="Customerid"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="Remarks">
+      <AttrNames>
+        <Item Value="Remarks"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
