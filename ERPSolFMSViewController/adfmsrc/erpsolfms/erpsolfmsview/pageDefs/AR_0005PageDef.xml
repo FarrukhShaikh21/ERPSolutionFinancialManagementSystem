@@ -5,6 +5,62 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="ArNoteMasterCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
+              id="ArNoteMasterCRUDIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <action IterBinding="ArNoteMasterCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="Submit">
+      <AttrNames>
+        <Item Value="Submit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="NoteCode">
+      <AttrNames>
+        <Item Value="NoteCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="DocDate">
+      <AttrNames>
+        <Item Value="DocDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="Locationid">
+      <AttrNames>
+        <Item Value="Locationid"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ArNoteMasterCRUDIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ArNoteMasterCRUDIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ArNoteMasterCRUDIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="ERPSolFMSAppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="ERPSolFMSAppModuleDataControl"/>
+    <methodAction id="doSuperviseARNoteMaster" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doSuperviseARNoteMaster" IsViewObjectMethod="true"
+                  DataControl="ERPSolFMSAppModuleDataControl"
+                  InstanceName="data.ERPSolFMSAppModuleDataControl.ArNoteMasterCRUD"
+                  ReturnName="data.ERPSolFMSAppModuleDataControl.methodResults.doSuperviseARNoteMaster_ERPSolFMSAppModuleDataControl_ArNoteMasterCRUD_doSuperviseARNoteMaster_result"/>
+    <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="DocTypeId">
+      <AttrNames>
+        <Item Value="DocTypeId"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="ArNoteMasterCRUDIterator" StaticList="false" Uses="LovtxtSalesPersonName"
+                  id="txtSalesPersonName"/>
+    <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="RefVoucher">
+      <AttrNames>
+        <Item Value="RefVoucher"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="ArNoteMasterCRUDIterator" StaticList="false" Uses="LovtxtCustomerName"
+                  id="txtCustomerName"/>
+    <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="Customerid">
+      <AttrNames>
+        <Item Value="Customerid"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
 </pageDefinition>

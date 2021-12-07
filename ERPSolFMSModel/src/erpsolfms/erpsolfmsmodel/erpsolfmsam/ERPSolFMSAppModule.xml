@@ -22,10 +22,22 @@
   <ViewUsage
     Name="SoSalesPersonsAutoSuggestRO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"/>
+  <ViewUsage
+    Name="ArNoteMasterCRUD"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteMasterView"/>
+  <ViewUsage
+    Name="ArNoteDetailDetCRUD"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteDetailView"/>
   <ViewLinkUsage
     Name="SysC0017666Link1"
     ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"
     SrcViewUsageName="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule.ReceiptMasterControlCRUD"
     DstViewUsageName="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule.ReceiptDetailControlDetCRUD"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkArNoteDetNotemasterLink1"
+    ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.FkArNoteDetNotemasterLink"
+    SrcViewUsageName="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule.ArNoteMasterCRUD"
+    DstViewUsageName="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule.ArNoteDetailDetCRUD"
     Reversed="false"/>
 </AppModule>

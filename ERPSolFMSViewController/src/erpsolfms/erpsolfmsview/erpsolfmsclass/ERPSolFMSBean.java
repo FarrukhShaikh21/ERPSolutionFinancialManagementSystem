@@ -182,6 +182,17 @@ public class ERPSolFMSBean {
         }
     }
 
+    public void doERPSolArNoteDialogConfirm(DialogEvent erpsolde) {
+        if (erpsolde.getOutcome()==DialogEvent.Outcome.yes) {
+            OperationBinding ob = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("Commit");
+            ob.execute();
+            if (!ob.getErrors().isEmpty()) {
+                return ;
+           }
+             ob = ERPSolGlobalViewBean.doIsERPSolGerOperationBinding("doSuperviseARNoteMaster");
+            ob.execute();
+        }
+    }
 
     public void setERPSolImeiPopup(RichPopup ERPSolImeiPopup) {
         this.ERPSolImeiPopup = ERPSolImeiPopup;

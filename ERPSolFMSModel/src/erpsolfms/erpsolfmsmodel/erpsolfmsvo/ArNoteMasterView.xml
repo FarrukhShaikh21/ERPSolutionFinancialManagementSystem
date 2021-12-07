@@ -12,15 +12,57 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  ComponentClass="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteMasterViewImpl"
+  ComponentInterface="erpsolfms.erpsolfmsmodel.erpsolfmsvo.common.ArNoteMasterView"
+  ClientProxyName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.client.ArNoteMasterViewClient"
+  RowClass="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteMasterViewRowImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewAccessor
     Name="AccAllCustomersView"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="AllCustomersByLocationVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView.AllCustomersByLocationVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_LOCATIONID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Locationid==null?"-1":Locationid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="AccSoSalesPersonsView"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SoSalesPersonsByCustomerVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView.SoSalesPersonsByCustomerVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_CUSTOMERID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Customerid==null?"-1":Customerid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="AccSoSalesPersonsDefaultVC"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SoSalesPersonsDefaultSalesPersonVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView.SoSalesPersonsDefaultSalesPersonVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_CUSTOMERID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Customerid==null?"0":Customerid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtCustomerName"
     ListVOName="AccAllCustomersView"
@@ -341,6 +383,110 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="ArNoteMasterViewFindVC"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteMasterView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="ArNoteMasterViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="NoteCode"
+        ViewAttribute="NoteCode"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Submit"
+        ViewAttribute="Submit"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DocDate"
+        ViewAttribute="DocDate"
+        Operator="BETWEEN"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ArNoteMasterViewCriteria_ArNoteMasterViewCriteria_row_0_AllCustomersView"
+        ViewAttribute="AllCustomersView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllCustomersViewNestedCriteria"
+          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllCustomersViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="AllCustomersViewNestedCriteria_AllCustomersViewNestedCriteria_row_0_Customerid"
+              ViewAttribute="Customerid"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+            <ViewCriteriaItem
+              Name="CustomerName"
+              ViewAttribute="CustomerName"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+      <ViewCriteriaItem
+        Name="SoSalesPersonsView"
+        ViewAttribute="SoSalesPersonsView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="SoSalesPersonsViewNestedCriteria"
+          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="SoSalesPersonsViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="SoSalesPersonsViewNestedCriteria_SoSalesPersonsViewNestedCriteria_row_0_Salespersonid"
+              ViewAttribute="Salespersonid"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+            <ViewCriteriaItem
+              Name="Name"
+              ViewAttribute="Name"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ArNoteDetailView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmsvo.FkArNoteDetNotemasterLink"
@@ -358,4 +504,14 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="doSuperviseARNoteMaster"
+      MethodName="doSuperviseARNoteMaster">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+  </ClientInterface>
 </ViewObject>

@@ -290,4 +290,64 @@
       <property
          name="sdm:polyPoints">R50,168.5,341.09766,284.6787,260.94824,L54</property>
    </ControlFlowCase>
+   <View
+      id="View27">
+      <property
+         name="activityId">AR_0005</property>
+      <property
+         name="page">/AR_0005.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AR_0005&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">467.79883</property>
+      <property
+         name="x">195.5</property>
+   </View>
+   <View
+      id="View29">
+      <property
+         name="activityId">AR_0005_SEARCH</property>
+      <property
+         name="page">/AR_0005_SEARCH.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AR_0005_SEARCH&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">467.09766</property>
+      <property
+         name="x">-62.63086</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase30"
+      from="MethodCall2"
+      to="View27">
+      <property
+         name="fromOutcome">ERP-ACT-AR-0005</property>
+      <property
+         name="sdm:polyPoints">B50,446.0,105.5459,195.5,413.44824,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase31"
+      from="View27"
+      to="View29">
+      <property
+         name="fromOutcome">ERP-ACT-AR-0005-SEARCH</property>
+      <property
+         name="sdm:polyPoints">L50,154.5,467.44824,-21.63086,466.74707,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase32"
+      from="View29"
+      to="View27">
+      <property
+         name="fromOutcome">ERP-ACT_BACK_AR-0005-SEARCH</property>
+      <property
+         name="sdm:polyPoints">R54,-21.63086,470.24707,154.48607,470.94824,L54</property>
+   </ControlFlowCase>
 </SDM>
