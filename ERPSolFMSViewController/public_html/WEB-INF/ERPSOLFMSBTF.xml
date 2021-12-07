@@ -96,10 +96,6 @@
         <from-outcome>ACT-ERP-GOTO-FMS-MAIN</from-outcome>
         <to-activity-id>ExecuteQueryFMSTransaction</to-activity-id>
       </control-flow-case>
-      <control-flow-case id="__29">
-        <from-outcome>ERP-ACT-AR-0005</from-outcome>
-        <to-activity-id>AR_0005</to-activity-id>
-      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__4">
       <from-activity-id>ExecuteQueryFMSTransaction</from-activity-id>
@@ -120,6 +116,10 @@
       <control-flow-case id="__9">
         <from-outcome>ERP-ACT-AR-0047</from-outcome>
         <to-activity-id>AR_0047</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__29">
+        <from-outcome>ERP-ACT-AR-0005</from-outcome>
+        <to-activity-id>AR_0005</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__15">

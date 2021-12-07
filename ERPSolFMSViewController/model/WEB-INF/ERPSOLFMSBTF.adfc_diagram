@@ -323,12 +323,12 @@
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase30"
-      from="MethodCall2"
+      from="MethodCall7"
       to="View27">
       <property
          name="fromOutcome">ERP-ACT-AR-0005</property>
       <property
-         name="sdm:polyPoints">B50,446.0,105.5459,195.5,413.44824,T50</property>
+         name="sdm:polyPoints">L46,543.25543,191.74707,195.5,413.44824,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"

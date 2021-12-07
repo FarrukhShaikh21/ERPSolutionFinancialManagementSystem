@@ -130,8 +130,8 @@
                                      valign="middle">
                           <af:selectOneChoice label="Label 1" id="soc1" value="#{bindings.DocTypeId.inputValue}"
                                               simple="true">
-                            <af:selectItem label="SDB" value="Debit Note" id="si1"/>
-                            <af:selectItem label="SDC" value="Credit Note" id="si2"/>
+                            <af:selectItem value="SDB" id="si1" label="Debit Note"/>
+                            <af:selectItem value="SDC" id="si2" label="Credit Note"/>
                           </af:selectOneChoice>
                         </af:gridCell>
                       </af:gridRow>
@@ -249,17 +249,6 @@
                               selectionListener="#{bindings.ArNoteDetailDetCRUD.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.ArNoteDetailDetCRUD.rangeSize}" id="t2"
                               partialTriggers="::b4 ::b3">
-                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}" id="c1" width="100">
-                        <af:inputText value="#{row.bindings.ItemRefId.inputValue}"
-                                      label="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}"
-                                      required="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.mandatory}"
-                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.displayWidth}"
-                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.precision}"
-                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.tooltip}" id="it2"
-                                      readOnly="true">
-                          <f:validator binding="#{row.bindings.ItemRefId.validator}"/>
-                        </af:inputText>
-                      </af:column>
                       <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.label}" id="c2"
                                  width="200">
                         <af:inputComboboxListOfValues id="txtItemNameId"
@@ -268,10 +257,22 @@
                                                       model="#{row.bindings.txtItemName.listOfValuesModel}"
                                                       required="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.mandatory}"
                                                       columns="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.displayWidth}"
-                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.tooltip}">
+                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.tooltip}"
+                                                      autoSubmit="true">
                           <f:validator binding="#{row.bindings.txtItemName.validator}"/>
                           <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedModelValues}"/>
                         </af:inputComboboxListOfValues>
+                      </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}" id="c1" width="100">
+                        <af:inputText value="#{row.bindings.ItemRefId.inputValue}"
+                                      label="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}"
+                                      required="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.mandatory}"
+                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.displayWidth}"
+                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.precision}"
+                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.tooltip}" id="it2"
+                                      readOnly="true" partialTriggers="txtItemNameId">
+                          <f:validator binding="#{row.bindings.ItemRefId.validator}"/>
+                        </af:inputText>
                       </af:column>
                       <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.label}" id="c3"
                                  width="200">
@@ -281,7 +282,8 @@
                                                       model="#{row.bindings.txtCOADescription.listOfValuesModel}"
                                                       required="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.mandatory}"
                                                       columns="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.displayWidth}"
-                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.tooltip}">
+                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.tooltip}"
+                                                      autoSubmit="true">
                           <f:validator binding="#{row.bindings.txtCOADescription.validator}"/>
                           <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCOAValues}"/>
                         </af:inputComboboxListOfValues>
@@ -293,7 +295,7 @@
                                       columns="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.displayWidth}"
                                       maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.precision}"
                                       shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.tooltip}" id="it3"
-                                      readOnly="true">
+                                      readOnly="true" partialTriggers="txtCOADescriptionId">
                           <f:validator binding="#{row.bindings.GlCode.validator}"/>
                         </af:inputText>
                       </af:column>

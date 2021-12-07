@@ -15,6 +15,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 
+import oracle.adf.model.AttributeBinding;
+
 import oracle.binding.BindingContainer;
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.OperationBinding;
@@ -94,11 +96,16 @@ public class ERPSolFMSBean {
         //public List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
         System.out.println("a");
+
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
-        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
+        AttributeBinding ERPLocid =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
+        
+//        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        System.out.println("b");
+//        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
         System.out.println("c");
-        String ERPLocid=""+ERPSolib.getCurrentRow().getAttribute("Locationid");
+//        String ERPLocid=""+ERPSolib.getCurrentRow().getAttribute("Locationid");
         System.out.println("d");
         System.out.println(ERPLocid);//ERPSolGlobalViewBean.
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllBankBranchesAutoSuggestRO",
@@ -114,11 +121,13 @@ public class ERPSolFMSBean {
         System.out.println("a");
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
-        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
+        AttributeBinding ERPLocid =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
+        System.out.println("b");
+//        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
         System.out.println("c");
-        String ERPLocid=""+ERPSolib.getCurrentRow().getAttribute("Locationid");
+//        String ERPLocid=""+ERPSolib.getCurrentRow().getAttribute("Locationid");
         System.out.println("d");
-        System.out.println(ERPLocid);//ERPSolGlobalViewBean.
+//        System.out.println(ERPLocid);//ERPSolGlobalViewBean.
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllCustomersAutoSuggestRO",
                                                             "LOCATIONID='"+ERPLocid+"' AND UPPER(CONCAT(CUSTOMERID,CUSTOMER_NAME))", "CustomerName", "Customerid", 10);
         return ResultList;
@@ -130,11 +139,17 @@ public class ERPSolFMSBean {
         //public List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
         System.out.println("a");
+//        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        System.out.println("b");
+//        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
+        System.out.println("c");
+        
+//        String ERPCustomerId=""+ERPSolib.getCurrentRow().getAttribute("Customerid");
+
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
-        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
-        System.out.println("c");
-        String ERPCustomerId=""+ERPSolib.getCurrentRow().getAttribute("Customerid");
+        AttributeBinding ERPCustomerId =(AttributeBinding)ERPSolbc.getControlBinding("Customerid");
+        
         System.out.println("d");
         System.out.println(ERPCustomerId);//ERPSolGlobalViewBean.
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "SoSalesPersonsAutoSuggestRO",
@@ -150,9 +165,11 @@ public class ERPSolFMSBean {
         System.out.println("a");
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
         System.out.println("b");
-        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
+        AttributeBinding ERPLocid =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
+        System.out.println("b");
+//        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
         System.out.println("c");
-        String ERPLocid=""+ERPSolib.getCurrentRow().getAttribute("Locationid");
+//        String ERPLocid=""+ERPSolib.getCurrentRow().getAttribute("Locationid");
         System.out.println("d");
         System.out.println(ERPLocid);//ERPSolGlobalViewBean.
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "PuSuppliersAutoSuggestRO",

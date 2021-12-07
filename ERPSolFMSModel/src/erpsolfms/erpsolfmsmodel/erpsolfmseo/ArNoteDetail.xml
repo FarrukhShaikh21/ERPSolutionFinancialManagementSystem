@@ -32,7 +32,7 @@
   <Attribute
     Name="NoteCode"
     IsNotNull="true"
-    Precision="15"
+    Precision="20"
     ColumnName="NOTE_CODE"
     SQLType="VARCHAR"
     Type="java.lang.String"
