@@ -1303,6 +1303,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="IN_ITEMS"/>
+  <AccessorAttribute
+    Name="ArNoteDetail"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.InItemsARNoteDetailItemIdAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.InItemsARNoteDetailItemIdAssoc.ArNoteDetail"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.InItemsARNoteDetailItemIdAssoc.InItems"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="UPkModelNo">
     <DesignTime>
