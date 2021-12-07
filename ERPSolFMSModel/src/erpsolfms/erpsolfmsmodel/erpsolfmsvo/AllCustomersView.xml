@@ -548,20 +548,23 @@
         ViewAttribute="Customerid"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="CustomerName"
         ViewAttribute="CustomerName"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewLinkAccessor
     Name="ReceiptMasterControlView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllCustomersReceiptControlMasterCustomerIdLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ArNoteMasterView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllCustomersArNoteMasterCustomerIdLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

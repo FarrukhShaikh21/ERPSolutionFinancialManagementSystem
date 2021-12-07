@@ -958,6 +958,13 @@
     AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllCustomersReceiptControlMasterCustomerIdAssoc.AllCustomers"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ArNoteMaster"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllCustomersArNoteMasterCustomerIdAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllCustomersArNoteMasterCustomerIdAssoc.ArNoteMaster"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllCustomersArNoteMasterCustomerIdAssoc.AllCustomers"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="ChkAllCustRestGift">
     <DesignTime>

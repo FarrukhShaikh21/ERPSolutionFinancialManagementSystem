@@ -421,6 +421,31 @@
     ColumnType="NUMBER"
     TableName="AR_NOTE_MASTER"
     PrimaryKey="true"/>
+  <Attribute
+    Name="txtCustomerName"
+    Precision="80"
+    ColumnName="TXT_CUSTOMER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AR_NOTE_MASTER"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllCustomers?.CustomerName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMaster.txtCustomerName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="Customerid"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="ArNoteDetail"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkArNoteDetNotemasterAssoc"
@@ -428,6 +453,13 @@
     AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkArNoteDetNotemasterAssoc.ArNoteMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AllCustomers"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllCustomersArNoteMasterCustomerIdAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllCustomersArNoteMasterCustomerIdAssoc.AllCustomers"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllCustomersArNoteMasterCustomerIdAssoc.ArNoteMaster"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkArNoteMaster"
     PrimaryKey="true">
@@ -460,4 +492,8 @@
       <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMaster.Salespersonid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
 </Entity>

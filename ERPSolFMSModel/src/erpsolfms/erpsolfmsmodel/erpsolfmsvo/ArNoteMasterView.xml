@@ -13,6 +13,35 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccAllCustomersView"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtCustomerName"
+    ListVOName="AccAllCustomersView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCustomerName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Customerid"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CustomerName"/>
+      <Item Value="Customerid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CustomerName"/>
+      <Item Value="Customerid"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="AllCustomersViewFindVC"/>
+  </ListBinding>
   <EntityUsage
     Name="ArNoteMaster"
     Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMaster"/>
@@ -252,9 +281,31 @@
     EntityAttrName="Notemasterseq"
     EntityUsage="ArNoteMaster"
     AliasName="NOTEMASTERSEQ"/>
+  <ViewAttribute
+    Name="txtCustomerName"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCustomerName"
+    EntityUsage="ArNoteMaster"
+    AliasName="TXT_CUSTOMER_NAME"
+    LOVName="LovtxtCustomerName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="ArNoteDetailView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmsvo.FkArNoteDetNotemasterLink"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllCustomersView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllCustomersArNoteMasterCustomerIdLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
     IsUpdateable="false"/>
 </ViewObject>
