@@ -78,6 +78,7 @@
           <Item Value="GlCode"/>
           <Item Value="Costcenter"/>
           <Item Value="FcurrAmount"/>
+          <Item Value="txtCostCenterDescription"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

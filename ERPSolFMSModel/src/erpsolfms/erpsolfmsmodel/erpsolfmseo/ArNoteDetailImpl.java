@@ -590,6 +590,9 @@ public class ArNoteDetailImpl extends ERPSolGlobalsEntityImpl {
     protected void doDML(int operation, TransactionEvent e) {
         if (operation==DML_INSERT) {
             populateAttributeAsChanged(SEQNO, getNotedetailseq());
+           populateAttributeAsChanged(NOTECODE, getArNoteMaster().getAttribute("NoteCode"));
+            
+            
        }
         if (operation!=DML_DELETE) {
             populateAttributeAsChanged(AMOUNT, getFcurrAmount());

@@ -18,10 +18,11 @@
         ResId="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWChartOfAccountQVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[select A.glnature_of_a_c || A.glbroad_category || A.glcontrol_a_c || 
-       A.glsub_control_a_c || A.glsubsidary_a_c GLCODE, 
-       A.DESCRIPTION 
-  from chart_of_acc A 
+  <SQLQuery><![CDATA[select A.glnature_of_a_c || A.glbroad_category || A.glcontrol_a_c ||   
+       A.glsub_control_a_c || A.glsubsidary_a_c GLCODE,   
+       A.DESCRIPTION   
+  from chart_of_acc A   
+  where A.glsubsidary_a_c!='00000'  
   order by description]]></SQLQuery>
   <ViewAttribute
     Name="Glcode"
@@ -75,6 +76,11 @@
   <ViewLinkAccessor
     Name="ArNoteDetailView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VWGLChartOfAcctARNoteDetailGLCodeLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ArNoteDetailView1"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VWChartOfAccountArNoteDetailCostCenterLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

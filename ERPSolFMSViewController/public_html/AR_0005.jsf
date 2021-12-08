@@ -249,29 +249,30 @@
                               selectionListener="#{bindings.ArNoteDetailDetCRUD.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.ArNoteDetailDetCRUD.rangeSize}" id="t2"
                               partialTriggers="::b4 ::b3">
-                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.label}" id="c2"
-                                 width="200">
-                        <af:inputComboboxListOfValues id="txtItemNameId"
-                                                      popupTitle="Search and Select: #{bindings.ArNoteDetailDetCRUD.hints.txtItemName.label}"
-                                                      value="#{row.bindings.txtItemName.inputValue}"
-                                                      model="#{row.bindings.txtItemName.listOfValuesModel}"
-                                                      required="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.mandatory}"
-                                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.displayWidth}"
-                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.tooltip}"
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}" id="c1" width="120"
+                                 displayIndex="-1">
+                        <af:inputComboboxListOfValues id="itemRefIdId"
+                                                      popupTitle="Search and Select: #{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}"
+                                                      value="#{row.bindings.ItemRefId.inputValue}"
+                                                      model="#{row.bindings.ItemRefId.listOfValuesModel}"
+                                                      required="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.mandatory}"
+                                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.displayWidth}"
+                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.tooltip}"
                                                       autoSubmit="true">
-                          <f:validator binding="#{row.bindings.txtItemName.validator}"/>
+                          <f:validator binding="#{row.bindings.ItemRefId.validator}"/>
                           <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedModelValues}"/>
                         </af:inputComboboxListOfValues>
                       </af:column>
-                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}" id="c1" width="100">
-                        <af:inputText value="#{row.bindings.ItemRefId.inputValue}"
-                                      label="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}"
-                                      required="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.mandatory}"
-                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.displayWidth}"
-                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.precision}"
-                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.tooltip}" id="it2"
-                                      readOnly="true" partialTriggers="txtItemNameId">
-                          <f:validator binding="#{row.bindings.ItemRefId.validator}"/>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.label}" id="c2"
+                                 width="200">
+                        <af:inputText value="#{row.bindings.txtItemName.inputValue}"
+                                      label="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.label}"
+                                      required="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.mandatory}"
+                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.displayWidth}"
+                                      maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.precision}"
+                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtItemName.tooltip}" id="it2"
+                                      readOnly="true" partialTriggers="itemRefIdId">
+                          <f:validator binding="#{row.bindings.txtItemName.validator}"/>
                         </af:inputText>
                       </af:column>
                       <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.label}" id="c3"
@@ -283,7 +284,7 @@
                                                       required="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.mandatory}"
                                                       columns="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.displayWidth}"
                                                       shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtCOADescription.tooltip}"
-                                                      autoSubmit="true">
+                                                      autoSubmit="true" contentStyle="width:100%">
                           <f:validator binding="#{row.bindings.txtCOADescription.validator}"/>
                           <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCOAValues}"/>
                         </af:inputComboboxListOfValues>
@@ -299,6 +300,20 @@
                           <f:validator binding="#{row.bindings.GlCode.validator}"/>
                         </af:inputText>
                       </af:column>
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.label}"
+                                 id="c7" width="200" displayIndex="-1">
+                        <af:inputComboboxListOfValues id="txtCostCenterDescriptionId"
+                                                      popupTitle="Search and Select: #{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.label}"
+                                                      value="#{row.bindings.txtCostCenterDescription.inputValue}"
+                                                      model="#{row.bindings.txtCostCenterDescription.listOfValuesModel}"
+                                                      required="#{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.mandatory}"
+                                                      columns="#{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.displayWidth}"
+                                                      shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.tooltip}"
+                                                      autoSubmit="true">
+                          <f:validator binding="#{row.bindings.txtCostCenterDescription.validator}"/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCOAValues}"/>
+                        </af:inputComboboxListOfValues>
+                      </af:column>
                       <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.label}" id="c5">
                         <af:inputText value="#{row.bindings.Costcenter.inputValue}"
                                       label="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.label}"
@@ -306,7 +321,7 @@
                                       columns="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.displayWidth}"
                                       maximumLength="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.precision}"
                                       shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.tooltip}" id="it5"
-                                      readOnly="true">
+                                      readOnly="true" partialTriggers="txtCostCenterDescriptionId">
                           <f:validator binding="#{row.bindings.Costcenter.validator}"/>
                         </af:inputText>
                       </af:column>
