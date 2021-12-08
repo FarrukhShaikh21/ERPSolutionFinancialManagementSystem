@@ -17,6 +17,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
 public class ArNoteMasterViewRowImpl extends ViewRowImpl {
 
+
     public static final int ENTITY_ARNOTEMASTER = 0;
 
     /**
@@ -92,6 +93,7 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
 
     public static final int NOTECODE = AttributesEnum.NoteCode.index();
     public static final int CUSTOMERID = AttributesEnum.Customerid.index();
@@ -856,6 +858,14 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccSoSalesPersonsDefaultVC() {
         return (RowSet) getAttributeInternal(ACCSOSALESPERSONSDEFAULTVC);
+    }
+    @Override
+    public boolean isAttributeUpdateable(int i) {
+        // TODO Implement this method
+        if (getSubmit().equals("Y")) {
+            return false;
+       }
+        return super.isAttributeUpdateable(i);
     }
 }
 

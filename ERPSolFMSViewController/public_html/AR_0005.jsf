@@ -102,7 +102,7 @@
                           <af:inputDate value="#{bindings.DocDate.inputValue}"
                                         required="#{bindings.DocDate.hints.mandatory}"
                                         columns="#{bindings.DocDate.hints.displayWidth}"
-                                        shortDesc="#{bindings.DocDate.hints.tooltip}" id="id2">
+                                        shortDesc="#{bindings.DocDate.hints.tooltip}" id="id2" simple="true">
                             <f:validator binding="#{bindings.DocDate.validator}"/>
                             <af:convertDateTime pattern="#{bindings.DocDate.format}"/>
                           </af:inputDate>
@@ -129,7 +129,7 @@
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc11" halign="stretch"
                                      valign="middle">
                           <af:selectOneChoice label="Label 1" id="soc1" value="#{bindings.DocTypeId.inputValue}"
-                                              simple="true">
+                                              simple="true" contentStyle="width:50%">
                             <af:selectItem value="SDB" id="si1" label="Debit Note"/>
                             <af:selectItem value="SDC" id="si2" label="Credit Note"/>
                           </af:selectOneChoice>

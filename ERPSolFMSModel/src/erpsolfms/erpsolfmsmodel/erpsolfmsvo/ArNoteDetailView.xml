@@ -12,7 +12,13 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  RowClass="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteDetailViewRowImpl"
+  ComponentClass="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteDetailViewImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewAccessor
     Name="AccInItemsView"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.InItemsView"
@@ -343,6 +349,12 @@
   <ViewLinkAccessor
     Name="VWChartOfAccountQVO1"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VWChartOfAccountArNoteDetailCostCenterLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ArNoteMasterView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmsvo.FkArNoteDetNotemasterLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
