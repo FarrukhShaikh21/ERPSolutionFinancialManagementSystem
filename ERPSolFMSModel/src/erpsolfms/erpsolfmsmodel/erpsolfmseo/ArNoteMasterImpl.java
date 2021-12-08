@@ -68,7 +68,8 @@ public class ArNoteMasterImpl extends ERPSolGlobalsEntityImpl {
         ArNoteDetail,
         AllCustomers,
         SoSalesPersons,
-        AccVwFuncUserBackDateAllowed;
+        AccVwFuncUserBackDateAllowed,
+        AccVwFuncCheckIsCustomerActive;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -138,6 +139,7 @@ public class ArNoteMasterImpl extends ERPSolGlobalsEntityImpl {
     public static final int ALLCUSTOMERS = AttributesEnum.AllCustomers.index();
     public static final int SOSALESPERSONS = AttributesEnum.SoSalesPersons.index();
     public static final int ACCVWFUNCUSERBACKDATEALLOWED = AttributesEnum.AccVwFuncUserBackDateAllowed.index();
+    public static final int ACCVWFUNCCHECKISCUSTOMERACTIVE = AttributesEnum.AccVwFuncCheckIsCustomerActive.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -850,6 +852,13 @@ public class ArNoteMasterImpl extends ERPSolGlobalsEntityImpl {
      */
     public RowSet getAccVwFuncUserBackDateAllowed() {
         return (RowSet) getAttributeInternal(ACCVWFUNCUSERBACKDATEALLOWED);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccVwFuncCheckIsCustomerActive.
+     */
+    public RowSet getAccVwFuncCheckIsCustomerActive() {
+        return (RowSet) getAttributeInternal(ACCVWFUNCCHECKISCUSTOMERACTIVE);
     }
 
     /**

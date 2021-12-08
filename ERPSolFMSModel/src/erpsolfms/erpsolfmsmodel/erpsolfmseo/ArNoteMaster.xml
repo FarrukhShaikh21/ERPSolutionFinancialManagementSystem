@@ -21,6 +21,10 @@
     Name="AccVwFuncUserBackDateAllowed"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwFuncUserBackDateAllowedQVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVwFuncCheckIsCustomerActive"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwFuncCheckIsCustomerActiveQVO"
+    RowLevelBinds="true"/>
   <Attribute
     Name="NoteCode"
     IsUnique="true"
@@ -61,6 +65,39 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:ExpressionValidationBean
+      Name="CustomeridActiveBR"
+      OperandType="EXPR"
+      Inverse="false">
+      <validation:OnCondition
+        trustMode="trusted"
+        Name="OnConditionExpr"><![CDATA[newValue!=null]]></validation:OnCondition>
+      <validation:MsgIds>
+        <validation:Item
+          Value="ERP_SOL_AR_CUST_ACTIVE"/>
+      </validation:MsgIds>
+      <validation:ResExpressions
+        Name="CustomeridActiveBR_ResExprList">
+        <validation:Expression
+          trustMode="trusted"
+          Name="0"><![CDATA[txtErrorMessage]]></validation:Expression>
+      </validation:ResExpressions>
+      <validation:TransientExpression
+        trustMode="trusted"><![CDATA[AccVwFuncCheckIsCustomerActive.setNamedWhereClauseParam("P_ADF_CUSTOMERID",newValue);
+AccVwFuncCheckIsCustomerActive.setNamedWhereClauseParam("P_ADF_MODULEID", "AR-0005");
+AccVwFuncCheckIsCustomerActive.setNamedWhereClauseParam("P_ADF_DATE", DocDate);
+println("0")
+AccVwFuncCheckIsCustomerActive.executeQuery();
+println("a")
+println(AccVwFuncCheckIsCustomerActive.first().getAttribute("Status"));
+if(!AccVwFuncCheckIsCustomerActive.first().getAttribute("Status").toString().equals("ERPSOLSUCCESS"))
+{
+settxtErrorMessage(AccVwFuncCheckIsCustomerActive.first().getAttribute("Status").toString());
+adf.error.raise("ERP_SOL_AR_CUST_ACTIVE");
+return false;
+}
+return true;]]></validation:TransientExpression>
+    </validation:ExpressionValidationBean>
   </Attribute>
   <Attribute
     Name="Deptid"
@@ -467,8 +504,7 @@
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="AR_NOTE_MASTER">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <TransientExpression><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -480,7 +516,6 @@
       OperandType="EXPR"
       Inverse="false">
       <validation:OnCondition
-        trustMode="trusted"
         Name="OnConditionExpr"><![CDATA[newValue!=null]]></validation:OnCondition>
       <validation:MsgIds>
         <validation:Item
@@ -489,11 +524,9 @@
       <validation:ResExpressions
         Name="DocDateBackDateBR_ResExprList">
         <validation:Expression
-          trustMode="trusted"
           Name="0"><![CDATA[txtErrorMessage]]></validation:Expression>
       </validation:ResExpressions>
-      <validation:TransientExpression
-        trustMode="trusted"><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
+      <validation:TransientExpression><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
 AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_MODULEID", "AR-0005");
 AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_DATE", newValue);
 println("0")
@@ -560,8 +593,7 @@ return true;]]></validation:TransientExpression>
     ColumnType="VARCHAR2"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[AllCustomers?.CustomerName]]></TransientExpression>
+    <TransientExpression><![CDATA[AllCustomers?.CustomerName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -584,10 +616,8 @@ return true;]]></validation:TransientExpression>
     ColumnType="VARCHAR2"
     IsPersistent="false"
     IsQueriable="false">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[SoSalesPersons?.Name]]></TransientExpression>
-    <RecalcCondition
-      trustMode="trusted"><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[SoSalesPersons?.Name]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
