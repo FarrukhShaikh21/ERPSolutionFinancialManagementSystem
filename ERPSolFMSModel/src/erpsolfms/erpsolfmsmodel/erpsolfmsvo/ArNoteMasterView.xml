@@ -63,6 +63,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccAllCustomerSalespersonPID"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomerSalespersonView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtCustomerName"
     ListVOName="AccAllCustomersView"
@@ -428,35 +432,6 @@
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem
-        Name="ArNoteMasterViewCriteria_ArNoteMasterViewCriteria_row_0_AllCustomersView"
-        ViewAttribute="AllCustomersView"
-        Operator="EXISTS"
-        Conjunction="AND"
-        IsNestedCriteria="true"
-        Required="Optional">
-        <ViewCriteria
-          Name="AllCustomersViewNestedCriteria"
-          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView"
-          Conjunction="AND">
-          <ViewCriteriaRow
-            Name="AllCustomersViewNestedCriteria_row_0"
-            UpperColumns="1">
-            <ViewCriteriaItem
-              Name="AllCustomersViewNestedCriteria_AllCustomersViewNestedCriteria_row_0_Customerid"
-              ViewAttribute="Customerid"
-              Operator="CONTAINS"
-              Conjunction="AND"
-              Required="Optional"/>
-            <ViewCriteriaItem
-              Name="CustomerName"
-              ViewAttribute="CustomerName"
-              Operator="CONTAINS"
-              Conjunction="AND"
-              Required="Optional"/>
-          </ViewCriteriaRow>
-        </ViewCriteria>
-      </ViewCriteriaItem>
-      <ViewCriteriaItem
         Name="SoSalesPersonsView"
         ViewAttribute="SoSalesPersonsView"
         Operator="EXISTS"
@@ -479,6 +454,35 @@
             <ViewCriteriaItem
               Name="Name"
               ViewAttribute="Name"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+      <ViewCriteriaItem
+        Name="ArNoteMasterViewCriteria_ArNoteMasterViewCriteria_row_0_AllCustomersView"
+        ViewAttribute="AllCustomersView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllCustomersViewNestedCriteria"
+          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllCustomersViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="AllCustomersViewNestedCriteria_AllCustomersViewNestedCriteria_row_0_Customerid"
+              ViewAttribute="Customerid"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+            <ViewCriteriaItem
+              Name="CustomerName"
+              ViewAttribute="CustomerName"
               Operator="CONTAINS"
               Conjunction="AND"
               Required="Optional"/>

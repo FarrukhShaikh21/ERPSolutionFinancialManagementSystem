@@ -69,7 +69,8 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
         SoSalesPersonsView,
         AccAllCustomersView,
         AccSoSalesPersonsView,
-        AccSoSalesPersonsDefaultVC;
+        AccSoSalesPersonsDefaultVC,
+        AccAllCustomerSalespersonPID;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -141,6 +142,7 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
     public static final int ACCALLCUSTOMERSVIEW = AttributesEnum.AccAllCustomersView.index();
     public static final int ACCSOSALESPERSONSVIEW = AttributesEnum.AccSoSalesPersonsView.index();
     public static final int ACCSOSALESPERSONSDEFAULTVC = AttributesEnum.AccSoSalesPersonsDefaultVC.index();
+    public static final int ACCALLCUSTOMERSALESPERSONPID = AttributesEnum.AccAllCustomerSalespersonPID.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -482,6 +484,16 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
      */
     public void setSalespersonid(String value) {
         setAttributeInternal(SALESPERSONID, value);
+        try {
+              getAccAllCustomerSalespersonPID().setNamedWhereClauseParam("P_ADF_CUSTOMERID", getCustomerid());
+              getAccAllCustomerSalespersonPID().setNamedWhereClauseParam("P_ADF_SALESPERSONID", value);
+              getAccAllCustomerSalespersonPID().executeQuery();
+              setPid((Integer) getAccAllCustomerSalespersonPID().first().getAttribute("Id"));
+          } catch (Exception e) {
+              // TODO: Add catch code
+              e.printStackTrace();
+          }
+      
     }
 
     /**
@@ -859,6 +871,14 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
     public RowSet getAccSoSalesPersonsDefaultVC() {
         return (RowSet) getAttributeInternal(ACCSOSALESPERSONSDEFAULTVC);
     }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccAllCustomerSalespersonPID.
+     */
+    public RowSet getAccAllCustomerSalespersonPID() {
+        return (RowSet) getAttributeInternal(ACCALLCUSTOMERSALESPERSONPID);
+    }
+
     @Override
     public boolean isAttributeUpdateable(int i) {
         // TODO Implement this method

@@ -10,12 +10,17 @@
   DBObjectName="AR_NOTE_MASTER"
   AliasName="ArNoteMaster"
   BindingStyle="OracleName"
-  RowClass="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMasterImpl">
+  RowClass="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMasterImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
     <Attr Name="_isCodegen" Value="true"/>
     <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
   </DesignTime>
+  <ViewAccessor
+    Name="AccVwFuncUserBackDateAllowed"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwFuncUserBackDateAllowedQVO"
+    RowLevelBinds="true"/>
   <Attribute
     Name="NoteCode"
     IsUnique="true"
@@ -463,13 +468,47 @@
     ColumnType="DATE"
     TableName="AR_NOTE_MASTER">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+      trustMode="trusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMaster.DocDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:ExpressionValidationBean
+      Name="DocDateBackDateBR"
+      OperandType="EXPR"
+      Inverse="false">
+      <validation:OnCondition
+        trustMode="trusted"
+        Name="OnConditionExpr"><![CDATA[newValue!=null]]></validation:OnCondition>
+      <validation:MsgIds>
+        <validation:Item
+          Value="ERP_SOL_AR_NOTE_USER_DATE"/>
+      </validation:MsgIds>
+      <validation:ResExpressions
+        Name="DocDateBackDateBR_ResExprList">
+        <validation:Expression
+          trustMode="trusted"
+          Name="0"><![CDATA[txtErrorMessage]]></validation:Expression>
+      </validation:ResExpressions>
+      <validation:TransientExpression
+        trustMode="trusted"><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
+AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_MODULEID", "SO-0167");
+AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_DATE", newValue);
+println("0")
+AccVwFuncUserBackDateAllowed.executeQuery();
+println("a")
+println(AccVwFuncUserBackDateAllowed.first().getAttribute("Status"));
+if(!AccVwFuncUserBackDateAllowed.first().getAttribute("Status").toString().equals("ERPSOLSUCCESS"))
+{
+settxtErrorMessage(AccVwFuncUserBackDateAllowed.first().getAttribute("Status").toString());
+adf.error.raise("ERP_SOL_AR_NOTE_USER_DATE");
+return false;
+}
+
+return true;]]></validation:TransientExpression>
+    </validation:ExpressionValidationBean>
   </Attribute>
   <Attribute
     Name="LocCurrcode"
@@ -522,7 +561,7 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[AllCustomers?.CustomerName]]></TransientExpression>
+      trustMode="trusted"><![CDATA[AllCustomers?.CustomerName]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -546,9 +585,9 @@
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[SoSalesPersons?.Name]]></TransientExpression>
+      trustMode="trusted"><![CDATA[SoSalesPersons?.Name]]></TransientExpression>
     <RecalcCondition
-      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+      trustMode="trusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -562,6 +601,15 @@
         Value="Salespersonid"/>
     </Dependencies>
   </Attribute>
+  <Attribute
+    Name="txtErrorMessage"
+    Precision="80"
+    ColumnName="TXT_ERROR_MESSAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false"/>
   <AccessorAttribute
     Name="ArNoteDetail"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkArNoteDetNotemasterAssoc"
