@@ -12,7 +12,7 @@
       </af:popup>
       <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
         <f:facet name="erptempmain">
-          <af:panelHeader text="Control Receipt" id="ph1" partialTriggers="::d2 b2 b1 b6 b5">
+          <af:panelHeader text=" " id="ph1" partialTriggers="::d2 b2 b1 b6 b5">
             <f:facet name="context"/>
             <f:facet name="menuBar"/>
             <f:facet name="toolbar"/>

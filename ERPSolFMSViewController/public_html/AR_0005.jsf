@@ -12,7 +12,7 @@
       </af:popup>
       <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
         <f:facet name="erptempmain">
-          <af:panelHeader text="Control Receipt" id="ph1" partialTriggers="::d2 b2 b1 b6 b5">
+          <af:panelHeader text=" " id="ph1" partialTriggers="::d2 b2 b1 b6 b5">
             <f:facet name="context"/>
             <f:facet name="menuBar"/>
             <f:facet name="toolbar"/>
@@ -98,7 +98,7 @@
                         <af:gridCell marginStart="5px" width="15%" id="gc6" halign="center" valign="middle">
                           <af:outputLabel value="#{bindings.DocDate.hints.label}" id="ol7"/>
                         </af:gridCell>
-                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc7">
+                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc7" valign="middle">
                           <af:inputDate value="#{bindings.DocDate.inputValue}"
                                         required="#{bindings.DocDate.hints.mandatory}"
                                         columns="#{bindings.DocDate.hints.displayWidth}"
@@ -129,7 +129,7 @@
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc11" halign="stretch"
                                      valign="middle">
                           <af:selectOneChoice label="Label 1" id="soc1" value="#{bindings.DocTypeId.inputValue}"
-                                              simple="true" contentStyle="width:50%">
+                                              simple="true" contentStyle="width:30%">
                             <af:selectItem value="SDB" id="si1" label="Debit Note"/>
                             <af:selectItem value="SDC" id="si2" label="Credit Note"/>
                           </af:selectOneChoice>
@@ -289,7 +289,7 @@
                           <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCOAValues}"/>
                         </af:inputComboboxListOfValues>
                       </af:column>
-                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.label}" id="c4" width="150">
+                      <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.label}" id="c4" width="200">
                         <af:inputText value="#{row.bindings.GlCode.inputValue}"
                                       label="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.label}"
                                       required="#{bindings.ArNoteDetailDetCRUD.hints.GlCode.mandatory}"
