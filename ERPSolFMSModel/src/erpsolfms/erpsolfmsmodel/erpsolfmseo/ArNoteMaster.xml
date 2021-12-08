@@ -494,7 +494,7 @@
       </validation:ResExpressions>
       <validation:TransientExpression
         trustMode="trusted"><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
-AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_MODULEID", "SO-0167");
+AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_MODULEID", "AR-0005");
 AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_DATE", newValue);
 println("0")
 AccVwFuncUserBackDateAllowed.executeQuery();

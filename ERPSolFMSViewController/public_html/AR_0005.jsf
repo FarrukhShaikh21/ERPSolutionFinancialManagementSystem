@@ -53,7 +53,7 @@
                         <af:button actionListener="#{bindings.Delete.execute}" text="Delete Receipt"
                                    disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowDelete=='N'  || bindings.Submit.inputValue=='Y'}" id="b2"
                                    icon="#{resource['images:imgDelete.png']}" iconPosition="top"/>
-                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Receipt"
+                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="New Note"
                                    disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowAdd=='N'}" id="b1"
                                    icon="#{resource['images:imgAdd.png']}" iconPosition="top"/>
                         <af:button actionListener="#{bindings.Rollback.execute}" text="Undo Changes" immediate="true"
