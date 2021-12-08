@@ -32,17 +32,18 @@ public class ArNoteMasterViewImpl extends ViewObjectImpl implements ArNoteMaster
             cs.executeUpdate();
 
             this.getCurrentRow().refresh(Row.REFRESH_WITH_DB_FORGET_CHANGES);
-            this.getCurrentRow().setAttribute("Submit", "Y");
+            
             if (!cs.getString(1).equals("ERPSOLSUCCESS")) {
 //               this.getCurrentRow().setAttribute("Submit", "N");
-               this.getDBTransaction().rollback();
+               this.getDBTransaction().commit();
                 throw new JboException("Unable to supervise due to "+cs.getString(1));
                
            }
+            this.getCurrentRow().setAttribute("Submit", "Y");
             this.getDBTransaction().commit();
         } catch (SQLException e) {
 //            this.getCurrentRow().setAttribute("Submit", "N");
-            this.getDBTransaction().rollback();
+            this.getDBTransaction().commit();
             System.out.println(e.getMessage()+ "this is message");
             throw new JboException("Unable to supervise ");
         }
