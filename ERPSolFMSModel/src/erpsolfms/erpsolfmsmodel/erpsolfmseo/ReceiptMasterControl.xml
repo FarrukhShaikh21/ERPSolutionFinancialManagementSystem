@@ -161,7 +161,7 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     TableName="RECEIPT_MASTER_CONTROL"
-    DefaultValue="C">
+    DefaultValue="Q">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
@@ -373,6 +373,8 @@
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="RECEIPT_MASTER_CONTROL">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
