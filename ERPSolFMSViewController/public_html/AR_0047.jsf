@@ -62,7 +62,6 @@
                           <af:resetActionListener/>
                         </af:button>
                         <af:button actionListener="#{bindings.Commit.execute}" text="Save Transaction" id="b5"
-                                   disabled="#{bindings.Submit.inputValue=='Y'}"
                                    icon="#{resource['images:imgSave.png']}" iconPosition="top"/>
                         <af:spacer width="50" height="10" id="s6"/>
                         <af:button text="Supervise Transaction" id="b9"
@@ -272,7 +271,8 @@
                     <f:facet name="toolbar">
                       <af:toolbar id="t3">
                         <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add Receipt Line"
-                                   disabled="#{bindings.Submit.inputValue=='Y'}" id="b3"/>
+                                   disabled="#{bindings.Submit.inputValue=='Y'}" id="b3"
+                                   action="#{pageFlowScope.ERPSolFMSPageFlowBean.ErpSolsetFocusOnNewRecord}"/>
                         <af:button actionListener="#{bindings.Delete1.execute}" text="Delete Receipt Line"
                                    disabled="#{bindings.Submit.inputValue=='Y'}" id="b4"/>
                       </af:toolbar>
@@ -285,7 +285,8 @@
                               selectedRowKeys="#{bindings.ReceiptDetailControlDetCRUD.collectionModel.selectedRow}"
                               selectionListener="#{bindings.ReceiptDetailControlDetCRUD.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.ReceiptDetailControlDetCRUD.rangeSize}"
-                              id="t2" styleClass="AFStretchWidth" partialTriggers="::b3 ::b4">
+                              id="t2" styleClass="AFStretchWidth" partialTriggers="::b3 ::b4"
+                              binding="#{pageFlowScope.ERPSolFMSPageFlowBean.ERPSolTable}" displayRow="selected" scrollPolicy="page" autoHeightRows="5">
                       <af:column headerText="#{bindings.ReceiptDetailControlDetCRUD.hints.Lineno.label}" id="c1"
                                  width="70">
                         <af:inputText value="#{row.bindings.Lineno.inputValue}"

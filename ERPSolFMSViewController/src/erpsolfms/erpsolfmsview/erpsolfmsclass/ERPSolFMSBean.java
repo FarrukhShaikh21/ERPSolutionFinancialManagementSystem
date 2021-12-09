@@ -27,12 +27,17 @@ import oracle.adf.model.binding.DCIteratorBindingDef;
 import oracle.adf.share.ADFContext;
 
 import oracle.adf.view.rich.component.rich.RichPopup;
+import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.event.DialogEvent;
 
 import oracle.jbo.ApplicationModule;
 import oracle.jbo.Row;
 import oracle.jbo.ViewObject;
 import oracle.jbo.server.DBTransaction;
+
+import org.apache.myfaces.trinidad.model.RowKeySet;
+import org.apache.myfaces.trinidad.render.ExtendedRenderKitService;
+import org.apache.myfaces.trinidad.util.Service;
 
 public class ERPSolFMSBean {
     public ERPSolFMSBean() {
@@ -47,6 +52,7 @@ public class ERPSolFMSBean {
     String ERPSolProductId;
     String ERPSolSalesOrderId;
     RichPopup ERPSolImeiPopup;
+    RichTable ERPSolTable;
     
     
     public void doSetERPSolFMSSessionGlobals() {
@@ -260,4 +266,31 @@ public class ERPSolFMSBean {
     public String getERPSolSalesOrderId() {
         return ERPSolSalesOrderId;
     }
+
+
+    public void setERPSolTable(RichTable ERPSolTable) {
+        this.ERPSolTable = ERPSolTable;
+    }
+
+    public RichTable getERPSolTable() {
+        return ERPSolTable;
+    }
+
+    public String ErpSolsetFocusOnNewRecord() {
+    FacesContext facesCtx = FacesContext.getCurrentInstance();
+    RowKeySet rks = getERPSolTable().getSelectedRowKeys();
+    String inputId ="";
+    if(rks != null && rks.size() > 0) {
+    Object rowKey = rks.iterator().next();
+    String rowId = getERPSolTable().getClientRowKeyManager().getClientRowKey(facesCtx,  getERPSolTable(), rowKey);
+    inputId = getERPSolTable().getClientId(facesCtx) + ":" + rowId + ":" + "it6"; //here it6 is id for inputtext in1st column.
+    System.out.println("inputid "+inputId);
+    } else {
+    // handle error
+    }
+    ExtendedRenderKitService service = Service.getRenderKitService(facesCtx, ExtendedRenderKitService.class);
+    service.addScript(facesCtx, "comp = AdfPage.PAGE.findComponent('"+inputId+"');\n" +
+    "comp.focus()");      // javascript method is used
+    return null;
+    }    
 }
