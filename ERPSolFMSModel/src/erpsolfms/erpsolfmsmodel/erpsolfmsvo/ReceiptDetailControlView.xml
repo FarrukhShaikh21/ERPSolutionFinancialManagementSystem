@@ -154,6 +154,14 @@
     EntityAttrName="Receiptseq"
     EntityUsage="ReceiptDetailControl"
     AliasName="RECEIPTSEQ"/>
+  <ViewAttribute
+    Name="txtCustomerName"
+    PrecisionRule="true"
+    EntityAttrName="txtCustomerName"
+    EntityUsage="ReceiptDetailControl"
+    AliasName="TXT_CUSTOMER_NAME"
+    IsQueriable="false"
+    IsPersistent="false"/>
   <ViewLinkAccessor
     Name="SoSalesPersonsView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonsReceiptDetailControlSalespersonIdLink"

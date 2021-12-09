@@ -36,6 +36,7 @@ public class ReceiptDetailControlViewRowImpl extends ViewRowImpl {
         Receiptdetailseq,
         txtSalesPersonName,
         Receiptseq,
+        txtCustomerName,
         SoSalesPersonsView,
         ReceiptMasterControlView,
         AccSoSalesPersonsView,
@@ -79,6 +80,7 @@ public class ReceiptDetailControlViewRowImpl extends ViewRowImpl {
     public static final int RECEIPTDETAILSEQ = AttributesEnum.Receiptdetailseq.index();
     public static final int TXTSALESPERSONNAME = AttributesEnum.txtSalesPersonName.index();
     public static final int RECEIPTSEQ = AttributesEnum.Receiptseq.index();
+    public static final int TXTCUSTOMERNAME = AttributesEnum.txtCustomerName.index();
     public static final int SOSALESPERSONSVIEW = AttributesEnum.SoSalesPersonsView.index();
     public static final int RECEIPTMASTERCONTROLVIEW = AttributesEnum.ReceiptMasterControlView.index();
     public static final int ACCSOSALESPERSONSVIEW = AttributesEnum.AccSoSalesPersonsView.index();
@@ -325,6 +327,22 @@ public class ReceiptDetailControlViewRowImpl extends ViewRowImpl {
      */
     public void setReceiptseq(BigDecimal value) {
         setAttributeInternal(RECEIPTSEQ, value);
+    }
+
+    /**
+     * Gets the attribute value for TXT_CUSTOMER_NAME using the alias name txtCustomerName.
+     * @return the TXT_CUSTOMER_NAME
+     */
+    public String gettxtCustomerName() {
+        return (String) getAttributeInternal(TXTCUSTOMERNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for TXT_CUSTOMER_NAME using the alias name txtCustomerName.
+     * @param value value to set the TXT_CUSTOMER_NAME
+     */
+    public void settxtCustomerName(String value) {
+        setAttributeInternal(TXTCUSTOMERNAME, value);
     }
 
     /**

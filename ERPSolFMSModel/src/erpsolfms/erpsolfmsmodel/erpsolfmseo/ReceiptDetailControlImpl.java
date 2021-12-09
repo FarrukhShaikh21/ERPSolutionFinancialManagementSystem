@@ -34,6 +34,7 @@ public class ReceiptDetailControlImpl extends ERPSolGlobalsEntityImpl {
         Receiptdetailseq,
         Receiptseq,
         txtSalesPersonName,
+        txtCustomerName,
         ReceiptMasterControl,
         SoSalesPersons;
         private static AttributesEnum[] vals = null;
@@ -74,6 +75,7 @@ public class ReceiptDetailControlImpl extends ERPSolGlobalsEntityImpl {
     public static final int RECEIPTDETAILSEQ = AttributesEnum.Receiptdetailseq.index();
     public static final int RECEIPTSEQ = AttributesEnum.Receiptseq.index();
     public static final int TXTSALESPERSONNAME = AttributesEnum.txtSalesPersonName.index();
+    public static final int TXTCUSTOMERNAME = AttributesEnum.txtCustomerName.index();
     public static final int RECEIPTMASTERCONTROL = AttributesEnum.ReceiptMasterControl.index();
     public static final int SOSALESPERSONS = AttributesEnum.SoSalesPersons.index();
 
@@ -313,6 +315,22 @@ public class ReceiptDetailControlImpl extends ERPSolGlobalsEntityImpl {
      */
     public void settxtSalesPersonName(String value) {
         setAttributeInternal(TXTSALESPERSONNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for txtCustomerName, using the alias name txtCustomerName.
+     * @return the value of txtCustomerName
+     */
+    public String gettxtCustomerName() {
+        return (String) getAttributeInternal(TXTCUSTOMERNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtCustomerName.
+     * @param value value to set the txtCustomerName
+     */
+    public void settxtCustomerName(String value) {
+        setAttributeInternal(TXTCUSTOMERNAME, value);
     }
 
     /**

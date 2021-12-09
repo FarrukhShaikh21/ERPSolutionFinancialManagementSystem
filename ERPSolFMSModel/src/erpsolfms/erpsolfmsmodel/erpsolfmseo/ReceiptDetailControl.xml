@@ -59,6 +59,8 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ReceiptMasterControl?.Salespersonid]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -185,6 +187,27 @@
           Value="20"/>
         <LABEL
           ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.txtSalesPersonName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="txtCustomerName"
+    Precision="80"
+    ColumnName="TXT_CUSTOMER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="RECEIPT_DETAIL_CONTROL"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[ReceiptMasterControl?.txtCustomerName]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl.txtCustomerName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>

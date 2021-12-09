@@ -76,6 +76,7 @@
           <Item Value="Salespersonid"/>
           <Item Value="FcurrTaxAmount"/>
           <Item Value="FcurrAmount"/>
+          <Item Value="txtCustomerName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
