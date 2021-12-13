@@ -24,14 +24,14 @@ af|inputText::label{
 af|panelLabelAndMessage::label{
     /*font-weight: bold;*/
     color: Black;
-    /*font-weight: bold;*/
+    font-weight: bold;
     /*font-size: medium;*/
     font-family: Verdana;
 }
 
 af|inputDate::label{
     font-weight: bold;
-    color: Blue;
+    color: Black;
     font-weight: bold;
 }
 
