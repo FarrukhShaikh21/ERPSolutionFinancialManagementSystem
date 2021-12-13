@@ -1,5 +1,7 @@
 package erpsolfms.erpsolfmsview.erpsolfmsclass;
 
+import erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel;
+
 import erpsolglob.erpsolglobview.erpclass.ERPSolGlobalViewBean;
 
 import java.sql.CallableStatement;
@@ -362,7 +364,7 @@ public class ERPSolFMSBean {
         AttributeBinding ERPToDate          =(AttributeBinding)ERPSolbc.getControlBinding("txtToDate");
         String reportParameter="";
         reportParameter="COMPANY="+ (ERPCompanyid.getInputValue()==null?"":ERPCompanyid.getInputValue());
-        reportParameter+="&P_LOCID="+(ERPRegionid.getInputValue()==null?"":ERPRegionid.getInputValue());
+        reportParameter+="&P_REGID="+(ERPRegionid.getInputValue()==null?"":ERPRegionid.getInputValue());
         reportParameter+="&P_LOCID="+(ERPLocationid.getInputValue()==null?"":ERPLocationid.getInputValue());
 //        reportParameter+="&P_STOREID_ID="+(ERPStoreid.getInputValue()==null?"":ERPStoreid.getInputValue());
         reportParameter+="&custid="+(ERPCustomerid.getInputValue()==null?"":ERPCustomerid.getInputValue());
@@ -371,6 +373,7 @@ public class ERPSolFMSBean {
 //        reportParameter+="&P_PRODUCT_ID="+(ERPProductid.getInputValue()==null?"":ERPProductid.getInputValue());
         reportParameter+="&FROM_DATE="+(ERPFromDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPFromDate.getInputValue() ) );
         reportParameter+="&TO_DATE="+(ERPToDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPToDate.getInputValue())  );
+        reportParameter+="&USER="+ERPSolGlobClassModel.doGetUserCode();
         
         pReportUrl=pReportUrl.replace("<P_REPORT_PATH>", pReportPath);
         pReportUrl=pReportUrl.replace("<P_REPORT_PARAMETERS>", reportParameter);

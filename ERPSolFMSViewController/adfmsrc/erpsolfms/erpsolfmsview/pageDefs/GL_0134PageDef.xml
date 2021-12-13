@@ -56,11 +56,22 @@
     <tree IterBinding="SysProgramDetROIterator" id="SysProgramDetRO">
       <nodeDefinition DefName="erpsoltemp.erpsoltempmodel.erpsoltempvo.SysProgramView" Name="SysProgramDetRO0">
         <AttrNames>
-          <Item Value="Moduleid"/>
+          <Item Value="ParameterFormId"/>
           <Item Value="ModuleName"/>
           <Item Value="ExecName"/>
+          <Item Value="Moduleid"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="SysProgramDetROIterator" id="ParameterFormId">
+      <AttrNames>
+        <Item Value="ParameterFormId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="doExecuteAgingProcedure" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doExecuteAgingProcedure" IsViewObjectMethod="true"
+                  DataControl="ERPSolFMSAppModuleDataControl"
+                  InstanceName="data.ERPSolFMSAppModuleDataControl.VwGLFinanceReportRO"
+                  ReturnName="data.ERPSolFMSAppModuleDataControl.methodResults.doExecuteAgingProcedure_ERPSolFMSAppModuleDataControl_VwGLFinanceReportRO_doExecuteAgingProcedure_result"/>
   </bindings>
 </pageDefinition>

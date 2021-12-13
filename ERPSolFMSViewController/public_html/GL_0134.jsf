@@ -4,6 +4,11 @@
     <af:document title="SO_1124.jsf" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="immediate">
+                <af:dialog id="d2" title="Please Wait..." type="none">
+                    <f:facet name="buttonBar"/>
+                </af:dialog>
+            </af:popup>
             <af:pageTemplate viewId="/ERPSolutionTemplate.jsf" value="#{bindings.ptb1}" id="pt1">
                 <f:facet name="erptempmain">
                     <af:decorativeBox id="db1">
@@ -142,10 +147,31 @@
                                     </af:gridCell>
                                     <af:gridCell marginStart="5px" width="40%" marginEnd="5px" id="gc2"
                                                  halign="stretch" valign="stretch">
+                                        <af:inputText value="#{bindings.ParameterFormId.inputValue}"
+                                                      label="#{bindings.ParameterFormId.hints.label}"
+                                                      required="#{bindings.ParameterFormId.hints.mandatory}"
+                                                      columns="#{bindings.ParameterFormId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ParameterFormId.hints.precision}"
+                                                      shortDesc="#{bindings.ParameterFormId.hints.tooltip}" id="it6"
+                                                      rendered="false">
+                                            <f:validator binding="#{bindings.ParameterFormId.validator}"/>
+                                        </af:inputText>
                                         <af:panelCollection id="pc1" styleClass="AFStretchWidth"
                                                             featuresOff="viewMenu detach">
                                             <f:facet name="menus"/>
-                                            <f:facet name="toolbar"/>
+                                            <f:facet name="toolbar">
+                                                <af:toolbar id="t2" flex="5">
+                                                    <af:button actionListener="#{bindings.doExecuteAgingProcedure.execute}"
+                                                               text="Process"
+                                                               disabled="#{!bindings.doExecuteAgingProcedure.enabled}"
+                                                               id="b1"
+                                                               visible="#{bindings.ParameterFormId.inputValue=='btnAging'}"
+                                                               partialTriggers="t1">
+                                                        <af:clientListener type="action"
+                                                                           method="enforcePreventUserInput"/>
+                                                    </af:button>
+                                                </af:toolbar>
+                                            </f:facet>
                                             <f:facet name="statusbar"/>
                                             <af:table value="#{bindings.SysProgramDetRO.collectionModel}" var="row"
                                                       rows="#{bindings.SysProgramDetRO.rangeSize}"
@@ -160,17 +186,31 @@
                                                       filterVisible="true" varStatus="vs" id="t1"
                                                       columnStretching="column:c2" scrollPolicy="scroll"
                                                       autoHeightRows="15">
+                                                <af:column sortProperty="#{bindings.SysProgramDetRO.hints.ParameterFormId.name}"
+                                                           filterable="true"
+                                                           headerText="#{bindings.SysProgramDetRO.hints.ParameterFormId.label}"
+                                                           id="c1" rendered="false">
+                                                    <af:inputText value="#{row.bindings.ParameterFormId.inputValue}"
+                                                                  label="#{bindings.SysProgramDetRO.hints.ParameterFormId.label}"
+                                                                  required="#{bindings.SysProgramDetRO.hints.ParameterFormId.mandatory}"
+                                                                  columns="#{bindings.SysProgramDetRO.hints.ParameterFormId.displayWidth}"
+                                                                  maximumLength="#{bindings.SysProgramDetRO.hints.ParameterFormId.precision}"
+                                                                  shortDesc="#{bindings.SysProgramDetRO.hints.ParameterFormId.tooltip}"
+                                                                  id="it1">
+                                                        <f:validator binding="#{row.bindings.ParameterFormId.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
                                                 <af:column sortProperty="#{bindings.SysProgramDetRO.hints.Moduleid.name}"
                                                            filterable="true"
                                                            headerText="#{bindings.SysProgramDetRO.hints.Moduleid.label}"
-                                                           id="c1">
+                                                           id="c4">
                                                     <af:inputText value="#{row.bindings.Moduleid.inputValue}"
                                                                   label="#{bindings.SysProgramDetRO.hints.Moduleid.label}"
                                                                   required="#{bindings.SysProgramDetRO.hints.Moduleid.mandatory}"
                                                                   columns="#{bindings.SysProgramDetRO.hints.Moduleid.displayWidth}"
                                                                   maximumLength="#{bindings.SysProgramDetRO.hints.Moduleid.precision}"
                                                                   shortDesc="#{bindings.SysProgramDetRO.hints.Moduleid.tooltip}"
-                                                                  id="it1" readOnly="true">
+                                                                  id="it4" readOnly="true">
                                                         <f:validator binding="#{row.bindings.Moduleid.validator}"/>
                                                     </af:inputText>
                                                 </af:column>
@@ -220,5 +260,30 @@
                 <f:facet name="erptempleft"/>
             </af:pageTemplate>
         </af:form>
+        <f:facet name="metaContainer">
+<af:resource type="javascript">
+ function enforcePreventUserInput(evt){
+ 
+ var popup = AdfPage.PAGE.findComponentByAbsoluteId('p1');
+if (popup != null){
+ AdfPage.PAGE.addBusyStateListener(popup,handleBusyState);
+ evt.preventUserInput();
+ }
+ }
+ //JavaScript call back handler
+ function handleBusyState(evt){
+ var popup = AdfPage.PAGE.findComponentByAbsoluteId('p1');
+ if(popup!=null){
+ if (evt.isBusy()){
+ popup.show();
+ }
+ else if (popup.isPopupVisible()) {
+ popup.hide();
+ AdfPage.PAGE.removeBusyStateListener(popup,handleBusyState);
+ }
+ }
+}
+</af:resource> 
+        </f:facet>
     </af:document>
 </f:view>
