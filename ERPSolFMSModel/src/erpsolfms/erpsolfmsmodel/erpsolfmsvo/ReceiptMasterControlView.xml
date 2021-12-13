@@ -69,6 +69,10 @@
       Name="AllCustomerSalespersonCustSpWiseVC"
       FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomerSalespersonView.AllCustomerSalespersonCustSpWiseVC"/>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccVWYesNoQVO"
+    ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtCustomerName"
     ListVOName="AccAllCustomersView"
@@ -146,6 +150,25 @@
     </AttrArray>
     <DisplayCriteria
       Name="AllBankBranchesFindVC"/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSubmit"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Submit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="ReceiptMasterControl"
@@ -254,7 +277,15 @@
     PrecisionRule="true"
     EntityAttrName="Submit"
     EntityUsage="ReceiptMasterControl"
-    AliasName="SUBMIT"/>
+    AliasName="SUBMIT"
+    LOVName="LovSubmit">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PostToIntFace"
     PrecisionRule="true"
@@ -573,6 +604,12 @@
         Name="Locationid"
         ViewAttribute="Locationid"
         Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="CreatedDate"
+        ViewAttribute="CreatedDate"
+        Operator="BETWEEN"
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem

@@ -8,7 +8,7 @@
     <iterator Binds="ReceiptMasterControlCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
               id="ReceiptMasterControlCRUDIterator"/>
     <iterator Binds="ReceiptDetailControlDetCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
-              id="ReceiptDetailControlDetCRUDIterator" ChangeEventPolicy="none"/>
+              id="ReceiptDetailControlDetCRUDIterator"/>
   </executables>
   <bindings>
     <listOfValues IterBinding="ReceiptMasterControlCRUDIterator" StaticList="false" Uses="LovtxtCustomerName"

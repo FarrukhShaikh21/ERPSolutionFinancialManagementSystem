@@ -1224,6 +1224,16 @@ public class ReceiptMasterControlImpl extends ERPSolGlobalsEntityImpl {
            populateAttributeAsChanged(DOCTYPEID, getReceiptMode().equals("C")?"SRCT":"SRBT");
 
        }
+        if (operation!=DML_DELETE) {
+           
+           if (getRecDate()==null) {
+                populateAttributeAsChanged(RECDATE, getDocDate());
+            }
+           if (getReceiptDate()==null) {
+                populateAttributeAsChanged(RECEIPTDATE, getDocDate());
+            }
+            
+       }
         super.doDML(operation, e);
     }
     

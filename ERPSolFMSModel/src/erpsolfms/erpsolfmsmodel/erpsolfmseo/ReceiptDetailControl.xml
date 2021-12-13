@@ -18,7 +18,7 @@
   </DesignTime>
   <Attribute
     Name="ReceiptNo"
-    Precision="15"
+    Precision="20"
     ColumnName="RECEIPT_NO"
     SQLType="VARCHAR"
     Type="java.lang.String"
@@ -197,7 +197,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="RECEIPT_DETAIL_CONTROL"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression

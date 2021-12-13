@@ -26,7 +26,7 @@ public class ReceiptMasterControlViewImpl extends ViewObjectImpl implements Rece
 
     public void doSuperviseControlReceipt() {
         
-        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=PKG_SALE_ORDER.FUNC_SUBMIT_SALES_ORDER('"+this.getCurrentRow().getAttribute("ReceiptNo")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
+        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_receipt.func_submit_control_receipt('"+this.getCurrentRow().getAttribute("ReceiptNo")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
         System.out.println("begin ?:=pkg_receipt.func_submit_control_receipt('"+this.getCurrentRow().getAttribute("ReceiptNo")+"'); END;");
         try {
             cs.registerOutParameter(1, Types.VARCHAR);

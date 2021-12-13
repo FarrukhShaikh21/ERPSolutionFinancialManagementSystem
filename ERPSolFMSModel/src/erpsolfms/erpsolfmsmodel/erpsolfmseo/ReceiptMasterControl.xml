@@ -19,7 +19,7 @@
   </DesignTime>
   <Attribute
     Name="ReceiptNo"
-    Precision="15"
+    Precision="20"
     ColumnName="RECEIPT_NO"
     SQLType="VARCHAR"
     Type="java.lang.String"

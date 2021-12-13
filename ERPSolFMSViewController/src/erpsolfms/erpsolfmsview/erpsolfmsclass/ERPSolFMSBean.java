@@ -31,6 +31,7 @@ import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.event.DialogEvent;
 
 import oracle.jbo.ApplicationModule;
+import oracle.jbo.JboException;
 import oracle.jbo.Row;
 import oracle.jbo.ViewObject;
 import oracle.jbo.server.DBTransaction;
@@ -57,6 +58,10 @@ public class ERPSolFMSBean {
     
     public void doSetERPSolFMSSessionGlobals() {
         System.out.println("glob user code"+getERPSolStrUserCode());
+        if (getERPSolStrUserCode().length()==0) {
+           FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Users Defaults are not defined properly. Please Check"));
+           throw new JboException("Users Defaults are not defined properly. Please Check");
+        }
         ADFContext.getCurrent().getPageFlowScope().put("GLOB_USER_CODE", getERPSolStrUserCode());
         ADFContext.getCurrent().getPageFlowScope().put("GLOB_USER_REGION", getERPSolStrUserRegionCode());
         ADFContext.getCurrent().getPageFlowScope().put("GLOB_USER_LOCATION", getERPSolStrUserLocationCode());
