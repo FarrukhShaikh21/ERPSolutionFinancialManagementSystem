@@ -120,7 +120,7 @@
       <property
          name="fromOutcome">ERP-ACT-AR-0047</property>
       <property
-         name="sdm:polyPoints">L50,546.0,195.24707,506.5,250.44824,T50</property>
+         name="sdm:polyPoints">L58,546.0,202.24707,506.5,250.44824,T50</property>
    </ControlFlowCase>
    <TaskFlowReturn
       id="TaskFlowReturn12">
@@ -349,5 +349,30 @@
          name="fromOutcome">ERP-ACT_BACK_AR-0005-SEARCH</property>
       <property
          name="sdm:polyPoints">R54,-21.63086,470.24707,154.48607,470.94824,L54</property>
+   </ControlFlowCase>
+   <View
+      id="View33">
+      <property
+         name="activityId">GL_0134</property>
+      <property
+         name="page">/GL_0134.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>GL_0134&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">514.7988</property>
+      <property
+         name="x">-261.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase34"
+      from="MethodCall7"
+      to="View33">
+      <property
+         name="fromOutcome">ERP-ACT-GL-0134</property>
+      <property
+         name="sdm:polyPoints">L42,541.6284,188.24707,-220.5,514.44824,R50</property>
    </ControlFlowCase>
 </SDM>
