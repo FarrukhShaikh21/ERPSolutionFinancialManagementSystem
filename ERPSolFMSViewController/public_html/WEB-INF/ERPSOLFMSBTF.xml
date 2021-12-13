@@ -93,6 +93,12 @@
     <view id="GL_0134">
       <page>/GL_0134.jsf</page>
     </view>
+    <method-call id="ExecuteWithParamsReportFMS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-GOTO-FMS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__1">
       <from-activity-id>doERPSolFMSSessionGlobals</from-activity-id>
       <control-flow-case id="__2">
@@ -104,7 +110,7 @@
       <from-activity-id>ExecuteQueryFMSTransaction</from-activity-id>
       <control-flow-case id="__5">
         <from-outcome>ERP-GOTO-FMS-MAIN</from-outcome>
-        <to-activity-id>ERPSolFMSMain</to-activity-id>
+        <to-activity-id>ExecuteWithParamsReportFMS</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__6">
@@ -190,6 +196,13 @@
       <control-flow-case id="__33">
         <from-outcome>ERP-ACT_BACK_AR-0005-SEARCH</from-outcome>
         <to-activity-id>AR_0005</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__35">
+      <from-activity-id>ExecuteWithParamsReportFMS</from-activity-id>
+      <control-flow-case id="__36">
+        <from-outcome>ERP-GOTO-FMS-MAIN</from-outcome>
+        <to-activity-id>ERPSolFMSMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

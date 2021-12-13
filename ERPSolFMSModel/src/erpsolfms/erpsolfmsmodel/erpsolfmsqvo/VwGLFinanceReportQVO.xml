@@ -26,7 +26,17 @@
   <ViewAccessor
     Name="AccSoSalesPersonsView"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SoSalesPersonsByCustomerVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView.SoSalesPersonsByCustomerVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_CUSTOMERID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Customerid==null?"0":Customerid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
     
   <ViewAccessor
     Name="AccAllCustomersView"

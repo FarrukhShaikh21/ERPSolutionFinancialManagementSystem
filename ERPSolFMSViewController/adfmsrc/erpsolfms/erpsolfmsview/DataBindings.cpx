@@ -13,6 +13,8 @@
           usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef1"/>
     <page path="/AR_0005.jsf" usageId="erpsolfms_erpsolfmsview_AR_0005PageDef"/>
     <page path="/GL_0134.jsf" usageId="erpsolfms_erpsolfmsview_GL_0134PageDef"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@ExecuteWithParamsReportFMS"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolfms_erpsolfmsview_AR_0047PageDef" path="erpsolfms.erpsolfmsview.pageDefs.AR_0047PageDef"/>
@@ -28,6 +30,8 @@
           path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_RollbackPageDef1"/>
     <page id="erpsolfms_erpsolfmsview_AR_0005PageDef" path="erpsolfms.erpsolfmsview.pageDefs.AR_0005PageDef"/>
     <page id="erpsolfms_erpsolfmsview_GL_0134PageDef" path="erpsolfms.erpsolfmsview.pageDefs.GL_0134PageDef"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolFMSAppModuleDataControl" Package="erpsolfms.erpsolfmsmodel.erpsolfmsam"
