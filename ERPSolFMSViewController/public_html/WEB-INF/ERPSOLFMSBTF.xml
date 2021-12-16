@@ -99,6 +99,12 @@
         <fixed-outcome>ERP-GOTO-FMS-MAIN</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="ExeWithParaExecuteWithParamsFMS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-GOTO-FMS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__1">
       <from-activity-id>doERPSolFMSSessionGlobals</from-activity-id>
       <control-flow-case id="__2">
@@ -110,7 +116,7 @@
       <from-activity-id>ExecuteQueryFMSTransaction</from-activity-id>
       <control-flow-case id="__5">
         <from-outcome>ERP-GOTO-FMS-MAIN</from-outcome>
-        <to-activity-id>ExecuteWithParamsReportFMS</to-activity-id>
+        <to-activity-id>ExeWithParaExecuteWithParamsFMS</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__6">
@@ -203,6 +209,13 @@
       <control-flow-case id="__36">
         <from-outcome>ERP-GOTO-FMS-MAIN</from-outcome>
         <to-activity-id>ERPSolFMSMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__37">
+      <from-activity-id>ExeWithParaExecuteWithParamsFMS</from-activity-id>
+      <control-flow-case id="__38">
+        <from-outcome>ERP-GOTO-FMS-MAIN</from-outcome>
+        <to-activity-id>ExecuteWithParamsReportFMS</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

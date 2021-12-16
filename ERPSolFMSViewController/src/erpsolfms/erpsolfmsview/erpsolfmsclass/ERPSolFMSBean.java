@@ -345,7 +345,7 @@ public class ERPSolFMSBean {
         vo.remove();
         vo=am.createViewObjectFromQueryStmt("QVOReport", "select PATH PATH FROM SYSTEM a where a.PROJECTID='AR' ");
         vo.executeQuery();
-        String pReportPath=vo.first().getAttribute(0).toString();
+        String pReportPath=vo.first().getAttribute(0).toString()+"REPORTS\\\\";
         System.out.println(pReportPath);
         pReportPath=pReportPath+ERPSolReportName;
         
