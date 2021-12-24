@@ -188,7 +188,7 @@
     ColumnType="NUMBER"
     AliasName="PK"
     Expression="PK"
-    SQLType="NUMERIC">
+    SQLType="INTEGER">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -206,7 +206,7 @@
     ColumnType="VARCHAR2"
     AliasName="COMPANYID"
     Expression="COMPANYID"
-    SQLType="NUMERIC"
+    SQLType="VARCHAR"
     LOVName="LovCompanyid">
     <Properties>
       <SchemaBasedProperties>
