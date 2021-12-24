@@ -437,6 +437,10 @@
     ColumnType="DATE"
     AliasName="VIEW_ATTR"
     SQLType="DATE">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -455,6 +459,10 @@
     ColumnType="DATE"
     AliasName="VIEW_ATTR"
     SQLType="DATE">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -472,6 +480,13 @@
     <Method
       Name="doExecuteAgingProcedure"
       MethodName="doExecuteAgingProcedure">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
+    <Method
+      Name="doSetERPSolReportDefault"
+      MethodName="doSetERPSolReportDefault">
       <Return
         Name="_return_type_"
         Type="void"/>

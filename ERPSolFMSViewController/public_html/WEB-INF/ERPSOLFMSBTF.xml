@@ -105,6 +105,12 @@
         <fixed-outcome>ERP-GOTO-FMS-MAIN</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="doSetERPSolReportDefault">
+      <method>#{bindings.doSetERPSolReportDefault.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-ACT-GL-0134</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__1">
       <from-activity-id>doERPSolFMSSessionGlobals</from-activity-id>
       <control-flow-case id="__2">
@@ -138,7 +144,7 @@
       </control-flow-case>
       <control-flow-case id="__34">
         <from-outcome>ERP-ACT-GL-0134</from-outcome>
-        <to-activity-id>GL_0134</to-activity-id>
+        <to-activity-id>doSetERPSolReportDefault</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__15">
@@ -216,6 +222,13 @@
       <control-flow-case id="__38">
         <from-outcome>ERP-GOTO-FMS-MAIN</from-outcome>
         <to-activity-id>ExecuteWithParamsReportFMS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__39">
+      <from-activity-id>doSetERPSolReportDefault</from-activity-id>
+      <control-flow-case id="__40">
+        <from-outcome>ERP-ACT-GL-0134</from-outcome>
+        <to-activity-id>GL_0134</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>

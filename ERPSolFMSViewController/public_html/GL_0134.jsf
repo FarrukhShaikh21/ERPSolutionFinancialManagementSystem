@@ -122,7 +122,8 @@
                                                           required="#{bindings.Productgroup.hints.mandatory}"
                                                           columns="#{bindings.Productgroup.hints.displayWidth}"
                                                           maximumLength="#{bindings.Productgroup.hints.precision}"
-                                                          shortDesc="#{bindings.Productgroup.hints.tooltip}" id="it9">
+                                                          shortDesc="#{bindings.Productgroup.hints.tooltip}" id="it9"
+                                                          rendered="false">
                                                 <f:validator binding="#{bindings.Productgroup.validator}"/>
                                             </af:inputText>
                                             <af:inputDate value="#{bindings.txtFromDate.inputValue}"

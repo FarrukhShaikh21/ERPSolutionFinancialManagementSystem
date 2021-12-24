@@ -7,5 +7,7 @@ import oracle.jbo.ViewObject;
 // ---------------------------------------------------------------------
 public interface VwGLFinanceReportQVO extends ViewObject {
     void doExecuteAgingProcedure();
+
+    void doSetERPSolReportDefault();
 }
 
