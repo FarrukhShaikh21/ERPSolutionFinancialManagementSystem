@@ -34,11 +34,6 @@
         <Item Value="Salespersonid"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="VwGLFinanceReportROIterator" id="Productgroup">
-      <AttrNames>
-        <Item Value="Productgroup"/>
-      </AttrNames>
-    </attributeValues>
     <listOfValues IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovtxtLocationName"
                   id="txtLocationName"/>
     <list IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovRegionid" id="Regionid"
