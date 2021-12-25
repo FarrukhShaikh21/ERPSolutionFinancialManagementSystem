@@ -73,5 +73,7 @@
                   DataControl="ERPSolFMSAppModuleDataControl"
                   InstanceName="data.ERPSolFMSAppModuleDataControl.VwGLFinanceReportRO"
                   ReturnName="data.ERPSolFMSAppModuleDataControl.methodResults.doExecuteAgingProcedure_ERPSolFMSAppModuleDataControl_VwGLFinanceReportRO_doExecuteAgingProcedure_result"/>
+    <list IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovtxtSalesTerritoryId"
+          id="txtSalesTerritoryId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

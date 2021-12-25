@@ -64,6 +64,8 @@ public class VwGLFinanceReportQVOImpl extends ViewObjectImpl implements VwGLFina
         this.first().setAttribute("Locationid", vo.first().getAttribute(0));
         this.first().setAttribute("txtLocationName", vo.first().getAttribute(1));
         this.first().setAttribute("Companyid", ERPSolGlobClassModel.doGetUserCompanyCode());
+        this.first().setAttribute("txtFromDate", this.first().getAttribute("txtDefaultDate"));
+        this.first().setAttribute("txtToDate", this.first().getAttribute("txtDefaultDate"));
         vo.remove();
     }
 }

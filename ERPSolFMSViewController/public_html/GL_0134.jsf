@@ -33,6 +33,14 @@
                                                 <f:selectItems value="#{bindings.Regionid.items}" id="si2"/>
                                                 <f:validator binding="#{bindings.Regionid.validator}"/>
                                             </af:selectOneChoice>
+                                            <af:selectOneChoice value="#{bindings.txtSalesTerritoryId.inputValue}"
+                                                                label="#{bindings.txtSalesTerritoryId.label}"
+                                                                required="#{bindings.txtSalesTerritoryId.hints.mandatory}"
+                                                                shortDesc="#{bindings.txtSalesTerritoryId.hints.tooltip}"
+                                                                id="soc3" contentStyle="width:200px" autoSubmit="true">
+                                                <f:selectItems value="#{bindings.txtSalesTerritoryId.items}" id="si3"/>
+                                                <f:validator binding="#{bindings.txtSalesTerritoryId.validator}"/>
+                                            </af:selectOneChoice>
                                             <af:panelLabelAndMessage label="#{bindings.txtLocationName.hints.label}" id="plam5">
                                                 <af:panelGroupLayout id="pgl6" layout="horizontal">
                                                     <af:inputComboboxListOfValues id="txtLocationNameId"
