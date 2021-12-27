@@ -230,6 +230,11 @@ and sud.moduleid=:P_ADF_MODULEID
   <AttrArray Name="KeyAttributes">
     <Item Value="Customerid"/>
   </AttrArray>
+  <ViewLinkAccessor
+    Name="ReceiptMasterControlView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VwAllCustomerQVOReceiptMasterControlCustomerIdVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>

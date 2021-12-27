@@ -711,6 +711,12 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="VwAllCustomerQVO"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VwAllCustomerQVOReceiptMasterControlCustomerIdVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
   <ClientInterface
     Name="__clientInterface">
     <Method

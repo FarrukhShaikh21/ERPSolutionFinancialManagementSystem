@@ -86,6 +86,7 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
         AllCustomersView,
         SoSalesPersonsView,
         AllBankBranchesView,
+        VwAllCustomerQVO,
         AccAllCustomersView,
         AccSoSalesPersonsView,
         AccAllBankBranchesView,
@@ -180,6 +181,7 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
     public static final int ALLCUSTOMERSVIEW = AttributesEnum.AllCustomersView.index();
     public static final int SOSALESPERSONSVIEW = AttributesEnum.SoSalesPersonsView.index();
     public static final int ALLBANKBRANCHESVIEW = AttributesEnum.AllBankBranchesView.index();
+    public static final int VWALLCUSTOMERQVO = AttributesEnum.VwAllCustomerQVO.index();
     public static final int ACCALLCUSTOMERSVIEW = AttributesEnum.AccAllCustomersView.index();
     public static final int ACCSOSALESPERSONSVIEW = AttributesEnum.AccSoSalesPersonsView.index();
     public static final int ACCALLBANKBRANCHESVIEW = AttributesEnum.AccAllBankBranchesView.index();
@@ -1195,6 +1197,20 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
      */
     public void setAllBankBranchesView(Row value) {
         setAttributeInternal(ALLBANKBRANCHESVIEW, value);
+    }
+
+    /**
+     * Gets the associated <code>Row</code> using master-detail link VwAllCustomerQVO.
+     */
+    public Row getVwAllCustomerQVO() {
+        return (Row) getAttributeInternal(VWALLCUSTOMERQVO);
+    }
+
+    /**
+     * Sets the master-detail link VwAllCustomerQVO between this object and <code>value</code>.
+     */
+    public void setVwAllCustomerQVO(Row value) {
+        setAttributeInternal(VWALLCUSTOMERQVO, value);
     }
 
     /**
