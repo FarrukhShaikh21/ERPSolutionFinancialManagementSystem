@@ -9,7 +9,11 @@
   ClearCacheOnRollback="true">
   <ViewUsage
     Name="ReceiptMasterControlCRUD"
-    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView"/>
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView">
+    <ViewCriteriaUsage
+      Name="ReceiptMasterControlUserWiseCustomerVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView.ReceiptMasterControlUserWiseCustomerVC"/>
+  </ViewUsage>
   <ViewUsage
     Name="ReceiptDetailControlDetCRUD"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptDetailControlView"/>
@@ -44,6 +48,9 @@
   <ViewUsage
     Name="AllLocationsAutoSuggestRO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllLocationsView"/>
+  <ViewUsage
+    Name="VwAllCustomerAutoSuggestRO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwAllCustomerQVO"/>
   <ViewLinkUsage
     Name="SysC0017666Link1"
     ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"

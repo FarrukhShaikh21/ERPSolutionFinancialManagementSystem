@@ -150,7 +150,7 @@
                                                         shortDesc="#{bindings.txtCustomerName.hints.tooltip}"
                                                         simple="true" autoSubmit="true">
                             <f:validator binding="#{bindings.txtCustomerName.validator}"/>
-                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCustomerValues}"/>
+                            <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetReceiptAutoSuggestedCustomerValues}"/>
                           </af:inputComboboxListOfValues>
                           <af:spacer width="10" height="10" id="s2"/>
                           <af:outputText value="#{bindings.Customerid.inputValue}" id="ot2" noWrap="true"

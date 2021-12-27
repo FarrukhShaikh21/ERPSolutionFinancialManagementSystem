@@ -688,6 +688,58 @@
       </ViewCriteriaItem>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ViewCriteria
+    Name="ReceiptMasterControlUserWiseCustomerVC"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="ReceiptMasterControlViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="VwAllCustomerQVO"
+        ViewAttribute="VwAllCustomerQVO"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="VwAllCustomerQVONestedCriteria"
+          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwAllCustomerQVO"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="VwAllCustomerQVONestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="Customerid"
+              ViewAttribute="Customerid"
+              Operator="ISNOTBLANK"
+              Conjunction="AND"
+              UpperColumns="0"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="ReceiptDetailControlView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"
