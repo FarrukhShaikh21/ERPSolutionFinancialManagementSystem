@@ -77,8 +77,11 @@
     Name="AccVwAllCustomerQVO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwAllCustomerQVO"
     RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="VwAllCustomerByLocationVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwAllCustomerQVO.VwAllCustomerByLocationVC"/>
     <ParameterMap>
-      <PIMap Variable="P_ADF_LOCATIONID">
+      <PIMap Variable="P_ADF_LOCATION_ID">
         <TransientExpression
           trustMode="untrusted"><![CDATA[Locationid==null?"0":Locationid]]></TransientExpression>
       </PIMap>

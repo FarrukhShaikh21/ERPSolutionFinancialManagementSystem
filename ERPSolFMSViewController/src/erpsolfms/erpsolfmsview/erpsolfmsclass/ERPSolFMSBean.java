@@ -180,7 +180,7 @@ public class ERPSolFMSBean {
         System.out.println("d");
     //        System.out.println(ERPLocid);//ERPSolGlobalViewBean.
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VwAllCustomerAutoSuggestRO",
-                                                            "  UPPER(CONCAT(CUSTOMERID,CUSTOMER_NAME))", "CustomerName", "Customerid", 10,"ERPSolFMSAppModuleDataControl");
+                                                            " LOCATIONID='"+ERPLocid+"' AND  UPPER(CONCAT(CUSTOMERID,CUSTOMER_NAME))", "CustomerName", "Customerid", 10,"ERPSolFMSAppModuleDataControl");
         return ResultList;
         
     }   

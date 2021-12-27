@@ -48,7 +48,7 @@
                                                                                   inlineStyle="voice-volume:medium;"
                                                                                   autoSubmit="true">
                                                         <f:validator binding="#{bindings.txtCustomerName.validator}"/>
-                                                        <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCustomerValues}"/>
+                                                        <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetReceiptAutoSuggestedCustomerValues}"/>
                                                     </af:inputComboboxListOfValues>
                                                     <af:spacer width="10" height="10" id="s1"/>
                                                     <af:inputText value="#{bindings.Customerid.inputValue}"

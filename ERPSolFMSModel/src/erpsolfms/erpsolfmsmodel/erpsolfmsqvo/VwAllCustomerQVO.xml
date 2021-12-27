@@ -74,20 +74,24 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
-  <SQLQuery><![CDATA[select loc.regionid,loc.locationid,loc.location_description,customerid,customer_name ,SUD.H_LEVEL 
-from all_customers cus, all_locations loc,sys_users_detail sud 
-where loc.locationid=cus.locationid 
-and   sud.userid=:P_ADF_USERID 
-and sud.moduleid=:P_ADF_MODULEID 
- AND  ((  sud.h_level ='C' and EXISTS (select '' from sys_user_customer suc where suc.customerid=cus.customerid and suc.userid=:P_ADF_USERID) ) 
- 
-     or 
-     (sud.h_level='U' and loc.locationid=:P_ADF_LOCATIONID) 
-     OR 
-     (sud.h_level='R' and loc.REGIONID=:P_ADF_REGIONID) 
-     OR 
-     (sud.h_level='A' ) 
-      
+  <Variable
+    Name="P_ADF_LOCATION_ID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <SQLQuery><![CDATA[select loc.regionid,loc.locationid,loc.location_description,customerid,customer_name ,SUD.H_LEVEL   
+from all_customers cus, all_locations loc,sys_users_detail sud   
+where loc.locationid=cus.locationid   
+and   sud.userid=:P_ADF_USERID   
+and sud.moduleid=:P_ADF_MODULEID   
+ AND  ((  sud.h_level ='C' and loc.locationid=:P_ADF_LOCATIONID and EXISTS (select '' from sys_user_customer suc where suc.customerid=cus.customerid and suc.userid=:P_ADF_USERID) )   
+   
+     or   
+     (sud.h_level='U' and loc.locationid=:P_ADF_LOCATIONID)   
+     OR   
+     (sud.h_level='R' and loc.REGIONID=:P_ADF_REGIONID)   
+     OR   
+     (sud.h_level='A' )   
+        
       )]]></SQLQuery>
   <ViewAttribute
     Name="Regionid"
@@ -227,6 +231,43 @@ and sud.moduleid=:P_ADF_MODULEID
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="VwAllCustomerByLocationVC"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwAllCustomerQVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="VwAllCustomerQVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Locationid"
+        ViewAttribute="Locationid"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ADF_LOCATION_ID"
+        UpperColumns="0"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <AttrArray Name="KeyAttributes">
     <Item Value="Customerid"/>
   </AttrArray>

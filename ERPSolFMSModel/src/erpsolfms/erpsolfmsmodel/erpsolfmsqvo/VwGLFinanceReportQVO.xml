@@ -64,6 +64,20 @@
     Name="AccSoSalesTerritoryView"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesTerritoryView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVwAllCustomerQVO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwAllCustomerQVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="VwAllCustomerByLocationVC"
+      FullName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwAllCustomerQVO.VwAllCustomerByLocationVC"/>
+    <ParameterMap>
+      <PIMap Variable="P_ADF_LOCATION_ID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Locationid==null?"0":Locationid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovCompanyid"
     ListVOName="AccAllCompanyView"
@@ -85,7 +99,7 @@
   </ListBinding>
   <ListBinding
     Name="LovtxtCustomerName"
-    ListVOName="AccAllCustomersView"
+    ListVOName="AccVwAllCustomerQVO"
     ListRangeSize="-1"
     ComboRowCountHint="10"
     NullValueFlag="none"
@@ -106,7 +120,6 @@
       <Item Value="Customerid"/>
     </AttrArray>
     <DisplayCriteria
-      Name="AllCustomersViewFindVC"
       Hint="showAndExecute"/>
   </ListBinding>
   <ListBinding
