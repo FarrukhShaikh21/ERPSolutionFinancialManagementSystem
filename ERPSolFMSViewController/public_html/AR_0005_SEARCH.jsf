@@ -2,6 +2,75 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="AR_0005_SEARCH.jsf" id="d1">
-        <af:form id="f1"></af:form>
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelHeader text="ArNoteMaster" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.ArNoteMasterViewFindVCQuery.queryDescriptor}"
+                              model="#{bindings.ArNoteMasterViewFindVCQuery.queryModel}"
+                              queryListener="#{bindings.ArNoteMasterViewFindVCQuery.processQuery}"
+                              queryOperationListener="#{bindings.ArNoteMasterViewFindVCQuery.processQueryOperation}"
+                              resultComponentId="::resId1" saveQueryMode="hidden"/>
+                    <f:facet name="toolbar">
+                        <af:toolbar id="t1">
+                            <af:button text="Back To Note" id="b1" action="ERP-ACT_BACK_AR-0005-SEARCH"
+                                       icon="#{resource['images:imgExitForm.png']}"/>
+                        </af:toolbar>
+                    </f:facet>
+                </af:panelHeader>
+                <af:table value="#{bindings.ArNoteMasterCRUD.collectionModel}" var="row"
+                          rows="#{bindings.ArNoteMasterCRUD.rangeSize}"
+                          emptyText="#{bindings.ArNoteMasterCRUD.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.ArNoteMasterCRUD.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.ArNoteMasterCRUD.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.ArNoteMasterCRUD.rangeSize}" id="resId1"
+                          columnStretching="last">
+                    <af:column headerText="#{bindings.ArNoteMasterCRUD.hints.NoteCode.label}" id="resId1c1">
+                        <af:link text="#{row.NoteCode}" id="l1" action="ERP-ACT_BACK_AR-0005-SEARCH"
+                                 partialSubmit="true"/>
+                        <af:outputText value="#{row.NoteCode}"
+                                       shortDesc="#{bindings.ArNoteMasterCRUD.hints.NoteCode.tooltip}" id="ot1"
+                                       rendered="false"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ArNoteMasterCRUD.hints.DocDate.label}" id="resId1c2">
+                        <af:outputText value="#{row.DocDate}"
+                                       shortDesc="#{bindings.ArNoteMasterCRUD.hints.DocDate.tooltip}" id="ot2">
+                            <af:convertDateTime pattern="#{bindings.ArNoteMasterCRUD.hints.DocDate.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.ArNoteMasterCRUD.hints.DocTypeId.label}" id="resId1c3">
+                        <af:outputText value="#{row.DocTypeId}"
+                                       shortDesc="#{bindings.ArNoteMasterCRUD.hints.DocTypeId.tooltip}" id="ot3"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ArNoteMasterCRUD.hints.Customerid.label}" id="resId1c4">
+                        <af:outputText value="#{row.Customerid}"
+                                       shortDesc="#{bindings.ArNoteMasterCRUD.hints.Customerid.tooltip}" id="ot4"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ArNoteMasterCRUD.hints.txtCustomerName.label}" id="resId1c5">
+                        <af:outputText value="#{row.txtCustomerName}"
+                                       shortDesc="#{bindings.ArNoteMasterCRUD.hints.txtCustomerName.tooltip}" id="ot5"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ArNoteMasterCRUD.hints.txtSalesPersonName.label}" id="resId1c6">
+                        <af:outputText value="#{row.txtSalesPersonName}"
+                                       shortDesc="#{bindings.ArNoteMasterCRUD.hints.txtSalesPersonName.tooltip}"
+                                       id="ot6"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ArNoteMasterCRUD.hints.Locationid.label}" id="resId1c7">
+                        <af:outputText value="#{row.Locationid}"
+                                       shortDesc="#{bindings.ArNoteMasterCRUD.hints.Locationid.tooltip}" id="ot7"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ArNoteMasterCRUD.hints.Submit.label}" id="resId1c8">
+                        <af:outputText value="#{row.Submit}"
+                                       shortDesc="#{bindings.ArNoteMasterCRUD.hints.Submit.tooltip}" id="ot8"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.ArNoteMasterCRUD.hints.Remarks.label}" id="resId1c9">
+                        <af:outputText value="#{row.Remarks}"
+                                       shortDesc="#{bindings.ArNoteMasterCRUD.hints.Remarks.tooltip}" id="ot9"/>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
     </af:document>
 </f:view>
