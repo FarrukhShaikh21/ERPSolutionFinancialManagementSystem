@@ -374,7 +374,7 @@
     ColumnType="DATE"
     TableName="RECEIPT_MASTER_CONTROL">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+      trustMode="trusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -830,12 +830,23 @@
     <validation:MsgIds>
       <validation:Item
         Value="ERP_SOL_SPID"/>
+      <validation:Item
+        Value="ERP_SOL_BRANCH"/>
     </validation:MsgIds>
-    <validation:TransientExpression><![CDATA[if(Salespersonid ==null)
+    <validation:TransientExpression
+      trustMode="trusted"><![CDATA[if(Salespersonid ==null)
 {
 adf.error.raise("ERP_SOL_SPID");
 return false;
 }
+
+if(Branchid ==null)
+{
+adf.error.raise("ERP_SOL_BRANCH");
+return false;
+}
+
+
 return true;]]></validation:TransientExpression>
   </validation:ExpressionValidationBean>
   <ResourceBundle>

@@ -82,6 +82,7 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
         Receiptseq,
         txtSalesPersonName,
         txtBankBranchName,
+        txtSumReceiptAmount,
         ReceiptDetailControlView,
         AllCustomersView,
         SoSalesPersonsView,
@@ -177,6 +178,7 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
     public static final int RECEIPTSEQ = AttributesEnum.Receiptseq.index();
     public static final int TXTSALESPERSONNAME = AttributesEnum.txtSalesPersonName.index();
     public static final int TXTBANKBRANCHNAME = AttributesEnum.txtBankBranchName.index();
+    public static final int TXTSUMRECEIPTAMOUNT = AttributesEnum.txtSumReceiptAmount.index();
     public static final int RECEIPTDETAILCONTROLVIEW = AttributesEnum.ReceiptDetailControlView.index();
     public static final int ALLCUSTOMERSVIEW = AttributesEnum.AllCustomersView.index();
     public static final int SOSALESPERSONSVIEW = AttributesEnum.SoSalesPersonsView.index();
@@ -1148,6 +1150,14 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
      */
     public void settxtBankBranchName(String value) {
         setAttributeInternal(TXTBANKBRANCHNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute txtSumReceiptAmount.
+     * @return the txtSumReceiptAmount
+     */
+    public BigDecimal gettxtSumReceiptAmount() {
+        return (BigDecimal) getAttributeInternal(TXTSUMRECEIPTAMOUNT);
     }
 
     /**

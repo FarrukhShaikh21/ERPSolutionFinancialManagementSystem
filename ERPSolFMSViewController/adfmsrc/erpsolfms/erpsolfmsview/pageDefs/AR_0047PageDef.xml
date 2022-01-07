@@ -104,5 +104,10 @@
         <Item Value="Submit"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="txtSumReceiptAmount">
+      <AttrNames>
+        <Item Value="txtSumReceiptAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

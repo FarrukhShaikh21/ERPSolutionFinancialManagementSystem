@@ -575,6 +575,33 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtSumReceiptAmount"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC">
+    <TransientExpression
+      trustMode="trusted"><![CDATA[ReceiptDetailControlView?.sum("Amount")]]></TransientExpression>
+    <RecalcCondition
+      trustMode="trusted"><![CDATA[true]]></RecalcCondition>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView.txtSumReceiptAmount_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <FMT_FORMAT
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView.txtSumReceiptAmount_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView.txtSumReceiptAmount_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="ReceiptMasterControlViewFindVC"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView"
@@ -782,4 +809,8 @@
         Type="void"/>
     </Method>
   </ClientInterface>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

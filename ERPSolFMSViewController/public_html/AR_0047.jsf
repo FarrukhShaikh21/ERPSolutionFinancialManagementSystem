@@ -346,7 +346,7 @@
                                       columns="#{bindings.ReceiptDetailControlDetCRUD.hints.Salespersonid.displayWidth}"
                                       maximumLength="#{bindings.ReceiptDetailControlDetCRUD.hints.Salespersonid.precision}"
                                       shortDesc="#{bindings.ReceiptDetailControlDetCRUD.hints.Salespersonid.tooltip}"
-                                      id="it9" readOnly="true">
+                                      id="it9" readOnly="true" partialTriggers="txtSalesPersonNameId">
                           <f:validator binding="#{row.bindings.Salespersonid.validator}"/>
                         </af:inputText>
                       </af:column>
@@ -378,6 +378,20 @@
                         </af:inputText>
                       </af:column>
                     </af:table>
+                    <f:facet name="secondaryToolbar">
+                      <af:toolbar id="t4">
+                        <af:inputText value="#{bindings.txtSumReceiptAmount.inputValue}"
+                                      label="#{bindings.txtSumReceiptAmount.hints.label}"
+                                      required="#{bindings.txtSumReceiptAmount.hints.mandatory}"
+                                      columns="#{bindings.txtSumReceiptAmount.hints.displayWidth}"
+                                      maximumLength="#{bindings.txtSumReceiptAmount.hints.precision}"
+                                      shortDesc="#{bindings.txtSumReceiptAmount.hints.tooltip}" id="it13"
+                                      readOnly="true" labelStyle="font-weight:bold">
+                          <f:validator binding="#{bindings.txtSumReceiptAmount.validator}"/>
+                          <af:convertNumber groupingUsed="false" pattern="#{bindings.txtSumReceiptAmount.format}"/>
+                        </af:inputText>
+                      </af:toolbar>
+                    </f:facet>
                   </af:panelCollection>
                 </af:gridCell>
               </af:gridRow>
