@@ -13,11 +13,12 @@
     Name="ArNoteMaster"
     Cardinality="1"
     Source="true"
-    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMaster">
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMaster"
+    LockLevel="NONE"
+    DeleteContainee="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="ArNoteMaster"/>
-      <Attr Name="_foreignKey" Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMaster.PkArNoteMaster"/>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_minCardinality" Value="1"/>
     </DesignTime>
@@ -28,11 +29,11 @@
   <AssociationEnd
     Name="ArNoteDetail"
     Cardinality="-1"
-    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail">
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail"
+    HasOwner="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="ArNoteDetail"/>
-      <Attr Name="_foreignKey" Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteDetail.FkArNoteDetNotemaster"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">

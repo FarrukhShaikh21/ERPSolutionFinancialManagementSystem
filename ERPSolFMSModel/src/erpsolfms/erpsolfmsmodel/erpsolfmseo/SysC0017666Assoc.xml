@@ -13,7 +13,9 @@
     Name="ReceiptMasterControl"
     Cardinality="1"
     Source="true"
-    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl">
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl"
+    LockLevel="NONE"
+    DeleteContainee="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="ReceiptMasterControl"/>
@@ -26,7 +28,8 @@
   <AssociationEnd
     Name="ReceiptDetailControl"
     Cardinality="-1"
-    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl">
+    Owner="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptDetailControl"
+    HasOwner="true">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="ReceiptDetailControl"/>
