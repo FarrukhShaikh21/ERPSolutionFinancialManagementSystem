@@ -24,6 +24,7 @@
           <Item Value="txtBankBranchName"/>
           <Item Value="Submit"/>
           <Item Value="Remarks"/>
+          <Item Value="txtSumReceiptAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

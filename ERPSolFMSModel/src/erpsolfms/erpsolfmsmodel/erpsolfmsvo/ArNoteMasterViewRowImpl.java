@@ -64,13 +64,15 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
         Notemasterseq,
         txtCustomerName,
         txtSalesPersonName,
+        txxSumNoteAmount,
         ArNoteDetailView,
         AllCustomersView,
         SoSalesPersonsView,
         AccAllCustomersView,
         AccSoSalesPersonsView,
         AccSoSalesPersonsDefaultVC,
-        AccAllCustomerSalespersonPID;
+        AccAllCustomerSalespersonPID,
+        AccVWYesNoQVO;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -136,6 +138,7 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
     public static final int NOTEMASTERSEQ = AttributesEnum.Notemasterseq.index();
     public static final int TXTCUSTOMERNAME = AttributesEnum.txtCustomerName.index();
     public static final int TXTSALESPERSONNAME = AttributesEnum.txtSalesPersonName.index();
+    public static final int TXXSUMNOTEAMOUNT = AttributesEnum.txxSumNoteAmount.index();
     public static final int ARNOTEDETAILVIEW = AttributesEnum.ArNoteDetailView.index();
     public static final int ALLCUSTOMERSVIEW = AttributesEnum.AllCustomersView.index();
     public static final int SOSALESPERSONSVIEW = AttributesEnum.SoSalesPersonsView.index();
@@ -143,6 +146,7 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
     public static final int ACCSOSALESPERSONSVIEW = AttributesEnum.AccSoSalesPersonsView.index();
     public static final int ACCSOSALESPERSONSDEFAULTVC = AttributesEnum.AccSoSalesPersonsDefaultVC.index();
     public static final int ACCALLCUSTOMERSALESPERSONPID = AttributesEnum.AccAllCustomerSalespersonPID.index();
+    public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -817,6 +821,14 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
     }
 
     /**
+     * Gets the attribute value for the calculated attribute txxSumNoteAmount.
+     * @return the txxSumNoteAmount
+     */
+    public Integer gettxxSumNoteAmount() {
+        return (Integer) getAttributeInternal(TXXSUMNOTEAMOUNT);
+    }
+
+    /**
      * Gets the associated <code>RowIterator</code> using master-detail link ArNoteDetailView.
      */
     public RowIterator getArNoteDetailView() {
@@ -877,6 +889,13 @@ public class ArNoteMasterViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccAllCustomerSalespersonPID() {
         return (RowSet) getAttributeInternal(ACCALLCUSTOMERSALESPERSONPID);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccVWYesNoQVO.
+     */
+    public RowSet getAccVWYesNoQVO() {
+        return (RowSet) getAttributeInternal(ACCVWYESNOQVO);
     }
 
     @Override

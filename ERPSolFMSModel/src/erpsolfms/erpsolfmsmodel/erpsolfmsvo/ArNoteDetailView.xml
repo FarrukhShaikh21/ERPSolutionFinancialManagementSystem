@@ -286,7 +286,7 @@
     SQLType="VARCHAR"
     LOVName="LovtxtCOADescription">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[VWChartOfAccountQVO?.Description]]></TransientExpression>
+      trustMode="trusted"><![CDATA[VWChartOfAccountQVO?.Description]]></TransientExpression>
     <RecalcCondition
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>

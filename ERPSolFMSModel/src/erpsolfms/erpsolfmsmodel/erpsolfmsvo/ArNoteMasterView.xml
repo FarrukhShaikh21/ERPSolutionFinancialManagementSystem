@@ -67,6 +67,10 @@
     Name="AccAllCustomerSalespersonPID"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomerSalespersonView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWYesNoQVO"
+    ViewObjectName="erpsolglob.erpsolglobmodel.erpsolglobqvo.VWYesNoQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtCustomerName"
     ListVOName="AccAllCustomersView"
@@ -113,6 +117,25 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
       <Item Value="Salespersonid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovSubmit"
+    ListVOName="AccVWYesNoQVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Submit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -185,7 +208,15 @@
     PrecisionRule="true"
     EntityAttrName="Submit"
     EntityUsage="ArNoteMaster"
-    AliasName="SUBMIT"/>
+    AliasName="SUBMIT"
+    LOVName="LovSubmit">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PostToIntFace"
     PrecisionRule="true"
@@ -387,10 +418,33 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txxSumNoteAmount"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Integer"
+    ColumnType="INTEGER"
+    AliasName="VIEW_ATTR"
+    SQLType="INTEGER">
+    <TransientExpression><![CDATA[ArNoteDetailView?.sum("FcurrAmount")]]></TransientExpression>
+    <RecalcCondition
+      trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteMasterView.txxSumNoteAmount_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="ArNoteMasterViewFindVC"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ArNoteMasterView"
-    Conjunction="AND">
+    Conjunction="AND"
+    Mode="3">
     <Properties>
       <CustomProperties>
         <Property
@@ -428,6 +482,12 @@
       <ViewCriteriaItem
         Name="DocDate"
         ViewAttribute="DocDate"
+        Operator="BETWEEN"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="txxSumNoteAmount"
+        ViewAttribute="txxSumNoteAmount"
         Operator="BETWEEN"
         Conjunction="AND"
         Required="Optional"/>
@@ -518,4 +578,8 @@
         Type="void"/>
     </Method>
   </ClientInterface>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

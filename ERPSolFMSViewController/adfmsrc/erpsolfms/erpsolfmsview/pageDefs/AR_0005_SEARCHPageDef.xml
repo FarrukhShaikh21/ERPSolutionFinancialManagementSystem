@@ -22,6 +22,7 @@
           <Item Value="Locationid"/>
           <Item Value="Submit"/>
           <Item Value="Remarks"/>
+          <Item Value="txxSumNoteAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

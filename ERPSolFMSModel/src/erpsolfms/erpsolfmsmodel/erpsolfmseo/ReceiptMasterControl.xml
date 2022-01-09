@@ -17,6 +17,10 @@
     <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
+  <ViewAccessor
+    Name="AccVwFuncUserBackDateAllowed"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwFuncUserBackDateAllowedQVO"
+    RowLevelBinds="true"/>
   <Attribute
     Name="ReceiptNo"
     Precision="20"
@@ -373,8 +377,7 @@
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="RECEIPT_MASTER_CONTROL">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <TransientExpression><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -504,6 +507,37 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:ExpressionValidationBean
+      Name="DocDateRule0"
+      OperandType="EXPR"
+      Inverse="false">
+      <validation:MsgIds>
+        <validation:Item
+          Value="ERP_SOL_AR_NOTE_USER_DATE"/>
+      </validation:MsgIds>
+      <validation:ResExpressions
+        Name="DocDateRule0_ResExprList">
+        <validation:Expression
+          trustMode="trusted"
+          Name="0"><![CDATA[txtErrorMessage]]></validation:Expression>
+      </validation:ResExpressions>
+      <validation:TransientExpression
+        trustMode="trusted"><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
+AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_MODULEID", "AR-0047");
+AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_DATE", newValue);
+println("0")
+AccVwFuncUserBackDateAllowed.executeQuery();
+println("a")
+println(AccVwFuncUserBackDateAllowed.first().getAttribute("Status"));
+if(!AccVwFuncUserBackDateAllowed.first().getAttribute("Status").toString().equals("ERPSOLSUCCESS"))
+{
+settxtErrorMessage(AccVwFuncUserBackDateAllowed.first().getAttribute("Status").toString());
+adf.error.raise("ERP_SOL_AR_NOTE_USER_DATE");
+return false;
+}
+
+return true;]]></validation:TransientExpression>
+    </validation:ExpressionValidationBean>
   </Attribute>
   <Attribute
     Name="ChequeCancel"
@@ -763,6 +797,24 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtErrorMessage"
+    Precision="80"
+    ColumnName="TXT_ERROR_MESSAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ReceiptMasterControl.txtErrorMessage_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="ReceiptDetailControl"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.SysC0017666Assoc"
@@ -833,8 +885,7 @@
       <validation:Item
         Value="ERP_SOL_BRANCH"/>
     </validation:MsgIds>
-    <validation:TransientExpression
-      trustMode="trusted"><![CDATA[if(Salespersonid ==null)
+    <validation:TransientExpression><![CDATA[if(Salespersonid ==null)
 {
 adf.error.raise("ERP_SOL_SPID");
 return false;

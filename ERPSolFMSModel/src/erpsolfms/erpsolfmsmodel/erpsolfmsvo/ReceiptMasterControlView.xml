@@ -585,10 +585,8 @@
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
     SQLType="NUMERIC">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[ReceiptDetailControlView?.sum("Amount")]]></TransientExpression>
-    <RecalcCondition
-      trustMode="trusted"><![CDATA[true]]></RecalcCondition>
+    <TransientExpression><![CDATA[ReceiptDetailControlView?.sum("Amount")]]></TransientExpression>
+    <RecalcCondition><![CDATA[true]]></RecalcCondition>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -605,7 +603,8 @@
   <ViewCriteria
     Name="ReceiptMasterControlViewFindVC"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.ReceiptMasterControlView"
-    Conjunction="AND">
+    Conjunction="AND"
+    Mode="3">
     <Properties>
       <CustomProperties>
         <Property
@@ -659,40 +658,17 @@
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem
-        Name="ReceiptMasterControlViewFindVC_ReceiptMasterControlViewCriteria_row_0_ArPosted"
-        ViewAttribute="ArPosted"
-        Operator="STARTSWITH"
-        Conjunction="AND"
-        Required="Optional"/>
-      <ViewCriteriaItem
         Name="DocDate"
         ViewAttribute="DocDate"
         Operator="BETWEEN"
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem
-        Name="ReceiptMasterControlViewFindVC_ReceiptMasterControlViewCriteria_row_0_AllCustomersView"
-        ViewAttribute="AllCustomersView"
-        Operator="EXISTS"
+        Name="txtSumReceiptAmount"
+        ViewAttribute="txtSumReceiptAmount"
+        Operator="BETWEEN"
         Conjunction="AND"
-        IsNestedCriteria="true"
-        Required="Optional">
-        <ViewCriteria
-          Name="AllCustomersViewNestedCriteria"
-          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView"
-          Conjunction="AND">
-          <ViewCriteriaRow
-            Name="AllCustomersViewNestedCriteria_row_0"
-            UpperColumns="1">
-            <ViewCriteriaItem
-              Name="CustomerName"
-              ViewAttribute="CustomerName"
-              Operator="CONTAINS"
-              Conjunction="AND"
-              Required="Optional"/>
-          </ViewCriteriaRow>
-        </ViewCriteria>
-      </ViewCriteriaItem>
+        Required="Optional"/>
       <ViewCriteriaItem
         Name="AllBankBranchesView"
         ViewAttribute="AllBankBranchesView"
@@ -710,6 +686,29 @@
             <ViewCriteriaItem
               Name="BranchName"
               ViewAttribute="BranchName"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+      <ViewCriteriaItem
+        Name="ReceiptMasterControlViewFindVC_ReceiptMasterControlViewCriteria_row_0_AllCustomersView"
+        ViewAttribute="AllCustomersView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllCustomersViewNestedCriteria"
+          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllCustomersView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllCustomersViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="CustomerName"
+              ViewAttribute="CustomerName"
               Operator="CONTAINS"
               Conjunction="AND"
               Required="Optional"/>

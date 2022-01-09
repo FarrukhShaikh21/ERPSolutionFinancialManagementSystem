@@ -132,7 +132,7 @@
                           <af:selectOneChoice label="Label 1" id="soc1" value="#{bindings.DocTypeId.inputValue}"
                                               simple="true" contentStyle="width:30%">
                             <af:selectItem value="SDB" id="si1" label="Debit Note"/>
-                            <af:selectItem value="SDC" id="si2" label="Credit Note"/>
+                            <af:selectItem value="SCR" id="si2" label="Credit Note"/>
                           </af:selectOneChoice>
                         </af:gridCell>
                       </af:gridRow>
