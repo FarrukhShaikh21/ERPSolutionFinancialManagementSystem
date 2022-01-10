@@ -54,6 +54,7 @@ public class ArNoteDetailViewRowImpl extends ViewRowImpl {
         VWChartOfAccountQVO,
         VWChartOfAccountQVO1,
         ArNoteMasterView,
+        VWCostCenterQVO,
         AccInItemsView,
         AccVWChartOfAccountQVO;
         static AttributesEnum[] vals = null;
@@ -112,6 +113,7 @@ public class ArNoteDetailViewRowImpl extends ViewRowImpl {
     public static final int VWCHARTOFACCOUNTQVO = AttributesEnum.VWChartOfAccountQVO.index();
     public static final int VWCHARTOFACCOUNTQVO1 = AttributesEnum.VWChartOfAccountQVO1.index();
     public static final int ARNOTEMASTERVIEW = AttributesEnum.ArNoteMasterView.index();
+    public static final int VWCOSTCENTERQVO = AttributesEnum.VWCostCenterQVO.index();
     public static final int ACCINITEMSVIEW = AttributesEnum.AccInItemsView.index();
     public static final int ACCVWCHARTOFACCOUNTQVO = AttributesEnum.AccVWChartOfAccountQVO.index();
 
@@ -615,6 +617,20 @@ public class ArNoteDetailViewRowImpl extends ViewRowImpl {
      */
     public void setArNoteMasterView(Row value) {
         setAttributeInternal(ARNOTEMASTERVIEW, value);
+    }
+
+    /**
+     * Gets the associated <code>Row</code> using master-detail link VWCostCenterQVO.
+     */
+    public Row getVWCostCenterQVO() {
+        return (Row) getAttributeInternal(VWCOSTCENTERQVO);
+    }
+
+    /**
+     * Sets the master-detail link VWCostCenterQVO between this object and <code>value</code>.
+     */
+    public void setVWCostCenterQVO(Row value) {
+        setAttributeInternal(VWCOSTCENTERQVO, value);
     }
 
     /**

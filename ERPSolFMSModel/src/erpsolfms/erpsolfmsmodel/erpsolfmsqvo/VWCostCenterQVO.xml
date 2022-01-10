@@ -68,6 +68,11 @@
   <AttrArray Name="KeyAttributes">
     <Item Value="Costcenterid"/>
   </AttrArray>
+  <ViewLinkAccessor
+    Name="ArNoteDetailView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VWCostCenterArNoteDetailCostCenterLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>

@@ -285,8 +285,7 @@
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR"
     LOVName="LovtxtCOADescription">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[VWChartOfAccountQVO?.Description]]></TransientExpression>
+    <TransientExpression><![CDATA[VWChartOfAccountQVO?.Description]]></TransientExpression>
     <RecalcCondition
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>
@@ -355,6 +354,12 @@
   <ViewLinkAccessor
     Name="ArNoteMasterView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmsvo.FkArNoteDetNotemasterLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="VWCostCenterQVO"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VWCostCenterArNoteDetailCostCenterLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
