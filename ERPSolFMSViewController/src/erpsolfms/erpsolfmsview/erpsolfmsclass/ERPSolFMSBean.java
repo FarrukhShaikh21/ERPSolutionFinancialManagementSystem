@@ -247,7 +247,17 @@ public class ERPSolFMSBean {
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VWChartOfAccountAutoSuggestRO"," UPPER(CONCAT(GLCODE,Description))", "Description", "Glcode", 10,"ERPSolFMSAppModuleDataControl");
         return ResultList;
         
-    }   
+    }  
+    
+    public List<SelectItem> doERPSolGetAutoSuggestedCostCenterValues(String pStringValues) {
+    //public static List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
+        //public List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
+        List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VWCostCenterAutoSuggestRO"," UPPER(CONCAT(Costcenterid,Description))", "Description", "Costcenterid", 10,"ERPSolFMSAppModuleDataControl");
+        return ResultList;
+        
+    }  
+    
     
     
     public void doERPSolDialogConfirm(DialogEvent erpsolde) {

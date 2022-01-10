@@ -312,7 +312,7 @@
                                                       shortDesc="#{bindings.ArNoteDetailDetCRUD.hints.txtCostCenterDescription.tooltip}"
                                                       autoSubmit="true">
                           <f:validator binding="#{row.bindings.txtCostCenterDescription.validator}"/>
-                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCOAValues}"/>
+                          <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedCostCenterValues}"/>
                         </af:inputComboboxListOfValues>
                       </af:column>
                       <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.Costcenter.label}" id="c5">

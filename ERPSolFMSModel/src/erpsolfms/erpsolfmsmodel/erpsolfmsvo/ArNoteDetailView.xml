@@ -31,6 +31,10 @@
     Name="AccVWChartOfAccountQVO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWChartOfAccountQVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWCostCenterQVO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWCostCenterQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtCOADescription"
     ListVOName="AccVWChartOfAccountQVO"
@@ -85,7 +89,7 @@
   </ListBinding>
   <ListBinding
     Name="LovtxtCostCenterDescription"
-    ListVOName="AccVWChartOfAccountQVO"
+    ListVOName="AccVWCostCenterQVO"
     ListRangeSize="-1"
     ComboRowCountHint="10"
     NullValueFlag="none"
@@ -99,11 +103,11 @@
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Description"/>
-      <Item Value="Glcode"/>
+      <Item Value="Costcenterid"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
-      <Item Value="Glcode"/>
+      <Item Value="Costcenterid"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -315,7 +319,7 @@
     SQLType="VARCHAR"
     LOVName="LovtxtCostCenterDescription">
     <TransientExpression
-      trustMode="untrusted"><![CDATA[VWChartOfAccountQVO1?.Description]]></TransientExpression>
+      trustMode="untrusted"><![CDATA[VWCostCenterQVO?.Description]]></TransientExpression>
     <RecalcCondition
       trustMode="untrusted"><![CDATA[true]]></RecalcCondition>
     <Properties>

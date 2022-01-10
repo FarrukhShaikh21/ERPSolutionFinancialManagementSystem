@@ -51,6 +51,9 @@
   <ViewUsage
     Name="VwAllCustomerAutoSuggestRO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwAllCustomerQVO"/>
+  <ViewUsage
+    Name="VWCostCenterAutoSuggestRO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWCostCenterQVO"/>
   <ViewLinkUsage
     Name="SysC0017666Link1"
     ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"

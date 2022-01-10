@@ -56,7 +56,8 @@ public class ArNoteDetailViewRowImpl extends ViewRowImpl {
         ArNoteMasterView,
         VWCostCenterQVO,
         AccInItemsView,
-        AccVWChartOfAccountQVO;
+        AccVWChartOfAccountQVO,
+        AccVWCostCenterQVO;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -116,6 +117,7 @@ public class ArNoteDetailViewRowImpl extends ViewRowImpl {
     public static final int VWCOSTCENTERQVO = AttributesEnum.VWCostCenterQVO.index();
     public static final int ACCINITEMSVIEW = AttributesEnum.AccInItemsView.index();
     public static final int ACCVWCHARTOFACCOUNTQVO = AttributesEnum.AccVWChartOfAccountQVO.index();
+    public static final int ACCVWCOSTCENTERQVO = AttributesEnum.AccVWCostCenterQVO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -645,6 +647,13 @@ public class ArNoteDetailViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccVWChartOfAccountQVO() {
         return (RowSet) getAttributeInternal(ACCVWCHARTOFACCOUNTQVO);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccVWCostCenterQVO.
+     */
+    public RowSet getAccVWCostCenterQVO() {
+        return (RowSet) getAttributeInternal(ACCVWCOSTCENTERQVO);
     }
 
     @Override
