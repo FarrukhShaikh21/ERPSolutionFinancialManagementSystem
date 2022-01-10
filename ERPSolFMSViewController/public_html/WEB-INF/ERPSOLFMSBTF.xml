@@ -111,6 +111,12 @@
         <fixed-outcome>ERP-ACT-GL-0134</fixed-outcome>
       </outcome>
     </method-call>
+    <method-call id="ExecuteWithParamsReportDettailFMS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-GOTO-FMS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__1">
       <from-activity-id>doERPSolFMSSessionGlobals</from-activity-id>
       <control-flow-case id="__2">
@@ -214,7 +220,7 @@
       <from-activity-id>ExecuteWithParamsReportFMS</from-activity-id>
       <control-flow-case id="__36">
         <from-outcome>ERP-GOTO-FMS-MAIN</from-outcome>
-        <to-activity-id>ERPSolFMSMain</to-activity-id>
+        <to-activity-id>ExecuteWithParamsReportDettailFMS</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__37">
@@ -229,6 +235,13 @@
       <control-flow-case id="__40">
         <from-outcome>ERP-ACT-GL-0134</from-outcome>
         <to-activity-id>GL_0134</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__41">
+      <from-activity-id>ExecuteWithParamsReportDettailFMS</from-activity-id>
+      <control-flow-case id="__42">
+        <from-outcome>ERP-GOTO-FMS-MAIN</from-outcome>
+        <to-activity-id>ERPSolFMSMain</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility>
