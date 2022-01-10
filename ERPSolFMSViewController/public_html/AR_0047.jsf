@@ -100,7 +100,8 @@
                           <af:inputDate value="#{bindings.DocDate.inputValue}"
                                         required="#{bindings.DocDate.hints.mandatory}"
                                         columns="#{bindings.DocDate.hints.displayWidth}"
-                                        shortDesc="#{bindings.DocDate.hints.tooltip}" id="id1" simple="true">
+                                        shortDesc="#{bindings.DocDate.hints.tooltip}" id="id1" simple="true"
+                                        autoSubmit="true">
                             <f:validator binding="#{bindings.DocDate.validator}"/>
                             <af:convertDateTime pattern="#{bindings.DocDate.format}"/>
                           </af:inputDate>
@@ -357,7 +358,7 @@
                                       columns="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.displayWidth}"
                                       maximumLength="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.precision}"
                                       shortDesc="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.tooltip}"
-                                      id="it6">
+                                      id="it6" autoSubmit="true">
                           <f:validator binding="#{row.bindings.FcurrAmount.validator}"/>
                           <af:convertNumber groupingUsed="false"
                                             pattern="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrAmount.format}"/>
@@ -371,7 +372,7 @@
                                       columns="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.displayWidth}"
                                       maximumLength="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.precision}"
                                       shortDesc="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.tooltip}"
-                                      id="it10">
+                                      id="it10" autoSubmit="true">
                           <f:validator binding="#{row.bindings.FcurrTaxAmount.validator}"/>
                           <af:convertNumber groupingUsed="false"
                                             pattern="#{bindings.ReceiptDetailControlDetCRUD.hints.FcurrTaxAmount.format}"/>

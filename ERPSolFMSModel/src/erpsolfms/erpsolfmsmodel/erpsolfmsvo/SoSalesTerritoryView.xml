@@ -78,4 +78,10 @@
     EntityAttrName="IsDefault"
     EntityUsage="SoSalesTerritory"
     AliasName="IS_DEFAULT"/>
+  <ViewAttribute
+    Name="Region"
+    PrecisionRule="true"
+    EntityAttrName="Region"
+    EntityUsage="SoSalesTerritory"
+    AliasName="REGION"/>
 </ViewObject>

@@ -119,7 +119,8 @@
                                                                                   columns="#{bindings.txtSalespersonName.hints.displayWidth}"
                                                                                   shortDesc="#{bindings.txtSalespersonName.hints.tooltip}"
                                                                                   simple="true"
-                                                                                  partialTriggers="txtLocationNameId txtCustomerNameId">
+                                                                                  partialTriggers="txtLocationNameId txtCustomerNameId"
+                                                                                  autoSubmit="true">
                                                         <f:validator binding="#{bindings.txtSalespersonName.validator}"/>
                                                         <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedSalesPersonValues}"/>
                                                     </af:inputComboboxListOfValues>

@@ -78,6 +78,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccVwRegionQVO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwRegionQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovCompanyid"
     ListVOName="AccAllCompanyView"
@@ -173,7 +177,7 @@
   </ListBinding>
   <ListBinding
     Name="LovRegionid"
-    ListVOName="AccSoSalesTerritoryView"
+    ListVOName="AccVwRegionQVO"
     ListRangeSize="-1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
@@ -183,11 +187,10 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="Salesterritoryid"/>
+      <Item Value="Region"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Salesterritoryid"/>
-      <Item Value="Description"/>
+      <Item Value="Region"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

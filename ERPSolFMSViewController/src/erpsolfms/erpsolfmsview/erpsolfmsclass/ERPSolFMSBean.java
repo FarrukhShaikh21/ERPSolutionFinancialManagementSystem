@@ -386,7 +386,7 @@ public class ERPSolFMSBean {
         AttributeBinding ERPCompanyid       =(AttributeBinding)ERPSolbc.getControlBinding("Companyid");
         AttributeBinding ERPRegionid        =(AttributeBinding)ERPSolbc.getControlBinding("Regionid");
         AttributeBinding ERPLocationid      =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
-//        AttributeBinding ERPStoreid         =(AttributeBinding)ERPSolbc.getControlBinding("Storeid");
+        AttributeBinding ERPSalesTerritory  =(AttributeBinding)ERPSolbc.getControlBinding("txtSalesTerritoryId");
         AttributeBinding ERPCustomerid      =(AttributeBinding)ERPSolbc.getControlBinding("Customerid");
         AttributeBinding ERPSalespersonid   =(AttributeBinding)ERPSolbc.getControlBinding("Salespersonid");
 //        AttributeBinding ERPProductgroup    =(AttributeBinding)ERPSolbc.getControlBinding("Productgroup");
@@ -397,9 +397,9 @@ public class ERPSolFMSBean {
         reportParameter="COMPANY="+ (ERPCompanyid.getInputValue()==null?"":ERPCompanyid.getInputValue());
         reportParameter+="&P_REGID="+(ERPRegionid.getInputValue()==null?"":ERPRegionid.getInputValue());
         reportParameter+="&P_LOCID="+(ERPLocationid.getInputValue()==null?"":ERPLocationid.getInputValue());
-//        reportParameter+="&P_STOREID_ID="+(ERPStoreid.getInputValue()==null?"":ERPStoreid.getInputValue());
-        reportParameter+="&custid="+(ERPCustomerid.getInputValue()==null?"":ERPCustomerid.getInputValue());
-        reportParameter+="&salepersonid="+(ERPSalespersonid.getInputValue()==null?"":ERPSalespersonid.getInputValue());
+        reportParameter+="&P_TERRITORY_ID="+(ERPSalesTerritory.getInputValue()==null?"":ERPSalesTerritory.getInputValue());
+        reportParameter+="&CUSTID="+(ERPCustomerid.getInputValue()==null?"":ERPCustomerid.getInputValue());
+        reportParameter+="&SALEPERSONID="+(ERPSalespersonid.getInputValue()==null?"":ERPSalespersonid.getInputValue());
 //        reportParameter+="&P_PRODUCT_GROUP_ID="+(ERPProductgroup.getInputValue()==null?"":ERPProductgroup.getInputValue());
 //        reportParameter+="&P_PRODUCT_ID="+(ERPProductid.getInputValue()==null?"":ERPProductid.getInputValue());
         reportParameter+="&FROM_DATE="+(ERPFromDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPFromDate.getInputValue() ) );

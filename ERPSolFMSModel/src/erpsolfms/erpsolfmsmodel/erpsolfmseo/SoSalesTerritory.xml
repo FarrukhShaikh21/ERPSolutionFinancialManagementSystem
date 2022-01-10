@@ -89,7 +89,7 @@
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="SO_SALES_TERRITORY"/>
   <Attribute
@@ -108,7 +108,7 @@
     Name="ModifiedDate"
     ColumnName="MODIFIED_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="SO_SALES_TERRITORY"/>
   <Attribute
@@ -121,6 +121,18 @@
     TableName="SO_SALES_TERRITORY">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Region"
+    Precision="20"
+    ColumnName="REGION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SO_SALES_TERRITORY">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
   </Attribute>
   <Key

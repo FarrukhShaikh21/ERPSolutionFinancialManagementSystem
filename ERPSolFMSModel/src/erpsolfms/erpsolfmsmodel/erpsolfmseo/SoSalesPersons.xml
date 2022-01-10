@@ -23,6 +23,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.SoSalesPersons.Salespersonid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Salesterritoryid"
@@ -60,6 +68,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.SoSalesPersons.Name_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CommissionAllowed"
@@ -210,4 +226,8 @@
       <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.SoSalesPersons.Salespersonid"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
 </Entity>
