@@ -69,8 +69,8 @@ public class VwGLFinanceReportQVOImpl extends ViewObjectImpl implements VwGLFina
         vo.remove();
     }
     public void doUnSubmitARRecord() {
-                CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=PKG_WARRANTY_CARD.FUNC_UNSUBMIT_WARRANTY_CARD('"+this.first().getAttribute("txtRecordID")+"','"+this.first().getAttribute("txtDocTypeId")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
-                System.out.println("begin ?:=PKG_WARRANTY_CARD.FUNC_UNSUBMIT_WARRANTY_CARD('"+this.first().getAttribute("txtRecordID")+"','"+this.first().getAttribute("txtDocTypeId")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;");
+                CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_receipt.func_unsubmit_ar_document('"+this.first().getAttribute("txtDoctypeId")+"','"+this.first().getAttribute("txtDocumentId")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
+//                System.out.println("begin ?:=PKG_WARRANTY_CARD.FUNC_UNSUBMIT_WARRANTY_CARD('"+this.first().getAttribute("txtRecordID")+"','"+this.first().getAttribute("txtDocTypeId")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;");
                 try {
                     cs.registerOutParameter(1, Types.VARCHAR);
                     cs.executeUpdate();

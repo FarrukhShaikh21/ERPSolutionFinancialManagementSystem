@@ -674,6 +674,13 @@
         Name="_return_type_"
         Type="void"/>
     </Method>
+    <Method
+      Name="doUnSubmitARRecord"
+      MethodName="doUnSubmitARRecord">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+    </Method>
   </ClientInterface>
   <ResourceBundle>
     <PropertiesBundle

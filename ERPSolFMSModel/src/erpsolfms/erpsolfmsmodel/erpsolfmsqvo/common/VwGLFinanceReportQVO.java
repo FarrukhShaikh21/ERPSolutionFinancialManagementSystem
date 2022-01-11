@@ -9,5 +9,7 @@ public interface VwGLFinanceReportQVO extends ViewObject {
     void doExecuteAgingProcedure();
 
     void doSetERPSolReportDefault();
+
+    void doUnSubmitARRecord();
 }
 
