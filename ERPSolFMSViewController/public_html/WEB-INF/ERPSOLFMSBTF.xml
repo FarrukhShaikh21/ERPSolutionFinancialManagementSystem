@@ -120,6 +120,12 @@
     <view id="AR_0056">
       <page>/AR_0056.jsf</page>
     </view>
+    <method-call id="ExecuteWithParamsReverseFMS">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ERP-GOTO-FMS-MAIN</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__1">
       <from-activity-id>doERPSolFMSSessionGlobals</from-activity-id>
       <control-flow-case id="__2">
@@ -247,6 +253,13 @@
     <control-flow-rule id="__41">
       <from-activity-id>ExecuteWithParamsReportDettailFMS</from-activity-id>
       <control-flow-case id="__42">
+        <from-outcome>ERP-GOTO-FMS-MAIN</from-outcome>
+        <to-activity-id>ExecuteWithParamsReverseFMS</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__43">
+      <from-activity-id>ExecuteWithParamsReverseFMS</from-activity-id>
+      <control-flow-case id="__45">
         <from-outcome>ERP-GOTO-FMS-MAIN</from-outcome>
         <to-activity-id>ERPSolFMSMain</to-activity-id>
       </control-flow-case>

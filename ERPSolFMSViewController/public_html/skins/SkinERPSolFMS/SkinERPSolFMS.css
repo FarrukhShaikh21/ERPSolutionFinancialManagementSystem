@@ -46,6 +46,13 @@ af|inputDate::label{
 }
 
 
+af|selectOneChoice::label{
+    font-weight: bold;
+    color: Black;
+    font-weight: bold;
+}
+
+
 af|inputComboboxListOfValues::label{
     font-weight: bold;
     color: Blue;

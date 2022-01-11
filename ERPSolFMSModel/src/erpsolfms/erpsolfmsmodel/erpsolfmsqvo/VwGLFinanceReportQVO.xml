@@ -654,6 +654,12 @@
           ResId="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwGLFinanceReportQVO.txtDescription_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="txtDoctypeId"/>
+      <Item
+        Value="txtDocumentId"/>
+    </Dependencies>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Pk"/>
