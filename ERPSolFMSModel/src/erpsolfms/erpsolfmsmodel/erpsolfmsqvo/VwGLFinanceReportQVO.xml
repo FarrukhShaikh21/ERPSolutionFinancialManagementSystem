@@ -82,6 +82,14 @@
     Name="AccVwRegionQVO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwRegionQVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWDocumentTypeForUnsubmit"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWDocumentTypeForUnsubmitQVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVwARDocumentIdForUnsubmit"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwARDocumentIdForUnsubmitQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovCompanyid"
     ListVOName="AccAllCompanyView"
@@ -210,6 +218,49 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Salesterritoryid"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtDoctypeId"
+    ListVOName="AccVWDocumentTypeForUnsubmit"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtDoctypeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Doctypeid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ModuleName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtDocumentId"
+    ListVOName="AccVwARDocumentIdForUnsubmit"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtDocumentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtDescription"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ReceiptNo"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ReceiptNo"/>
       <Item Value="Description"/>
     </AttrArray>
     <DisplayCriteria/>
@@ -534,6 +585,73 @@
           Value="20"/>
         <CONTROLTYPE
           Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtDoctypeId"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LovtxtDoctypeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwGLFinanceReportQVO.txtDoctypeId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtDocumentId"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LovtxtDocumentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwGLFinanceReportQVO.txtDocumentId_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="txtDoctypeId"/>
+    </Dependencies>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtDescription"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwGLFinanceReportQVO.txtDescription_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

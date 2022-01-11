@@ -25,8 +25,8 @@ public class ArNoteMasterViewImpl extends ViewObjectImpl implements ArNoteMaster
     }
     public void doSuperviseARNoteMaster() {
         
-        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_ar_note.func_submit_ar_note('"+this.getCurrentRow().getAttribute("NoteCode")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
-        System.out.println("begin ?:=pkg_ar_note.func_submit_ar_note('"+this.getCurrentRow().getAttribute("NoteCode")+"'); END;");
+        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_receipt.func_submit_ar_note('"+this.getCurrentRow().getAttribute("NoteCode")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
+        System.out.println("begin ?:=pkg_receipt.func_submit_ar_note('"+this.getCurrentRow().getAttribute("NoteCode")+"'); END;");
         try {
             cs.registerOutParameter(1, Types.VARCHAR);
             cs.executeUpdate();

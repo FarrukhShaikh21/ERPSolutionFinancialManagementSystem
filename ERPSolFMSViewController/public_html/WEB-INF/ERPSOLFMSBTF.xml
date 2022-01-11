@@ -117,6 +117,9 @@
         <fixed-outcome>ERP-GOTO-FMS-MAIN</fixed-outcome>
       </outcome>
     </method-call>
+    <view id="AR_0056">
+      <page>/AR_0056.jsf</page>
+    </view>
     <control-flow-rule id="__1">
       <from-activity-id>doERPSolFMSSessionGlobals</from-activity-id>
       <control-flow-case id="__2">
@@ -151,6 +154,10 @@
       <control-flow-case id="__34">
         <from-outcome>ERP-ACT-GL-0134</from-outcome>
         <to-activity-id>doSetERPSolReportDefault</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__44">
+        <from-outcome>ERP-ACT-AR-0056</from-outcome>
+        <to-activity-id>AR_0056</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__15">

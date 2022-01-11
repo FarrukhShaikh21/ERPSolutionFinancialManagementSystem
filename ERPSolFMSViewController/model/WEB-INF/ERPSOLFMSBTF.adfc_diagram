@@ -288,7 +288,7 @@
       <property
          name="fromOutcome">ACT-ERP-EXIT-FORM</property>
       <property
-         name="sdm:polyPoints">R50,168.5,341.09766,284.6787,257.44824,L50</property>
+         name="sdm:polyPoints">R50,168.5,341.09766,284.6787,260.94824,L54</property>
    </ControlFlowCase>
    <View
       id="View27">
@@ -396,7 +396,7 @@
       <property
          name="fromOutcome">ERP-GOTO-FMS-MAIN</property>
       <property
-         name="sdm:polyPoints">T56,-206.14844,134.09766,325.6787,203.44824,T50</property>
+         name="sdm:polyPoints">L50,-250.64844,188.09766,-301.64844,265.09766,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall37">
@@ -419,7 +419,7 @@
       <property
          name="fromOutcome">ERP-GOTO-FMS-MAIN</property>
       <property
-         name="sdm:polyPoints">B50,-190.64844,98.09766,-213.14844,129.10783,T44</property>
+         name="sdm:polyPoints">B50,-190.64844,98.09766,-209.64844,134.09766,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall39">
@@ -466,5 +466,30 @@
          name="fromOutcome">ERP-GOTO-FMS-MAIN</property>
       <property
          name="sdm:polyPoints">R50,-260.64844,319.09766,283.38022,253.94824,L46</property>
+   </ControlFlowCase>
+   <View
+      id="View43">
+      <property
+         name="activityId">AR_0056</property>
+      <property
+         name="page">/AR_0056.jsf</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AR_0056&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">347.09766</property>
+      <property
+         name="x">680.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase44"
+      from="MethodCall7"
+      to="View43">
+      <property
+         name="fromOutcome">ERP-ACT-AR-0056</property>
+      <property
+         name="sdm:polyPoints">B50,587.0,249.24707,680.5,292.74707,T50</property>
    </ControlFlowCase>
 </SDM>

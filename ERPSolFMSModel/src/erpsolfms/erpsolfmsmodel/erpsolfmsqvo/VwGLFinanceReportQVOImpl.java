@@ -28,8 +28,8 @@ public class VwGLFinanceReportQVOImpl extends ViewObjectImpl implements VwGLFina
     }
     public void doExecuteAgingProcedure() {
 //Locationid        
-        System.out.println("begin ?:=pkg_ar_note.func_run_dealer_Aging('"+this.getCurrentRow().getAttribute("Regionid")+"','"+this.getCurrentRow().getAttribute("Locationid")+"','"+this.getCurrentRow().getAttribute("Companyid")+"',to_date('"+this.first().getAttribute("txtFromDate")+"','yyyy-mm-dd')); END;");
-        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_ar_note.func_run_dealer_Aging('"+this.getCurrentRow().getAttribute("Regionid")+"','"+this.getCurrentRow().getAttribute("Locationid")+"','"+this.getCurrentRow().getAttribute("Companyid")+"',to_date('"+this.first().getAttribute("txtFromDate")+"','yyyy-mm-dd')); END;", 1);
+//        System.out.println("begin ?:=pkg_receipt.func_run_dealer_Aging('"+this.getCurrentRow().getAttribute("Regionid")+"','"+this.getCurrentRow().getAttribute("Locationid")+"','"+this.getCurrentRow().getAttribute("Companyid")+"',to_date('"+this.first().getAttribute("txtFromDate")+"','yyyy-mm-dd')); END;");
+        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_receipt.func_run_dealer_Aging('"+this.getCurrentRow().getAttribute("Regionid")+"','"+this.getCurrentRow().getAttribute("Locationid")+"','"+this.getCurrentRow().getAttribute("Companyid")+"',to_date('"+this.first().getAttribute("txtFromDate")+"','yyyy-mm-dd')); END;", 1);
         try {
             cs.registerOutParameter(1, Types.VARCHAR);
             cs.executeUpdate();
@@ -67,6 +67,29 @@ public class VwGLFinanceReportQVOImpl extends ViewObjectImpl implements VwGLFina
         this.first().setAttribute("txtFromDate", this.first().getAttribute("txtDefaultDate"));
         this.first().setAttribute("txtToDate", this.first().getAttribute("txtDefaultDate"));
         vo.remove();
+    }
+    public void doUnSubmitARRecord() {
+                CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=PKG_WARRANTY_CARD.FUNC_UNSUBMIT_WARRANTY_CARD('"+this.first().getAttribute("txtRecordID")+"','"+this.first().getAttribute("txtDocTypeId")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
+                System.out.println("begin ?:=PKG_WARRANTY_CARD.FUNC_UNSUBMIT_WARRANTY_CARD('"+this.first().getAttribute("txtRecordID")+"','"+this.first().getAttribute("txtDocTypeId")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;");
+                try {
+                    cs.registerOutParameter(1, Types.VARCHAR);
+                    cs.executeUpdate();
+                    throw new JboException(cs.getString(1));
+                    
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage()+ "this is message");
+                    throw new JboException("Unable to Unsupervise ");
+                }
+                finally{
+                    System.out.println("finally is being called");
+                    try {
+                        cs.close();
+                    } catch (SQLException e) {
+                    }
+                }
+                    
+            
+        
     }
 }
 
