@@ -183,8 +183,7 @@
                                                         required="#{bindings.txtBankBranchName.hints.mandatory}"
                                                         columns="#{bindings.txtBankBranchName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtBankBranchName.hints.tooltip}"
-                                                        simple="true" autoSubmit="true" partialTriggers="sor1"
-                                                        readOnly="#{bindings.ReceiptMode.inputValue=='C'}">
+                                                        simple="true" autoSubmit="true">
                             <f:validator binding="#{bindings.txtBankBranchName.validator}"/>
                             <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedBranchValues}"/>
                           </af:inputComboboxListOfValues>

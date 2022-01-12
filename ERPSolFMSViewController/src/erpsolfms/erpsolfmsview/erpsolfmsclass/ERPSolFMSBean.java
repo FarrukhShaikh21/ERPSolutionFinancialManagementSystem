@@ -108,30 +108,39 @@ public class ERPSolFMSBean {
     public String getERPSolStrUserStoreCode() {
         return ERPSolStrUserStoreCode;
     }
-
+//    
     public List<SelectItem> doERPSolGetAutoSuggestedBranchValues(String pStringValues) {
-//public static List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
-        //public List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
-        System.out.println("a");
-
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
-        System.out.println("b");
         AttributeBinding ERPLocid =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
-        
-//        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
-        System.out.println("b");
-//        DCIteratorBinding ERPSolib =(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
-        System.out.println("c");
-//        String ERPLocid=""+ERPSolib.getCurrentRow().getAttribute("Locationid");
-        System.out.println("d");
-        System.out.println(ERPLocid);//ERPSolGlobalViewBean.
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllBankBranchesAutoSuggestRO",
                                                             "LOCATIONID='"+ERPLocid+"' AND UPPER(CONCAT(Branch_Name,Branchid))", "BranchName", "Branchid", 10,"ERPSolFMSAppModuleDataControl");
         return ResultList;
         
     }
 
+    
+    public List<SelectItem> doERPSolGetAutoSuggestedARUnsubmitDoc(String pStringValues) {
+        List<SelectItem> ResultList=new ArrayList<SelectItem>();
+        System.out.println("a");
+        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        DCIteratorBinding ERPSolIB=(DCIteratorBinding)ERPSolbc.get("VwGLFinanceReportROIterator");
+        ApplicationModule ERPSolAM=ERPSolIB.getViewObject().getApplicationModule();
+        System.out.println("b");
+        String ERPLocid=ERPSolGlobClassModel.doGetUserLocationCode();
+        AttributeBinding ERPDocType =(AttributeBinding)ERPSolbc.getControlBinding("txtDoctypeId");
+        ViewObject vo=ERPSolAM.findViewObject("VwARDocumentIdForUnsubmitAutoSuggestRO");
+        vo.setNamedWhereClauseParam("P_ADF_DOCTYPEID", ERPDocType.getInputValue());
+        vo.setNamedWhereClauseParam("P_ADF_LOCATIONID", ERPLocid);
+        vo.executeQuery();
+        System.out.println("d");
+        System.out.println(ERPLocid);//ERPSolGlobalViewBean.
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VwARDocumentIdForUnsubmitAutoSuggestRO",
+                                                            " UPPER(CONCAT(Receipt_No,Description))", "ReceiptNo", "Description", 10);
+        return ResultList;
+        
+    }
+    
     public List<SelectItem> doERPSolGetAutoSuggestedLocationValues(String pStringValues) {
     //public static List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
         //public List<SelectItem> doERPSolGetAutoSuggestedValues(String pSearch,String pViewObjectName,String pWhereColumn,String pAttribute1,String pAttribute2,Integer pNoOfRecordsSuggest) {
@@ -442,4 +451,6 @@ public class ERPSolFMSBean {
     public String getERPSolReportName() {
         return ERPSolReportName;
     }
+    
+    
 }

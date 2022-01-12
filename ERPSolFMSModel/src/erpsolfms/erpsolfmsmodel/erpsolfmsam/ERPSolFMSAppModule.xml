@@ -54,6 +54,9 @@
   <ViewUsage
     Name="VWCostCenterAutoSuggestRO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWCostCenterQVO"/>
+  <ViewUsage
+    Name="VwARDocumentIdForUnsubmitAutoSuggestRO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwARDocumentIdForUnsubmitQVO"/>
   <ViewLinkUsage
     Name="SysC0017666Link1"
     ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"

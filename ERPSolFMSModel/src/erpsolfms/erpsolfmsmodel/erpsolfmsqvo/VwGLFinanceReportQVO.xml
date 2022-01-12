@@ -89,7 +89,14 @@
   <ViewAccessor
     Name="AccVwARDocumentIdForUnsubmit"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwARDocumentIdForUnsubmitQVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="P_ADF_DOCTYPEID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[txtDoctypeId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovCompanyid"
     ListVOName="AccAllCompanyView"

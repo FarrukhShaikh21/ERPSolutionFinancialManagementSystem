@@ -25,11 +25,15 @@
   <Variable
     Name="P_ADF_LOCATIONID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <TransientExpression
+      trustMode="untrusted"
+      Name="expression"><![CDATA[erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserLocationCode()]]></TransientExpression>
+  </Variable>
   <SQLQuery><![CDATA[select m.receipt_no, 'Customer: '||ac.customerid||'('||ac.customer_name||') Date: '||m.receipt_date description  
 from receipt_master_control m, all_customers ac 
 where m.customerid=ac.customerid 
-  and :P_ADF_DOCTYPEID = 'CREC'   
+  and :P_ADF_DOCTYPEID = 'RRC'   
   and m.submit = 'Y'   
   and m.LocationId = :P_ADF_LOCATIONID]]></SQLQuery>
   <ViewAttribute
@@ -46,6 +50,14 @@ where m.customerid=ac.customerid
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwARDocumentIdForUnsubmitQVO.ReceiptNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Description"
@@ -61,6 +73,14 @@ where m.customerid=ac.customerid
     <DesignTime>
       <Attr Name="_DisplaySize" Value="143"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwARDocumentIdForUnsubmitQVO.Description_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="ReceiptNo"/>
