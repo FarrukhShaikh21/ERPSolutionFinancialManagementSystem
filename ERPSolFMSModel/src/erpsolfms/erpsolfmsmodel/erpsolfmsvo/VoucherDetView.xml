@@ -174,4 +174,10 @@
     EntityAttrName="Voucherdetseq"
     EntityUsage="VoucherDet"
     AliasName="VOUCHERDETSEQ"/>
+  <ViewLinkAccessor
+    Name="VoucherView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.GlVoucherGlVoucherDetVoucherseqLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

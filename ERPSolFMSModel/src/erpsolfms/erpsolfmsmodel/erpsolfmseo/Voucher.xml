@@ -511,6 +511,13 @@
     AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.SysC0016796Assoc.Voucher1"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="VoucherDet2"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.GlVoucherGlVoucherDetVoucherseqAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.GlVoucherGlVoucherDetVoucherseqAssoc.VoucherDet2"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.GlVoucherGlVoucherDetVoucherseqAssoc.Voucher2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="SysC0015522"
     PrimaryKey="true">
