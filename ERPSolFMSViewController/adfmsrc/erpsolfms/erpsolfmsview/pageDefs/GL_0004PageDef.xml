@@ -5,6 +5,19 @@
   <executables>
     <variableIterator id="variables"/>
     <page path="erpsoltemp.erpsoltempview.pageDefs.ERPSolutionTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="VoucherViewCRUD" RangeSize="25" DataControl="ERPSolFMSAppModuleDataControl"
+              id="VoucherViewCRUDIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="VoucherNo">
+      <AttrNames>
+        <Item Value="VoucherNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="VoucherDate">
+      <AttrNames>
+        <Item Value="VoucherDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
 </pageDefinition>

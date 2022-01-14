@@ -9,7 +9,13 @@
   DBObjectType="table"
   DBObjectName="VOUCHER"
   AliasName="Voucher"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <Attr Name="_superClass" Value="erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobalsEntityImpl"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="VoucherNo"
     IsNotNull="true"
@@ -18,11 +24,18 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER"
-    PrimaryKey="true">
+    TableName="VOUCHER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.VoucherNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="VoucherType"
@@ -32,11 +45,18 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER"
-    PrimaryKey="true">
+    TableName="VOUCHER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.VoucherType_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="LocCode"
@@ -46,19 +66,37 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER"
-    PrimaryKey="true">
+    TableName="VOUCHER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.LocCode_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="VoucherDate"
     ColumnName="VOUCHER_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="VOUCHER"/>
+    TableName="VOUCHER">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[adf.currentDate]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.VoucherDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ChequeNo"
     Precision="15"
@@ -70,14 +108,31 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.ChequeNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ChequeDate"
     ColumnName="CHEQUE_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="VOUCHER"/>
+    TableName="VOUCHER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.ChequeDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Particulars"
     Precision="300"
@@ -89,6 +144,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="300"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.Particulars_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Cash"
@@ -154,7 +217,7 @@
     Name="PrepareDt"
     ColumnName="PREPARE_DT"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="VOUCHER"/>
   <Attribute
@@ -173,7 +236,7 @@
     Name="CheckDt"
     ColumnName="CHECK_DT"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="VOUCHER"/>
   <Attribute
@@ -192,7 +255,7 @@
     Name="VerifyDt"
     ColumnName="VERIFY_DT"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="VOUCHER"/>
   <Attribute
@@ -211,7 +274,7 @@
     Name="ApproveDt"
     ColumnName="APPROVE_DT"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="VOUCHER"/>
   <Attribute
@@ -273,6 +336,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.RefNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SubmitVoucherNo"
@@ -285,14 +356,31 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.SubmitVoucherNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SubmitVoucherDate"
     ColumnName="SUBMIT_VOUCHER_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="VOUCHER"/>
+    TableName="VOUCHER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.SubmitVoucherDate_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Submit"
     Precision="1"
@@ -300,10 +388,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER">
+    TableName="VOUCHER"
+    DefaultValue="N">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.Submit_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="SubmitBy"
@@ -321,9 +418,16 @@
     Name="SubmitDate"
     ColumnName="SUBMIT_DATE"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="VOUCHER"/>
+    TableName="VOUCHER">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="GlVoucherType"
     Precision="3"
@@ -398,7 +502,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER">
+    TableName="VOUCHER"
+    DefaultValue="PKR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
@@ -409,7 +514,15 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="VOUCHER"/>
+    TableName="VOUCHER"
+    DefaultValue="1">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="AuditRefNo"
     Precision="50"
@@ -428,7 +541,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="VOUCHER"/>
+    TableName="VOUCHER">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.ProjectId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Lcno"
     Precision="20"
@@ -464,6 +586,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="RefDoctypeid"
@@ -476,6 +604,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="RefVoucherNo"
@@ -488,15 +622,31 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.RefVoucherNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Voucherseq"
     IsUnique="true"
     ColumnName="VOUCHERSEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="VOUCHER"/>
+    TableName="VOUCHER"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="VoucherDet"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkVoucherDetVoucherSeqAssoc"
@@ -525,9 +675,7 @@
       <Attr Name="_DBObjectName" Value="SYS_C0015522"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.VoucherNo"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.VoucherType"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.LocCode"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.Voucherseq"/>
     </AttrArray>
   </Key>
   <Key
@@ -552,4 +700,8 @@
       <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.VoucherType"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="erpsolfms.erpsolfmsmodel.ERPSolFMSModelBundle"/>
+  </ResourceBundle>
 </Entity>
