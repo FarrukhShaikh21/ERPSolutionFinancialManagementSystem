@@ -305,4 +305,10 @@
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.GlVoucherGlVoucherDetVoucherseqLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="AllLocationsView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.AllLocationsVoucherLocCodeLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

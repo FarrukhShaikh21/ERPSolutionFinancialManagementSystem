@@ -865,6 +865,13 @@
     AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.R264Assoc.AllLocations"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Voucher"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllLocationsVoucherLocCodeAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllLocationsVoucherLocCodeAssoc.Voucher"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllLocationsVoucherLocCodeAssoc.AllLocations"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="XpkallLocations"
     PrimaryKey="true">

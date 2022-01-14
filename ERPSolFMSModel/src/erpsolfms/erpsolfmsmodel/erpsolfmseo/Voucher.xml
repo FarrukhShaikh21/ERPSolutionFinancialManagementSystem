@@ -668,6 +668,13 @@
     AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.GlVoucherGlVoucherDetVoucherseqAssoc.Voucher2"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="AllLocations"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllLocationsVoucherLocCodeAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllLocationsVoucherLocCodeAssoc.AllLocations"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllLocationsVoucherLocCodeAssoc.Voucher"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="SysC0015522"
     PrimaryKey="true">
@@ -698,6 +705,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.VoucherType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Voucher">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XPKALL_LOCATIONS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_VOUCHER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.LocCode"/>
     </AttrArray>
   </Key>
   <ResourceBundle>
