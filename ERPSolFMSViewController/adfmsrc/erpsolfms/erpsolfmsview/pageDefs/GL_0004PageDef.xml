@@ -19,5 +19,7 @@
         <Item Value="VoucherDate"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="VoucherViewCRUDIterator" StaticList="false" Uses="LovVoucherType" id="VoucherType"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

@@ -13,6 +13,56 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="AccAllLocationsView"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllLocationsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVoucherTypeView"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.VoucherTypeView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovtxtLocationName"
+    ListVOName="AccAllLocationsView"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtLocationName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="LocCode"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LocationDescription"/>
+      <Item Value="Locationid"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovVoucherType"
+    ListVOName="AccVoucherTypeView"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="VoucherType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="VoucherType1"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Voucher"
     Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher"/>
@@ -29,7 +79,15 @@
     PrecisionRule="true"
     EntityAttrName="VoucherType"
     EntityUsage="Voucher"
-    AliasName="VOUCHER_TYPE"/>
+    AliasName="VOUCHER_TYPE"
+    LOVName="LovVoucherType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LocCode"
     IsNotNull="true"
@@ -290,6 +348,20 @@
     EntityAttrName="Voucherseq"
     EntityUsage="Voucher"
     AliasName="VOUCHERSEQ"/>
+  <ViewAttribute
+    Name="txtLocationName"
+    PrecisionRule="true"
+    EntityAttrName="txtLocationName"
+    EntityUsage="Voucher"
+    AliasName="TXT_LOCATION_NAME"
+    LOVName="LovtxtLocationName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="VoucherDetView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmsvo.FkVoucherDetVoucherSeqLink"

@@ -647,6 +647,29 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <Attribute
+    Name="txtLocationName"
+    Precision="80"
+    ColumnName="TXT_LOCATION_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="VOUCHER">
+    <TransientExpression
+      trustMode="untrusted"><![CDATA[AllLocations?.LocationDescription]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.txtLocationName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="LocCode"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="VoucherDet"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkVoucherDetVoucherSeqAssoc"

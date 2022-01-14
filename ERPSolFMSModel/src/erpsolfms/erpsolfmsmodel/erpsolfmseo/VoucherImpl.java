@@ -70,6 +70,7 @@ public class VoucherImpl extends ERPSolGlobalsEntityImpl {
         RefDoctypeid,
         RefVoucherNo,
         Voucherseq,
+        txtLocationName,
         VoucherDet,
         VoucherDet1,
         VoucherDet2,
@@ -143,6 +144,7 @@ public class VoucherImpl extends ERPSolGlobalsEntityImpl {
     public static final int REFDOCTYPEID = AttributesEnum.RefDoctypeid.index();
     public static final int REFVOUCHERNO = AttributesEnum.RefVoucherNo.index();
     public static final int VOUCHERSEQ = AttributesEnum.Voucherseq.index();
+    public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
     public static final int VOUCHERDET = AttributesEnum.VoucherDet.index();
     public static final int VOUCHERDET1 = AttributesEnum.VoucherDet1.index();
     public static final int VOUCHERDET2 = AttributesEnum.VoucherDet2.index();
@@ -880,6 +882,22 @@ public class VoucherImpl extends ERPSolGlobalsEntityImpl {
      */
     public void setVoucherseq(Integer value) {
         setAttributeInternal(VOUCHERSEQ, value);
+    }
+
+    /**
+     * Gets the attribute value for txtLocationName, using the alias name txtLocationName.
+     * @return the value of txtLocationName
+     */
+    public String gettxtLocationName() {
+        return (String) getAttributeInternal(TXTLOCATIONNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtLocationName.
+     * @param value value to set the txtLocationName
+     */
+    public void settxtLocationName(String value) {
+        setAttributeInternal(TXTLOCATIONNAME, value);
     }
 
     /**
