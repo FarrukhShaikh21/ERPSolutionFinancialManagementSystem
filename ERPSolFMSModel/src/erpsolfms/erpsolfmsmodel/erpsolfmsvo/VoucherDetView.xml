@@ -22,77 +22,88 @@
     PrecisionRule="true"
     EntityAttrName="VoucherNo"
     EntityUsage="VoucherDet"
-    AliasName="VOUCHER_NO"/>
+    AliasName="VOUCHER_NO"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="VoucherType"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="VoucherType"
     EntityUsage="VoucherDet"
-    AliasName="VOUCHER_TYPE"/>
+    AliasName="VOUCHER_TYPE"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="LocCode"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="LocCode"
     EntityUsage="VoucherDet"
-    AliasName="LOC_CODE"/>
+    AliasName="LOC_CODE"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="GlnatureOfAC"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="GlnatureOfAC"
     EntityUsage="VoucherDet"
-    AliasName="GLNATURE_OF_A_C"/>
+    AliasName="GLNATURE_OF_A_C"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="GlbroadCategory"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="GlbroadCategory"
     EntityUsage="VoucherDet"
-    AliasName="GLBROAD_CATEGORY"/>
+    AliasName="GLBROAD_CATEGORY"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="GlcontrolAC"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="GlcontrolAC"
     EntityUsage="VoucherDet"
-    AliasName="GLCONTROL_A_C"/>
+    AliasName="GLCONTROL_A_C"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="GlsubControlAC"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="GlsubControlAC"
     EntityUsage="VoucherDet"
-    AliasName="GLSUB_CONTROL_A_C"/>
+    AliasName="GLSUB_CONTROL_A_C"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="GlsubsidaryAC"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="GlsubsidaryAC"
     EntityUsage="VoucherDet"
-    AliasName="GLSUBSIDARY_A_C"/>
+    AliasName="GLSUBSIDARY_A_C"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="Ccregion"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Ccregion"
     EntityUsage="VoucherDet"
-    AliasName="CCREGION"/>
+    AliasName="CCREGION"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="CcsubLocation"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="CcsubLocation"
     EntityUsage="VoucherDet"
-    AliasName="CCSUB_LOCATION"/>
+    AliasName="CCSUB_LOCATION"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="Ccsubsidary"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Ccsubsidary"
     EntityUsage="VoucherDet"
-    AliasName="CCSUBSIDARY"/>
+    AliasName="CCSUBSIDARY"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="Debit"
     PrecisionRule="true"
@@ -123,7 +134,8 @@
     PrecisionRule="true"
     EntityAttrName="SNo"
     EntityUsage="VoucherDet"
-    AliasName="S_NO"/>
+    AliasName="S_NO"
+    PrimaryKey="true"/>
   <ViewAttribute
     Name="TrnLocCode"
     IsNotNull="true"
@@ -177,6 +189,12 @@
   <ViewLinkAccessor
     Name="VoucherView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.GlVoucherGlVoucherDetVoucherseqLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ChartOfAccView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.GlChartOfAccountVoucherDetChartOfAccountLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

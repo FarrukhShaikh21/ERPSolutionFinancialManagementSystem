@@ -210,7 +210,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CHART_OF_ACC"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
@@ -236,6 +235,13 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <AccessorAttribute
+    Name="VoucherDet"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.GlChartOfAccountVoucherDetChartOfAccountAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.GlChartOfAccountVoucherDetChartOfAccountAssoc.VoucherDet"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.GlChartOfAccountVoucherDetChartOfAccountAssoc.ChartOfAcc"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="SysC0016804"
     PrimaryKey="true">
