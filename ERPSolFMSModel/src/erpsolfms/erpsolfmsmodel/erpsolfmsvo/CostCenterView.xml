@@ -49,4 +49,9 @@
     EntityAttrName="Description"
     EntityUsage="CostCenter"
     AliasName="DESCRIPTION"/>
+  <ViewLinkAccessor
+    Name="VoucherDetView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.CostCenterVoucherDetCostCenterLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

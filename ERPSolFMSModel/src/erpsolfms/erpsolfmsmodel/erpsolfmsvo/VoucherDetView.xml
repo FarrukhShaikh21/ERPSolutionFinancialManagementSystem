@@ -17,6 +17,10 @@
     Name="AccVWChartOfAccountQVO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWChartOfAccountQVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AccVWCostCenterQVO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWCostCenterQVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovtxtGlDescription"
     ListVOName="AccVWChartOfAccountQVO"
@@ -38,6 +42,53 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
       <Item Value="Glcode"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtGLCodeCreditDescription"
+    ListVOName="AccVWChartOfAccountQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtGLCodeCreditDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtGLCode"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Glcode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovtxtCostCenterDescription"
+    ListVOName="AccVWCostCenterQVO"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="txtCostCenterDescription"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="txtCostCenterDescription"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Costcenterid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+      <Item Value="Costcenterid"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -237,7 +288,39 @@
     PrecisionRule="true"
     EntityAttrName="txtGLCodeCreditDescription"
     EntityUsage="VoucherDet"
-    AliasName="TXT_GLCODE_CREDIT_DESCRIPTION"/>
+    AliasName="TXT_GLCODE_CREDIT_DESCRIPTION"
+    LOVName="LovtxtGLCodeCreditDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtCostCenterDescription"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCostCenterDescription"
+    EntityUsage="VoucherDet"
+    AliasName="TXT_COST_CENTER_DESCRIPTION"
+    LOVName="LovtxtCostCenterDescription">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="txtCostCenter"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtCostCenter"
+    EntityUsage="VoucherDet"
+    AliasName="TXT_COST_CENTER"/>
   <ViewLinkAccessor
     Name="VoucherView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.GlVoucherGlVoucherDetVoucherseqLink"
@@ -247,6 +330,12 @@
   <ViewLinkAccessor
     Name="ChartOfAccView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.GlChartOfAccountVoucherDetChartOfAccountLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CostCenterView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.CostCenterVoucherDetCostCenterLink"
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>

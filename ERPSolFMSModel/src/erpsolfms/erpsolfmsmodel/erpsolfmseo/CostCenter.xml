@@ -76,6 +76,13 @@
       <Attr Name="_DisplaySize" Value="35"/>
     </DesignTime>
   </Attribute>
+  <AccessorAttribute
+    Name="VoucherDet"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.CostCenterVoucherDetCostCenterAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.CostCenterVoucherDetCostCenterAssoc.VoucherDet"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.CostCenterVoucherDetCostCenterAssoc.CostCenter"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="SysC0015310"
     PrimaryKey="true">
