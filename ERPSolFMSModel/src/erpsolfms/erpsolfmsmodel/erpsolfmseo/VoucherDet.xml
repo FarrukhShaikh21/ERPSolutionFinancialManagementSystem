@@ -18,8 +18,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
@@ -32,8 +31,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
@@ -46,8 +44,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
@@ -60,8 +57,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
@@ -74,8 +70,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>
@@ -88,8 +83,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>
@@ -102,8 +96,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>
@@ -116,8 +109,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="5"/>
     </DesignTime>
@@ -130,8 +122,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>
@@ -144,8 +135,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>
@@ -158,8 +148,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="5"/>
     </DesignTime>
@@ -211,8 +200,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER_DET"
-    PrimaryKey="true">
+    TableName="VOUCHER_DET">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4"/>
     </DesignTime>
@@ -296,9 +284,10 @@
     IsUnique="true"
     ColumnName="VOUCHERDETSEQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="VOUCHER_DET"/>
+    TableName="VOUCHER_DET"
+    PrimaryKey="true"/>
   <AccessorAttribute
     Name="Voucher"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkVoucherDetVoucherSeqAssoc"
@@ -327,18 +316,7 @@
       <Attr Name="_DBObjectName" Value="SYS_C0015523"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.VoucherNo"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.VoucherType"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.LocCode"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.GlnatureOfAC"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.GlbroadCategory"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.GlcontrolAC"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.GlsubControlAC"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.GlsubsidaryAC"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.Ccregion"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.CcsubLocation"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.Ccsubsidary"/>
-      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.SNo"/>
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherDet.Voucherdetseq"/>
     </AttrArray>
   </Key>
   <Key

@@ -670,6 +670,24 @@
         Value="LocCode"/>
     </Dependencies>
   </Attribute>
+  <Attribute
+    Name="txtGL_V_TYPE"
+    Precision="80"
+    ColumnName="TXT_GL_V_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    IsPersistent="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.txtGL_V_TYPE_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="VoucherDet"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.FkVoucherDetVoucherSeqAssoc"

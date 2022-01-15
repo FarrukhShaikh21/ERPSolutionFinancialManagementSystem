@@ -362,6 +362,14 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="txtGL_V_TYPE"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="txtGL_V_TYPE"
+    EntityUsage="Voucher"
+    AliasName="TXT_GL_V_TYPE"/>
   <ViewLinkAccessor
     Name="VoucherDetView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmsvo.FkVoucherDetVoucherSeqLink"

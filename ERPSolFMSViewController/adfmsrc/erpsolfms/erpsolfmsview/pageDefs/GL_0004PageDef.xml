@@ -21,5 +21,32 @@
     </attributeValues>
     <list IterBinding="VoucherViewCRUDIterator" StaticList="false" Uses="LovVoucherType" id="VoucherType"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="VoucherViewCRUDIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="txtGL_V_TYPE">
+      <AttrNames>
+        <Item Value="txtGL_V_TYPE"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="RefNo">
+      <AttrNames>
+        <Item Value="RefNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="ChequeDate">
+      <AttrNames>
+        <Item Value="ChequeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="ChequeNo">
+      <AttrNames>
+        <Item Value="ChequeNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="VoucherViewCRUDIterator" id="Particulars">
+      <AttrNames>
+        <Item Value="Particulars"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

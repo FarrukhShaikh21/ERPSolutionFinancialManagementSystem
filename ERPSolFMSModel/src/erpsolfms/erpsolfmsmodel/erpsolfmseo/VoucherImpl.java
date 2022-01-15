@@ -71,6 +71,7 @@ public class VoucherImpl extends ERPSolGlobalsEntityImpl {
         RefVoucherNo,
         Voucherseq,
         txtLocationName,
+        txtGL_V_TYPE,
         VoucherDet,
         VoucherDet1,
         VoucherDet2,
@@ -145,6 +146,7 @@ public class VoucherImpl extends ERPSolGlobalsEntityImpl {
     public static final int REFVOUCHERNO = AttributesEnum.RefVoucherNo.index();
     public static final int VOUCHERSEQ = AttributesEnum.Voucherseq.index();
     public static final int TXTLOCATIONNAME = AttributesEnum.txtLocationName.index();
+    public static final int TXTGL_V_TYPE = AttributesEnum.txtGL_V_TYPE.index();
     public static final int VOUCHERDET = AttributesEnum.VoucherDet.index();
     public static final int VOUCHERDET1 = AttributesEnum.VoucherDet1.index();
     public static final int VOUCHERDET2 = AttributesEnum.VoucherDet2.index();
@@ -898,6 +900,22 @@ public class VoucherImpl extends ERPSolGlobalsEntityImpl {
      */
     public void settxtLocationName(String value) {
         setAttributeInternal(TXTLOCATIONNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for txtGL_V_TYPE, using the alias name txtGL_V_TYPE.
+     * @return the value of txtGL_V_TYPE
+     */
+    public String gettxtGL_V_TYPE() {
+        return (String) getAttributeInternal(TXTGL_V_TYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for txtGL_V_TYPE.
+     * @param value value to set the txtGL_V_TYPE
+     */
+    public void settxtGL_V_TYPE(String value) {
+        setAttributeInternal(TXTGL_V_TYPE, value);
     }
 
     /**
