@@ -34,10 +34,20 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="txtGLCode"/>
+      <Item Value="GlbroadCategory"/>
+      <Item Value="GlcontrolAC"/>
+      <Item Value="GlnatureOfAC"/>
+      <Item Value="GlsubControlAC"/>
+      <Item Value="GlsubsidaryAC"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Description"/>
       <Item Value="Glcode"/>
+      <Item Value="GlbroadCategory"/>
+      <Item Value="GlcontrolAC"/>
+      <Item Value="GlnatureOfAC"/>
+      <Item Value="GlsubControlAC"/>
+      <Item Value="GlsubsidaryAC"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
@@ -58,10 +68,20 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="txtGLCode"/>
+      <Item Value="GlbroadCategory"/>
+      <Item Value="GlcontrolAC"/>
+      <Item Value="GlnatureOfAC"/>
+      <Item Value="GlsubControlAC"/>
+      <Item Value="GlsubsidaryAC"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Description"/>
       <Item Value="Glcode"/>
+      <Item Value="GlbroadCategory"/>
+      <Item Value="GlcontrolAC"/>
+      <Item Value="GlnatureOfAC"/>
+      <Item Value="GlsubControlAC"/>
+      <Item Value="GlsubsidaryAC"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
@@ -81,10 +101,16 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="txtCostCenterDescription"/>
+      <Item Value="Ccregion"/>
+      <Item Value="CcsubLocation"/>
+      <Item Value="Ccsubsidary"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Description"/>
       <Item Value="Costcenterid"/>
+      <Item Value="Ccregion"/>
+      <Item Value="CcsubLocation"/>
+      <Item Value="Ccsubsidary"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>

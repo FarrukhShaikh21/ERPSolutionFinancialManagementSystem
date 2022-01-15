@@ -18,7 +18,7 @@
         ResId="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWCostCenterQVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[select costcenterid, description from vw_cost_center]]></SQLQuery>
+  <SQLQuery><![CDATA[select costcenterid, description,ccregion,ccsub_location,ccsubsidary from vw_cost_center]]></SQLQuery>
   <ViewAttribute
     Name="Costcenterid"
     IsUpdateable="false"
@@ -64,6 +64,43 @@
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Ccregion"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Domain="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.Type"
+    Type="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.common.Type"
+    ColumnType="TYPE"
+    AliasName="CCREGION"
+    Expression="CCREGION"
+    SQLType="STRUCT"/>
+  <ViewAttribute
+    Name="CcsubLocation"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Domain="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.Type"
+    Type="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.common.Type"
+    ColumnType="TYPE"
+    AliasName="CCSUB_LOCATION"
+    Expression="CCSUB_LOCATION"
+    SQLType="STRUCT"/>
+  <ViewAttribute
+    Name="Ccsubsidary"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="5"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CCSUBSIDARY"
+    Expression="CCSUBSIDARY"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Costcenterid"/>
