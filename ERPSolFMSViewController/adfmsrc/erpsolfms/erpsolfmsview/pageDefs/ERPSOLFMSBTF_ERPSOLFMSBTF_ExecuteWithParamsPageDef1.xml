@@ -10,7 +10,7 @@
   <bindings>
     <action IterBinding="SysProgramReportROIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
             Action="executeWithParams">
-      <NamedData NDName="P_ADF_PROJECTID" NDValue="#{'GL'}" NDType="java.lang.String"/>
+      <NamedData NDName="P_ADF_PROJECTID" NDValue="#{'AR'}" NDType="java.lang.String"/>
       <NamedData NDName="P_ADF_LEVELID" NDValue="#{'TRANSACTION'}" NDType="java.lang.String"/>
       <NamedData NDName="P_ADF_USERID" NDValue="#{pageFlowScope.ERPSolTempBean.LERPSolUserCode}"
                  NDType="java.lang.String"/>

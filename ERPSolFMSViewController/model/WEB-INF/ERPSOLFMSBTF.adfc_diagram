@@ -230,7 +230,7 @@
       <property
          name="fromOutcome">ACT-ERP-EXIT-FORM</property>
       <property
-         name="sdm:polyPoints">R50,25.0,206.74707,127.5,287.09766,T50</property>
+         name="sdm:polyPoints">R50,26.90749,206.74706,127.5,285.19016,T50</property>
    </ControlFlowCase>
    <View
       id="View22">
@@ -513,6 +513,6 @@
       <property
          name="fromOutcome">ERP-GOTO-FMS-MAIN</property>
       <property
-         name="sdm:polyPoints">R50,-346.64844,437.09766,283.09113,253.94824,L46</property>
+         name="sdm:polyPoints">R50,-344.74097,437.09766,325.6787,313.35574,B50</property>
    </ControlFlowCase>
 </SDM>
