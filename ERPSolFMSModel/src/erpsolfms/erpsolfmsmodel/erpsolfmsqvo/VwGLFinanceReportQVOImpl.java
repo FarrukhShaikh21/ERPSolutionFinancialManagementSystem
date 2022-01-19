@@ -29,7 +29,7 @@ public class VwGLFinanceReportQVOImpl extends ViewObjectImpl implements VwGLFina
     public void doExecuteAgingProcedure() {
 //Locationid        
 //        System.out.println("begin ?:=pkg_receipt.func_run_dealer_Aging('"+this.getCurrentRow().getAttribute("Regionid")+"','"+this.getCurrentRow().getAttribute("Locationid")+"','"+this.getCurrentRow().getAttribute("Companyid")+"',to_date('"+this.first().getAttribute("txtFromDate")+"','yyyy-mm-dd')); END;");
-        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_receipt.func_run_dealer_Aging('"+this.getCurrentRow().getAttribute("Regionid")+"','"+this.getCurrentRow().getAttribute("Locationid")+"','"+this.getCurrentRow().getAttribute("Companyid")+"',to_date('"+this.first().getAttribute("txtFromDate")+"','yyyy-mm-dd')); END;", 1);
+        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_receipt.func_run_dealer_Aging('"+this.getCurrentRow().getAttribute("Regionid")+"','"+this.getCurrentRow().getAttribute("Locationid")+"','"+this.getCurrentRow().getAttribute("Companyid")+"',to_date('"+this.first().getAttribute("txtToDate")+"','yyyy-mm-dd')); END;", 1);
         try {
             cs.registerOutParameter(1, Types.VARCHAR);
             cs.executeUpdate();

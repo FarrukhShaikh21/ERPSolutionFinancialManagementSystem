@@ -654,7 +654,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER">
+    TableName="VOUCHER"
+    IsPersistent="false"
+    IsQueriable="false">
     <TransientExpression
       trustMode="untrusted"><![CDATA[AllLocations?.LocationDescription]]></TransientExpression>
     <Properties>

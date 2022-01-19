@@ -57,12 +57,6 @@
   <ViewUsage
     Name="VwARDocumentIdForUnsubmitAutoSuggestRO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwARDocumentIdForUnsubmitQVO"/>
-  <ViewUsage
-    Name="VoucherViewCRUD"
-    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.VoucherView"/>
-  <ViewUsage
-    Name="VoucherDetViewDetCRUD"
-    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.VoucherDetView"/>
   <ViewLinkUsage
     Name="SysC0017666Link1"
     ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"
@@ -74,11 +68,5 @@
     ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.FkArNoteDetNotemasterLink"
     SrcViewUsageName="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule.ArNoteMasterCRUD"
     DstViewUsageName="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule.ArNoteDetailDetCRUD"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="GlVoucherGlVoucherDetVoucherseqLink1"
-    ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmslink.GlVoucherGlVoucherDetVoucherseqLink"
-    SrcViewUsageName="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule.VoucherViewCRUD"
-    DstViewUsageName="erpsolfms.erpsolfmsmodel.erpsolfmsam.ERPSolFMSAppModule.VoucherDetViewDetCRUD"
     Reversed="false"/>
 </AppModule>

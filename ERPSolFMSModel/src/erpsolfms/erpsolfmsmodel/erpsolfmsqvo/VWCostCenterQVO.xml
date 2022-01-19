@@ -70,23 +70,21 @@
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Domain="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.Type"
-    Type="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.common.Type"
+    Type="java.lang.String"
     ColumnType="TYPE"
     AliasName="CCREGION"
     Expression="CCREGION"
-    SQLType="STRUCT"/>
+    SQLType="VARCHAR"/>
   <ViewAttribute
     Name="CcsubLocation"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Domain="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.Type"
-    Type="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.common.Type"
+    Type="java.lang.String"
     ColumnType="TYPE"
     AliasName="CCSUB_LOCATION"
     Expression="CCSUB_LOCATION"
-    SQLType="STRUCT"/>
+    SQLType="VARCHAR"/>
   <ViewAttribute
     Name="Ccsubsidary"
     IsUpdateable="false"
