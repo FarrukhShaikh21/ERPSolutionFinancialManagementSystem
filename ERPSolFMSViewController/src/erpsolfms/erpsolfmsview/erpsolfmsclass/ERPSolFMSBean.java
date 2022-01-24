@@ -425,6 +425,64 @@ public class ERPSolFMSBean {
         doErpSolOpenReportTab(pReportUrl);
         return null;
     }
+    
+    public String doERPSolExecuteAR0047Report() {
+        BindingContainer bc = ERPSolGlobalViewBean.doGetERPBindings();
+        DCIteratorBinding ib=(DCIteratorBinding)bc.get("ReceiptMasterControlCRUDIterator");
+        ApplicationModule am=ib.getViewObject().getApplicationModule();
+        ViewObject vo=am.findViewObject("QVOReceipt");
+        if (vo!=null) {
+            vo.remove();
+       }
+        
+        vo=am.createViewObjectFromQueryStmt("QVOReceipt", "select PARAMETER_VALUE FROM so_sales_parameter a where a.Parameter_Id='REPORT_SERVER_URL'");
+        vo.executeQuery();
+        String pReportUrl=vo.first().getAttribute(0).toString();
+        vo.remove();
+        vo=am.createViewObjectFromQueryStmt("QVOReceipt", "select PATH PATH FROM SYSTEM a where a.PROJECTID='AR' ");
+        vo.executeQuery();
+        String pReportPath=vo.first().getAttribute(0).toString()+"REPORTS\\\\";
+        System.out.println(pReportPath);
+        pReportPath=pReportPath+"RECEIPT_CONTROL";
+        
+    
+        BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        System.out.println("b");
+        AttributeBinding ERPCompanyid       =(AttributeBinding)ERPSolbc.getControlBinding("Companyid");
+//        AttributeBinding ERPRegionid        =(AttributeBinding)ERPSolbc.getControlBinding("Regionid");
+        AttributeBinding ERPReceiptNo        =(AttributeBinding)ERPSolbc.getControlBinding("ReceiptNo");
+        AttributeBinding ERPLocationid      =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
+//        AttributeBinding ERPSalesTerritory  =(AttributeBinding)ERPSolbc.getControlBinding("txtSalesTerritoryId");
+//        AttributeBinding ERPCustomerid      =(AttributeBinding)ERPSolbc.getControlBinding("Customerid");
+//        AttributeBinding ERPSalespersonid   =(AttributeBinding)ERPSolbc.getControlBinding("Salespersonid");
+    //        AttributeBinding ERPProductgroup    =(AttributeBinding)ERPSolbc.getControlBinding("Productgroup");
+    //        AttributeBinding ERPProductid       =(AttributeBinding)ERPSolbc.getControlBinding("Productid");
+//        AttributeBinding ERPFromDate        =(AttributeBinding)ERPSolbc.getControlBinding("txtFromDate");
+//        AttributeBinding ERPToDate          =(AttributeBinding)ERPSolbc.getControlBinding("txtToDate");
+        String reportParameter="";
+        reportParameter="COMPANY="+ (ERPCompanyid.getInputValue()==null?"":ERPCompanyid.getInputValue());
+//        reportParameter+="&P_REGID="+(ERPRegionid.getInputValue()==null?"":ERPRegionid.getInputValue());
+        reportParameter+="&LOCID="+(ERPLocationid.getInputValue()==null?"":ERPLocationid.getInputValue());
+        reportParameter+="&R="+(ERPReceiptNo.getInputValue()==null?"":ERPReceiptNo.getInputValue());
+//        reportParameter+="&P_TERRITORY_ID="+(ERPSalesTerritory.getInputValue()==null?"":ERPSalesTerritory.getInputValue());
+//        reportParameter+="&CUSTID="+(ERPCustomerid.getInputValue()==null?"":ERPCustomerid.getInputValue());
+//        reportParameter+="&SALEPERSONID="+(ERPSalespersonid.getInputValue()==null?"":ERPSalespersonid.getInputValue());
+    //        reportParameter+="&P_PRODUCT_GROUP_ID="+(ERPProductgroup.getInputValue()==null?"":ERPProductgroup.getInputValue());
+    //        reportParameter+="&P_PRODUCT_ID="+(ERPProductid.getInputValue()==null?"":ERPProductid.getInputValue());
+//        reportParameter+="&FROM_DATE="+(ERPFromDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPFromDate.getInputValue() ) );
+//        reportParameter+="&TO_DATE="+(ERPToDate.getInputValue()==null?"":doERPSolGetFormatDate(""+ERPToDate.getInputValue())  );
+        reportParameter+="&USER="+ERPSolGlobClassModel.doGetUserCode();
+        
+        pReportUrl=pReportUrl.replace("<P_REPORT_PATH>", pReportPath);
+        pReportUrl=pReportUrl.replace("<P_REPORT_PARAMETERS>", reportParameter);
+        
+        System.out.println(pReportPath);
+        System.out.println(reportParameter);
+        System.out.println(pReportUrl);
+        
+        doErpSolOpenReportTab(pReportUrl);
+        return null;
+    }
 
     public String ErpSolsetFocusOnNewRecord() {
     FacesContext facesCtx = FacesContext.getCurrentInstance();

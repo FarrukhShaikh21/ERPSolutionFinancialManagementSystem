@@ -42,6 +42,9 @@
                                    disabled="#{!bindings.doSuperviseControlReceipt.enabled}" id="b11" rendered="false"/>
                         <af:button text="Close Form" id="b10" action="ACT-ERP-EXIT-FORM"
                                    icon="#{resource['images:imgExitForm.png']}" iconPosition="top"/>
+                        <af:button text="Print" id="b13" icon="#{resource['images:imgPrintPreview.png']}"
+                                   iconPosition="top"
+                                   action="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolExecuteAR0047Report}"/>
                         <af:button text="Search" id="b12" action="ERP-ACT-AR-0047-SEARCH"
                                    icon="#{resource['images:imgFind.png']}" iconPosition="top"/>
                         <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
@@ -112,6 +115,14 @@
                           <af:outputLabel value="#{bindings.Locationid.hints.label}" id="ol1"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc9" halign="stretch" valign="middle">
+                          <af:inputText value="#{bindings.Companyid.inputValue}"
+                                        label="#{bindings.Companyid.hints.label}"
+                                        required="#{bindings.Companyid.hints.mandatory}"
+                                        columns="#{bindings.Companyid.hints.displayWidth}"
+                                        maximumLength="#{bindings.Companyid.hints.precision}"
+                                        shortDesc="#{bindings.Companyid.hints.tooltip}" id="it14" rendered="false">
+                            <f:validator binding="#{bindings.Companyid.validator}"/>
+                          </af:inputText>
                           <af:inputText value="#{bindings.Locationid.inputValue}"
                                         label="#{bindings.Locationid.hints.label}"
                                         required="#{bindings.Locationid.hints.mandatory}"
