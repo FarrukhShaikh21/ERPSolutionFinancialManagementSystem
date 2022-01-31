@@ -265,6 +265,18 @@
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="Salesterritoryid"
+    Precision="15"
+    ColumnName="SALESTERRITORYID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ALL_BANK_BRANCHES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="ReceiptMasterControl"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllBankBranchesReceiptMasterControlBranchidAssoc"

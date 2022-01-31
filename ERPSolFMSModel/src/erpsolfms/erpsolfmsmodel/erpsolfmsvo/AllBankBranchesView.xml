@@ -154,6 +154,12 @@
     EntityAttrName="CashBank"
     EntityUsage="AllBankBranches"
     AliasName="CASH_BANK"/>
+  <ViewAttribute
+    Name="Salesterritoryid"
+    PrecisionRule="true"
+    EntityAttrName="Salesterritoryid"
+    EntityUsage="AllBankBranches"
+    AliasName="SALESTERRITORYID"/>
   <ViewCriteria
     Name="AllBankBranchesFindVC"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView"
@@ -185,21 +191,18 @@
         ViewAttribute="BranchName"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="AllBankBranchesViewCriteria_AllBankBranchesViewCriteria_row_0_AccountNo"
         ViewAttribute="AccountNo"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="AllBankBranchesViewCriteria_AllBankBranchesViewCriteria_row_0_AccountName"
         ViewAttribute="AccountName"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
