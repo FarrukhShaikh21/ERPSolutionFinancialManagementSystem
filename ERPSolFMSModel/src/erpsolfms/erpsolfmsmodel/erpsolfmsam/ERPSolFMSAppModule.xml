@@ -57,6 +57,9 @@
   <ViewUsage
     Name="VwARDocumentIdForUnsubmitAutoSuggestRO"
     ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwARDocumentIdForUnsubmitQVO"/>
+  <ViewUsage
+    Name="VWAllBankBranchesAutoSuggestRO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWAllBankBranchesQVO"/>
   <ViewLinkUsage
     Name="SysC0017666Link1"
     ViewLinkObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SysC0017666Link"

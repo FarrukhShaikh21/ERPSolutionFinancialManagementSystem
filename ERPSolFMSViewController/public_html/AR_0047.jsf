@@ -68,8 +68,8 @@
                                    icon="#{resource['images:imgSave.png']}" iconPosition="top"/>
                         <af:spacer width="50" height="10" id="s6"/>
                         <af:button text="Supervise Transaction" id="b9"
-                                   visible="#{pageFlowScope.ERPSolTempBean.LERPSolAllowSubmit=='Y'}"
-                                   disabled="#{pageFlowScope.ERPSolTempBean.LERPSolAllowSubmit=='N' || bindings.Submit.inputValue=='Y'}"
+                                   visible="#{pageFlowScope.ERPSolTempBean.LERPSolAllowSubmit=='Y'||bindings.ReceiptMode.inputValue=='C'}"
+                                   disabled="#{(pageFlowScope.ERPSolTempBean.LERPSolAllowSubmit=='N' &amp;&amp; bindings.ReceiptMode.inputValue!='C') || bindings.Submit.inputValue=='Y'}"
                                    icon="#{resource['images:imgSupervise.png']}" iconPosition="top">
                           <af:showPopupBehavior popupId="::p1" triggerType="action"/>
                         </af:button>
@@ -99,12 +99,12 @@
                         <af:gridCell marginStart="5px" width="15%" id="gc6" valign="middle">
                           <af:outputLabel value="#{bindings.DocDate.hints.label}" id="ol7"/>
                         </af:gridCell>
-                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc7">
+                        <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc7" valign="middle">
                           <af:inputDate value="#{bindings.DocDate.inputValue}"
                                         required="#{bindings.DocDate.hints.mandatory}"
                                         columns="#{bindings.DocDate.hints.displayWidth}"
                                         shortDesc="#{bindings.DocDate.hints.tooltip}" id="id1" simple="true"
-                                        autoSubmit="true">
+                                        autoSubmit="true" readOnly="#{bindings.ReceiptNo.inputValue!=null}">
                             <f:validator binding="#{bindings.DocDate.validator}"/>
                             <af:convertDateTime pattern="#{bindings.DocDate.format}"/>
                           </af:inputDate>
@@ -152,6 +152,14 @@
                           <af:outputLabel value="#{bindings.txtCustomerName.hints.label}" id="ol2"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" id="gc13" halign="stretch" valign="middle">
+                          <af:inputText value="#{bindings.Salespersonid.inputValue}"
+                                        label="#{bindings.Salespersonid.hints.label}"
+                                        required="#{bindings.Salespersonid.hints.mandatory}"
+                                        columns="#{bindings.Salespersonid.hints.displayWidth}"
+                                        maximumLength="#{bindings.Salespersonid.hints.precision}"
+                                        shortDesc="#{bindings.Salespersonid.hints.tooltip}" id="it15" rendered="false">
+                            <f:validator binding="#{bindings.Salespersonid.validator}"/>
+                          </af:inputText>
                           <af:inputComboboxListOfValues id="iclov1"
                                                         popupTitle="Search and Select: #{bindings.txtCustomerName.hints.label}"
                                                         value="#{bindings.txtCustomerName.inputValue}"
@@ -194,7 +202,7 @@
                                                         required="#{bindings.txtBankBranchName.hints.mandatory}"
                                                         columns="#{bindings.txtBankBranchName.hints.displayWidth}"
                                                         shortDesc="#{bindings.txtBankBranchName.hints.tooltip}"
-                                                        simple="true" autoSubmit="true">
+                                                        simple="true" autoSubmit="true" partialTriggers="sor1">
                             <f:validator binding="#{bindings.txtBankBranchName.validator}"/>
                             <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedBranchValues}"/>
                           </af:inputComboboxListOfValues>

@@ -112,9 +112,21 @@ public class ERPSolFMSBean {
     public List<SelectItem> doERPSolGetAutoSuggestedBranchValues(String pStringValues) {
         List<SelectItem> ResultList=new ArrayList<SelectItem>();
         BindingContainer ERPSolbc=ERPSolGlobalViewBean.doGetERPBindings();
+        DCIteratorBinding ERPSolIB=(DCIteratorBinding)ERPSolbc.get("ReceiptMasterControlCRUDIterator");
+        ApplicationModule ERPSolAM=ERPSolIB.getViewObject().getApplicationModule();
         AttributeBinding ERPLocid =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
-        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "AllBankBranchesAutoSuggestRO",
-                                                            "LOCATIONID='"+ERPLocid+"' AND UPPER(CONCAT(Branch_Name,Branchid))", "BranchName", "Branchid", 10,"ERPSolFMSAppModuleDataControl");
+        AttributeBinding ERPSalespersonId =(AttributeBinding)ERPSolbc.getControlBinding("Salespersonid");
+        AttributeBinding ERPReceiptMode =(AttributeBinding)ERPSolbc.getControlBinding("ReceiptMode");
+        
+        
+        ViewObject vo=ERPSolAM.findViewObject("VWAllBankBranchesAutoSuggestRO");
+        vo.setNamedWhereClauseParam("P_ADF_RECEIPT_MODE", ERPReceiptMode.getInputValue());
+        vo.setNamedWhereClauseParam("P_ADF_SALESPERSONID", ERPSalespersonId.getInputValue());
+        vo.setNamedWhereClauseParam("P_ADF_LOCATIONID", ERPLocid.getInputValue());
+        vo.executeQuery();
+        
+        ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VWAllBankBranchesAutoSuggestRO",
+                                                            " UPPER(CONCAT(Branch_Name,Branchid))", "BranchName", "Branchid", 10,"ERPSolFMSAppModuleDataControl");
         return ResultList;
         
     }

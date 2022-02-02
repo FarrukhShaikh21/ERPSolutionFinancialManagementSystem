@@ -296,6 +296,10 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Dependencies>
+      <Item
+        Value="ReceiptMode"/>
+    </Dependencies>
   </Attribute>
   <Attribute
     Name="Branchid"
@@ -308,6 +312,10 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>
+    <Dependencies>
+      <Item
+        Value="ReceiptMode"/>
+    </Dependencies>
   </Attribute>
   <Attribute
     Name="Deptid"
@@ -518,11 +526,9 @@
       <validation:ResExpressions
         Name="DocDateRule0_ResExprList">
         <validation:Expression
-          trustMode="trusted"
           Name="0"><![CDATA[txtErrorMessage]]></validation:Expression>
       </validation:ResExpressions>
-      <validation:TransientExpression
-        trustMode="trusted"><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
+      <validation:TransientExpression><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
 AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_MODULEID", "AR-0047");
 AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_DATE", newValue);
 println("0")
@@ -881,9 +887,9 @@ return true;]]></validation:TransientExpression>
     Inverse="false">
     <validation:MsgIds>
       <validation:Item
-        Value="ERP_SOL_SPID"/>
-      <validation:Item
         Value="ERP_SOL_BRANCH"/>
+      <validation:Item
+        Value="ERP_SOL_SPID"/>
     </validation:MsgIds>
     <validation:TransientExpression><![CDATA[if(Salespersonid ==null)
 {

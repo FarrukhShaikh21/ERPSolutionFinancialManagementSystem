@@ -94,7 +94,8 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
         AccSoSalesPersonsViewDefaultVC,
         AccAllCustomerSalespersonPid,
         AccVWYesNoQVO,
-        AccVwAllCustomerQVO;
+        AccVwAllCustomerQVO,
+        AccVWAllBankBranchesQVO;
         static AttributesEnum[] vals = null;
         ;
         private static final int firstIndex = 0;
@@ -191,6 +192,7 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
     public static final int ACCALLCUSTOMERSALESPERSONPID = AttributesEnum.AccAllCustomerSalespersonPid.index();
     public static final int ACCVWYESNOQVO = AttributesEnum.AccVWYesNoQVO.index();
     public static final int ACCVWALLCUSTOMERQVO = AttributesEnum.AccVwAllCustomerQVO.index();
+    public static final int ACCVWALLBANKBRANCHESQVO = AttributesEnum.AccVWAllBankBranchesQVO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1270,6 +1272,13 @@ public class ReceiptMasterControlViewRowImpl extends ViewRowImpl {
      */
     public RowSet getAccVwAllCustomerQVO() {
         return (RowSet) getAttributeInternal(ACCVWALLCUSTOMERQVO);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> AccVWAllBankBranchesQVO.
+     */
+    public RowSet getAccVWAllBankBranchesQVO() {
+        return (RowSet) getAttributeInternal(ACCVWALLBANKBRANCHESQVO);
     }
 
     @Override

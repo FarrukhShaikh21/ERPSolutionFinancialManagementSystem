@@ -87,6 +87,25 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccVWAllBankBranchesQVO"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VWAllBankBranchesQVO"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="P_ADF_LOCATIONID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Locationid==null?"0":Locationid]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_RECEIPT_MODE">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[ReceiptMode==null?"0":ReceiptMode]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="P_ADF_SALESPERSONID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Salespersonid==null?"0":Salespersonid]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LovtxtCustomerName"
     ListVOName="AccVwAllCustomerQVO"
@@ -137,7 +156,7 @@
   </ListBinding>
   <ListBinding
     Name="LovtxtBankBranchName"
-    ListVOName="AccAllBankBranchesView"
+    ListVOName="AccVWAllBankBranchesQVO"
     ListRangeSize="-1"
     ComboRowCountHint="10"
     NullValueFlag="none"
@@ -157,12 +176,9 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="BranchName"/>
-      <Item Value="AccountName"/>
-      <Item Value="AccountNo"/>
       <Item Value="Branchid"/>
     </AttrArray>
-    <DisplayCriteria
-      Name="AllBankBranchesFindVC"/>
+    <DisplayCriteria/>
   </ListBinding>
   <ListBinding
     Name="LovSubmit"
@@ -670,29 +686,6 @@
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem
-        Name="AllBankBranchesView"
-        ViewAttribute="AllBankBranchesView"
-        Operator="EXISTS"
-        Conjunction="AND"
-        IsNestedCriteria="true"
-        Required="Optional">
-        <ViewCriteria
-          Name="AllBankBranchesViewNestedCriteria"
-          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView"
-          Conjunction="AND">
-          <ViewCriteriaRow
-            Name="AllBankBranchesViewNestedCriteria_row_0"
-            UpperColumns="1">
-            <ViewCriteriaItem
-              Name="BranchName"
-              ViewAttribute="BranchName"
-              Operator="CONTAINS"
-              Conjunction="AND"
-              Required="Optional"/>
-          </ViewCriteriaRow>
-        </ViewCriteria>
-      </ViewCriteriaItem>
-      <ViewCriteriaItem
         Name="ReceiptMasterControlViewFindVC_ReceiptMasterControlViewCriteria_row_0_AllCustomersView"
         ViewAttribute="AllCustomersView"
         Operator="EXISTS"
@@ -709,6 +702,29 @@
             <ViewCriteriaItem
               Name="CustomerName"
               ViewAttribute="CustomerName"
+              Operator="CONTAINS"
+              Conjunction="AND"
+              Required="Optional"/>
+          </ViewCriteriaRow>
+        </ViewCriteria>
+      </ViewCriteriaItem>
+      <ViewCriteriaItem
+        Name="AllBankBranchesView"
+        ViewAttribute="AllBankBranchesView"
+        Operator="EXISTS"
+        Conjunction="AND"
+        IsNestedCriteria="true"
+        Required="Optional">
+        <ViewCriteria
+          Name="AllBankBranchesViewNestedCriteria"
+          ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllBankBranchesView"
+          Conjunction="AND">
+          <ViewCriteriaRow
+            Name="AllBankBranchesViewNestedCriteria_row_0"
+            UpperColumns="1">
+            <ViewCriteriaItem
+              Name="BranchName"
+              ViewAttribute="BranchName"
               Operator="CONTAINS"
               Conjunction="AND"
               Required="Optional"/>

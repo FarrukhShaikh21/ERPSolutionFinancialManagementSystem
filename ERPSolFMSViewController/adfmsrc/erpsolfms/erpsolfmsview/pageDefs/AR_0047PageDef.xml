@@ -114,5 +114,10 @@
         <Item Value="Companyid"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="ReceiptMasterControlCRUDIterator" id="Salespersonid">
+      <AttrNames>
+        <Item Value="Salespersonid"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
