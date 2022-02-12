@@ -70,7 +70,6 @@
       OperandType="EXPR"
       Inverse="false">
       <validation:OnCondition
-        trustMode="trusted"
         Name="OnConditionExpr"><![CDATA[newValue!=null]]></validation:OnCondition>
       <validation:MsgIds>
         <validation:Item
@@ -79,11 +78,9 @@
       <validation:ResExpressions
         Name="CustomeridActiveBR_ResExprList">
         <validation:Expression
-          trustMode="trusted"
           Name="0"><![CDATA[txtErrorMessage]]></validation:Expression>
       </validation:ResExpressions>
-      <validation:TransientExpression
-        trustMode="trusted"><![CDATA[AccVwFuncCheckIsCustomerActive.setNamedWhereClauseParam("P_ADF_CUSTOMERID",newValue);
+      <validation:TransientExpression><![CDATA[AccVwFuncCheckIsCustomerActive.setNamedWhereClauseParam("P_ADF_CUSTOMERID",newValue);
 AccVwFuncCheckIsCustomerActive.setNamedWhereClauseParam("P_ADF_MODULEID", "AR-0005");
 AccVwFuncCheckIsCustomerActive.setNamedWhereClauseParam("P_ADF_DATE", DocDate);
 println("0")
@@ -176,12 +173,50 @@ return true;]]></validation:TransientExpression>
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
     TableName="AR_NOTE_MASTER">
+    <TransientExpression
+      trustMode="trusted"><![CDATA[adf.currentDate]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMaster.EntryDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:ExpressionValidationBean
+      Name="DocEntryDateBackDateBR"
+      OperandType="EXPR"
+      Inverse="false">
+      <validation:OnCondition
+        trustMode="trusted"
+        Name="OnConditionExpr"><![CDATA[newValue!=null]]></validation:OnCondition>
+      <validation:MsgIds>
+        <validation:Item
+          Value="ERP_SOL_AR_NOTE_USER_DATE"/>
+      </validation:MsgIds>
+      <validation:ResExpressions
+        Name="DocEntryDateBackDateBR_ResExprList">
+        <validation:Expression
+          trustMode="trusted"
+          Name="0"><![CDATA[txtErrorMessage]]></validation:Expression>
+      </validation:ResExpressions>
+      <validation:TransientExpression
+        trustMode="trusted"><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
+AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_MODULEID", "AR-0005");
+AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_DATE", newValue);
+println("0")
+AccVwFuncUserBackDateAllowed.executeQuery();
+println("a")
+println(AccVwFuncUserBackDateAllowed.first().getAttribute("Status"));
+if(!AccVwFuncUserBackDateAllowed.first().getAttribute("Status").toString().equals("ERPSOLSUCCESS"))
+{
+settxtErrorMessage(AccVwFuncUserBackDateAllowed.first().getAttribute("Status").toString());
+adf.error.raise("ERP_SOL_AR_NOTE_USER_DATE");
+return false;
+}
+
+return true;]]></validation:TransientExpression>
+    </validation:ExpressionValidationBean>
   </Attribute>
   <Attribute
     Name="TotalAmount"
@@ -511,37 +546,6 @@ return true;]]></validation:TransientExpression>
           ResId="erpsolfms.erpsolfmsmodel.erpsolfmseo.ArNoteMaster.DocDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
-    <validation:ExpressionValidationBean
-      Name="DocDateBackDateBR"
-      OperandType="EXPR"
-      Inverse="false">
-      <validation:OnCondition
-        Name="OnConditionExpr"><![CDATA[newValue!=null]]></validation:OnCondition>
-      <validation:MsgIds>
-        <validation:Item
-          Value="ERP_SOL_AR_NOTE_USER_DATE"/>
-      </validation:MsgIds>
-      <validation:ResExpressions
-        Name="DocDateBackDateBR_ResExprList">
-        <validation:Expression
-          Name="0"><![CDATA[txtErrorMessage]]></validation:Expression>
-      </validation:ResExpressions>
-      <validation:TransientExpression><![CDATA[AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_USERID",erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserCode());
-AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_MODULEID", "AR-0005");
-AccVwFuncUserBackDateAllowed.setNamedWhereClauseParam("P_ADF_DATE", newValue);
-println("0")
-AccVwFuncUserBackDateAllowed.executeQuery();
-println("a")
-println(AccVwFuncUserBackDateAllowed.first().getAttribute("Status"));
-if(!AccVwFuncUserBackDateAllowed.first().getAttribute("Status").toString().equals("ERPSOLSUCCESS"))
-{
-settxtErrorMessage(AccVwFuncUserBackDateAllowed.first().getAttribute("Status").toString());
-adf.error.raise("ERP_SOL_AR_NOTE_USER_DATE");
-return false;
-}
-
-return true;]]></validation:TransientExpression>
-    </validation:ExpressionValidationBean>
   </Attribute>
   <Attribute
     Name="LocCurrcode"

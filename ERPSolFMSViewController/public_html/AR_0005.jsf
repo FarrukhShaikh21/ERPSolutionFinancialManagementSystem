@@ -96,16 +96,17 @@
                           </af:inputText>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="15%" id="gc6" valign="middle">
-                          <af:outputLabel value="#{bindings.DocDate.hints.label}" id="ol7"/>
+                          <af:outputLabel value="#{bindings.EntryDate.hints.label}" id="ol7"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc7" valign="middle">
-                          <af:inputDate value="#{bindings.DocDate.inputValue}"
-                                        required="#{bindings.DocDate.hints.mandatory}"
-                                        columns="#{bindings.DocDate.hints.displayWidth}"
-                                        shortDesc="#{bindings.DocDate.hints.tooltip}" id="id2" simple="true"
+                          <af:inputDate value="#{bindings.EntryDate.inputValue}"
+                                        label="#{bindings.EntryDate.hints.label}"
+                                        required="#{bindings.EntryDate.hints.mandatory}"
+                                        columns="#{bindings.EntryDate.hints.displayWidth}"
+                                        shortDesc="#{bindings.EntryDate.hints.tooltip}" id="id1" simple="true"
                                         autoSubmit="true">
-                            <f:validator binding="#{bindings.DocDate.validator}"/>
-                            <af:convertDateTime pattern="#{bindings.DocDate.format}"/>
+                            <f:validator binding="#{bindings.EntryDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.EntryDate.format}"/>
                           </af:inputDate>
                         </af:gridCell>
                       </af:gridRow>

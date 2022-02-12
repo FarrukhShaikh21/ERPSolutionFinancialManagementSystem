@@ -23,11 +23,6 @@
         <Item Value="NoteCode"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="DocDate">
-      <AttrNames>
-        <Item Value="DocDate"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="Locationid">
       <AttrNames>
         <Item Value="Locationid"/>
@@ -86,5 +81,10 @@
             Action="createInsertRow"/>
     <action IterBinding="ArNoteDetailDetCRUDIterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="EntryDate">
+      <AttrNames>
+        <Item Value="EntryDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
