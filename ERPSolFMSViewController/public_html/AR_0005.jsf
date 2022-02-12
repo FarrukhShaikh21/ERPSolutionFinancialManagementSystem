@@ -249,7 +249,7 @@
                               selectedRowKeys="#{bindings.ArNoteDetailDetCRUD.collectionModel.selectedRow}"
                               selectionListener="#{bindings.ArNoteDetailDetCRUD.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.ArNoteDetailDetCRUD.rangeSize}" id="t2"
-                              partialTriggers="::b4 ::b3">
+                              partialTriggers="::b4 ::b3" autoHeightRows="5" scrollPolicy="page">
                       <af:column headerText="#{bindings.ArNoteDetailDetCRUD.hints.ItemRefId.label}" id="c1" width="120"
                                  displayIndex="-1">
                         <af:inputComboboxListOfValues id="itemRefIdId"
