@@ -12,7 +12,10 @@
   </executables>
   <bindings>
     <action IterBinding="ArNoteMasterCRUDIterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
+            Action="createWithParams" InstanceName="ERPSolFMSAppModuleDataControl.ArNoteMasterCRUD"
+            DataControl="ERPSolFMSAppModuleDataControl">
+      <NamedData NDName="DocTypeId" NDValue="#{'SCR'}" NDType="java.lang.String"/>
+    </action>
     <attributeValues IterBinding="ArNoteMasterCRUDIterator" id="Submit">
       <AttrNames>
         <Item Value="Submit"/>

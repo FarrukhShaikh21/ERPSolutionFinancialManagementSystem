@@ -51,22 +51,22 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
-  <SQLQuery><![CDATA[SELECT ABB.BRANCHID,         
-       ABB.BANKID,         
-       ABB.BRANCH_NAME         
-FROM  ALL_BANK_BRANCHES ABB         
-WHERE ABB.SALESTERRITORYID=(SELECT SP.SALESTERRITORYID FROM SO_SALES_PERSONS SP WHERE SP.SALESPERSONID=:P_ADF_SALESPERSONID)         
-AND   ABB.CASH_BANK='C'         
-AND   :P_ADF_RECEIPT_MODE='C'         
-AND   ABB.LOCATIONID=:P_ADF_LOCATIONID        
-UNION ALL         
-SELECT ABB.BRANCHID,         
-       ABB.BANKID,         
-       ABB.BRANCH_NAME         
-FROM  ALL_BANK_BRANCHES ABB         
-WHERE ABB.CASH_BANK='B'         
-AND   :P_ADF_RECEIPT_MODE!='C'        
-AND   ABB.LOCATIONID=:P_ADF_LOCATIONID]]></SQLQuery>
+  <SQLQuery><![CDATA[SELECT ABB.BRANCHID,            
+       ABB.BANKID,            
+       ABB.BRANCH_NAME            
+FROM  ALL_BANK_BRANCHES ABB            
+WHERE ABB.SALESTERRITORYID=(SELECT SP.SALESTERRITORYID FROM SO_SALES_PERSONS SP WHERE SP.SALESPERSONID=:P_ADF_SALESPERSONID)            
+AND   ABB.CASH_BANK='C'            
+AND   :P_ADF_RECEIPT_MODE='C'            
+AND   ABB.LOCATIONID=:P_ADF_LOCATIONID           
+UNION ALL            
+SELECT ABB.BRANCHID,            
+       ABB.BANKID,            
+       ABB.BRANCH_NAME            
+FROM  ALL_BANK_BRANCHES ABB            
+WHERE ABB.CASH_BANK='B'            
+/*AND   :P_ADF_RECEIPT_MODE!='C'           
+AND   ABB.LOCATIONID=:P_ADF_LOCATIONID*/]]></SQLQuery>
   <ViewAttribute
     Name="Branchid"
     IsUpdateable="false"
