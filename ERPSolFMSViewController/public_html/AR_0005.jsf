@@ -131,7 +131,7 @@
                         <af:gridCell marginStart="5px" width="35%" marginEnd="5px" id="gc11" halign="stretch"
                                      valign="middle">
                           <af:selectOneChoice label="Label 1" id="soc1" value="#{bindings.DocTypeId.inputValue}"
-                                              simple="true" contentStyle="width:30%">
+                                              simple="true" contentStyle="width:50%">
                             <af:selectItem value="SDB" id="si1" label="Debit Note"/>
                             <af:selectItem value="SCR" id="si2" label="Credit Note"/>
                           </af:selectOneChoice>
