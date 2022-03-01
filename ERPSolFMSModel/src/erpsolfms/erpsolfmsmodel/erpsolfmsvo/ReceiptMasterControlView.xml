@@ -668,6 +668,18 @@
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem
+        Name="ChequeNo"
+        ViewAttribute="ChequeNo"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ChequeDate"
+        ViewAttribute="ChequeDate"
+        Operator="BETWEEN"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
         Name="Submit"
         ViewAttribute="Submit"
         Operator="="

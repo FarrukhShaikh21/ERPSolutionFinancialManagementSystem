@@ -98,6 +98,28 @@
                                                shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.Submit.tooltip}"
                                                id="ot8"/>
                             </af:column>
+                            <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.label}" id="c2">
+                                <af:inputText value="#{row.bindings.ChequeNo.inputValue}"
+                                              label="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.label}"
+                                              required="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.mandatory}"
+                                              columns="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.displayWidth}"
+                                              maximumLength="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.precision}"
+                                              shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.tooltip}"
+                                              id="it2">
+                                    <f:validator binding="#{row.bindings.ChequeNo.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.ChequeDate.label}" id="c3">
+                                <af:inputDate value="#{row.bindings.ChequeDate.inputValue}"
+                                              label="#{bindings.ReceiptMasterControlCRUD.hints.ChequeDate.label}"
+                                              required="#{bindings.ReceiptMasterControlCRUD.hints.ChequeDate.mandatory}"
+                                              columns="#{bindings.ReceiptMasterControlCRUD.hints.ChequeDate.displayWidth}"
+                                              shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.ChequeDate.tooltip}"
+                                              id="id1">
+                                    <f:validator binding="#{row.bindings.ChequeDate.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.ReceiptMasterControlCRUD.hints.ChequeDate.format}"/>
+                                </af:inputDate>
+                            </af:column>
                             <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.Remarks.label}"
                                        id="resId1c9">
                                 <af:outputText value="#{row.Remarks}"

@@ -25,6 +25,8 @@
           <Item Value="Submit"/>
           <Item Value="Remarks"/>
           <Item Value="txtSumReceiptAmount"/>
+          <Item Value="ChequeNo"/>
+          <Item Value="ChequeDate"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
