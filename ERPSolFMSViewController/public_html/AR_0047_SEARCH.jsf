@@ -98,6 +98,18 @@
                                                shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.Submit.tooltip}"
                                                id="ot8"/>
                             </af:column>
+                            <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.RefVoucherNo.label}"
+                                       id="c4">
+                                <af:inputText value="#{row.bindings.RefVoucherNo.inputValue}"
+                                              label="#{bindings.ReceiptMasterControlCRUD.hints.RefVoucherNo.label}"
+                                              required="#{bindings.ReceiptMasterControlCRUD.hints.RefVoucherNo.mandatory}"
+                                              columns="#{bindings.ReceiptMasterControlCRUD.hints.RefVoucherNo.displayWidth}"
+                                              maximumLength="#{bindings.ReceiptMasterControlCRUD.hints.RefVoucherNo.precision}"
+                                              shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.RefVoucherNo.tooltip}"
+                                              id="it3" readOnly="true">
+                                    <f:validator binding="#{row.bindings.RefVoucherNo.validator}"/>
+                                </af:inputText>
+                            </af:column>
                             <af:column headerText="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.label}" id="c2">
                                 <af:inputText value="#{row.bindings.ChequeNo.inputValue}"
                                               label="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.label}"
@@ -105,7 +117,7 @@
                                               columns="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.displayWidth}"
                                               maximumLength="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.precision}"
                                               shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.ChequeNo.tooltip}"
-                                              id="it2">
+                                              id="it2" readOnly="true">
                                     <f:validator binding="#{row.bindings.ChequeNo.validator}"/>
                                 </af:inputText>
                             </af:column>
@@ -115,7 +127,7 @@
                                               required="#{bindings.ReceiptMasterControlCRUD.hints.ChequeDate.mandatory}"
                                               columns="#{bindings.ReceiptMasterControlCRUD.hints.ChequeDate.displayWidth}"
                                               shortDesc="#{bindings.ReceiptMasterControlCRUD.hints.ChequeDate.tooltip}"
-                                              id="id1">
+                                              id="id1" readOnly="true">
                                     <f:validator binding="#{row.bindings.ChequeDate.validator}"/>
                                     <af:convertDateTime pattern="#{bindings.ReceiptMasterControlCRUD.hints.ChequeDate.format}"/>
                                 </af:inputDate>

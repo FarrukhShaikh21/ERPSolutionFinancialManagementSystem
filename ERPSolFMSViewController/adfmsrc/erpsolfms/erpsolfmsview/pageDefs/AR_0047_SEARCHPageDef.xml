@@ -27,6 +27,7 @@
           <Item Value="txtSumReceiptAmount"/>
           <Item Value="ChequeNo"/>
           <Item Value="ChequeDate"/>
+          <Item Value="RefVoucherNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
