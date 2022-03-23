@@ -668,6 +668,12 @@
         Conjunction="AND"
         Required="Optional"/>
       <ViewCriteriaItem
+        Name="RefVoucherNo"
+        ViewAttribute="RefVoucherNo"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
         Name="ChequeNo"
         ViewAttribute="ChequeNo"
         Operator="="

@@ -22,5 +22,9 @@
                   MethodName="doUnSubmitARRecord" IsViewObjectMethod="true" DataControl="ERPSolFMSAppModuleDataControl"
                   InstanceName="data.ERPSolFMSAppModuleDataControl.VwGLFinanceReportRO"
                   ReturnName="data.ERPSolFMSAppModuleDataControl.methodResults.doUnSubmitARRecord_ERPSolFMSAppModuleDataControl_VwGLFinanceReportRO_doUnSubmitARRecord_result"/>
+    <list IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovCompanyid" id="Companyid"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="VwGLFinanceReportROIterator" StaticList="false" Uses="LovtxtLocationName"
+                  id="txtLocationName"/>
   </bindings>
 </pageDefinition>

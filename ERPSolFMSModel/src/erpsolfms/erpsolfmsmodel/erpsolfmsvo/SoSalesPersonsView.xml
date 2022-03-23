@@ -17,6 +17,10 @@
     Name="P_ADF_CUSTOMERID"
     Kind="viewcriteria"
     Type="java.lang.String"/>
+  <Variable
+    Name="P_ADF_DIVID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="SoSalesPersons"
     Entity="erpsolfms.erpsolfmsmodel.erpsolfmseo.SoSalesPersons"/>
@@ -156,6 +160,15 @@
               UpperColumns="0"
               IsBindVarValue="true"
               Required="Optional"/>
+            <ViewCriteriaItem
+              Name="Divid"
+              ViewAttribute="Divid"
+              Operator="="
+              Conjunction="AND"
+              Value=":P_ADF_DIVID"
+              UpperColumns="0"
+              IsBindVarValue="true"
+              Required="Optional"/>
           </ViewCriteriaRow>
         </ViewCriteria>
       </ViewCriteriaItem>
@@ -254,14 +267,12 @@
         ViewAttribute="Salespersonid"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="Name"
         ViewAttribute="Name"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>

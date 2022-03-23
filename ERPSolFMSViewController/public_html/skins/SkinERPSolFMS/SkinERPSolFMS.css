@@ -16,7 +16,16 @@ af|outputLabel{
 af|inputText::label{
     /*font-weight: bold;*/
     color: Black;
+    font-weight: bold;
+    /*font-size: medium;*/
+    font-family: Verdana;
+}
+
+
+af|inputText:read-only::label{
     /*font-weight: bold;*/
+    color: Black;
+    font-weight: bold;
     /*font-size: medium;*/
     font-family: Verdana;
 }
@@ -55,8 +64,7 @@ af|selectOneChoice::label{
 
 af|inputComboboxListOfValues::label{
     font-weight: bold;
-    color: Blue;
-    font-weight: bold;
+    color: Black;
 }
 
 af|inputText::content{

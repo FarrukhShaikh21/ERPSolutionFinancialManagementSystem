@@ -68,7 +68,7 @@ public class VwGLFinanceReportQVOImpl extends ViewObjectImpl implements VwGLFina
         this.first().setAttribute("txtToDate", this.first().getAttribute("txtDefaultDate"));
         vo.remove();
     }
-    public void doUnSubmitARRecord() {
+    public void doUnSubmitARRecord1() {
                 CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_receipt.func_unsubmit_ar_document('"+this.first().getAttribute("txtDoctypeId")+"','"+this.first().getAttribute("txtDocumentId")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
 //                System.out.println("begin ?:=PKG_WARRANTY_CARD.FUNC_UNSUBMIT_WARRANTY_CARD('"+this.first().getAttribute("txtRecordID")+"','"+this.first().getAttribute("txtDocTypeId")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;");
                 try {
@@ -87,8 +87,35 @@ public class VwGLFinanceReportQVOImpl extends ViewObjectImpl implements VwGLFina
                     } catch (SQLException e) {
                     }
                 }
-                    
+        
+    }
+    public void doUnSubmitARRecord() {
+        CallableStatement cs=this.getDBTransaction().createCallableStatement("begin ?:=pkg_receipt.func_unsubmit_ar_document('"+this.first().getAttribute("txtDoctypeId")+"','"+this.first().getAttribute("txtDocumentId")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;", 1);
+        System.out.println("begin ?:=pkg_receipt.func_unsubmit_ar_document('"+this.first().getAttribute("txtDoctypeId")+"','"+this.first().getAttribute("txtDocumentId")+"','"+ERPSolGlobClassModel.doGetUserCode()+"'); END;");
+        try {
+            cs.registerOutParameter(1, Types.VARCHAR);
+            cs.executeUpdate();
             
+    //            if (!cs.getString(1).equals("ERPSOLSUCCESS")) {
+                JboException jboex=new JboException(cs.getString(1));
+                jboex.setSeverity(JboException.SEVERITY_WARNING); 
+                throw new JboException(jboex);
+    //           }
+    //            this.getDBTransaction().commit();
+        } catch (SQLException e) {
+        //            this.getCurrentRow().setAttribute("Submit", "N");
+            this.getDBTransaction().commit();
+            System.out.println(e.getMessage()+ "this is message");
+            throw new JboException("Unable to supervise ");
+        }
+        finally{
+            try {
+                cs.close();
+                System.out.println("closing----AR");
+            } catch (SQLException e) {
+            }
+        }
+
         
     }
 }

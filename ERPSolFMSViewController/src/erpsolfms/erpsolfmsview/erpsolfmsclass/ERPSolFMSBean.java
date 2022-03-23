@@ -407,6 +407,7 @@ public class ERPSolFMSBean {
         AttributeBinding ERPCompanyid       =(AttributeBinding)ERPSolbc.getControlBinding("Companyid");
         AttributeBinding ERPRegionid        =(AttributeBinding)ERPSolbc.getControlBinding("Regionid");
         AttributeBinding ERPLocationid      =(AttributeBinding)ERPSolbc.getControlBinding("Locationid");
+        AttributeBinding ERPDivid           =(AttributeBinding)ERPSolbc.getControlBinding("Divid");
         AttributeBinding ERPSalesTerritory  =(AttributeBinding)ERPSolbc.getControlBinding("txtSalesTerritoryId");
         AttributeBinding ERPCustomerid      =(AttributeBinding)ERPSolbc.getControlBinding("Customerid");
         AttributeBinding ERPSalespersonid   =(AttributeBinding)ERPSolbc.getControlBinding("Salespersonid");
@@ -416,6 +417,7 @@ public class ERPSolFMSBean {
         AttributeBinding ERPToDate          =(AttributeBinding)ERPSolbc.getControlBinding("txtToDate");
         String reportParameter="";
         reportParameter="COMPANY="+ (ERPCompanyid.getInputValue()==null?"":ERPCompanyid.getInputValue());
+        reportParameter+="&P_DIVID="+(ERPDivid.getInputValue()==null?"":ERPDivid.getInputValue());
         reportParameter+="&P_REGID="+(ERPRegionid.getInputValue()==null?"":ERPRegionid.getInputValue());
         reportParameter+="&P_LOCID="+(ERPLocationid.getInputValue()==null?"":ERPLocationid.getInputValue());
         reportParameter+="&P_TERRITORY_ID="+(ERPSalesTerritory.getInputValue()==null?"":ERPSalesTerritory.getInputValue());

@@ -30,12 +30,19 @@
       trustMode="untrusted"
       Name="expression"><![CDATA[erpsolglob.erpsolglobmodel.erpsolglobclasses.ERPSolGlobClassModel.doGetUserLocationCode()]]></TransientExpression>
   </Variable>
-  <SQLQuery><![CDATA[select m.receipt_no, 'Customer: '||ac.customerid||'('||ac.customer_name||') Date: '||m.receipt_date description  
-from receipt_master_control m, all_customers ac 
-where m.customerid=ac.customerid 
-  and :P_ADF_DOCTYPEID = 'RRC'   
-  and m.submit = 'Y'   
-  and m.LocationId = :P_ADF_LOCATIONID]]></SQLQuery>
+  <SQLQuery><![CDATA[select m.receipt_no, 'Customer: '||ac.customerid||'('||ac.customer_name||') Date: '||m.receipt_date description      
+from receipt_master_control m, all_customers ac     
+where m.customerid=ac.customerid     
+  and :P_ADF_DOCTYPEID = 'RRC'       
+  and m.submit = 'Y'       
+  and m.LocationId = :P_ADF_LOCATIONID    
+UNION ALL   
+select NM.NOTE_CODE, 'Customer: '||ac.customerid||'('||ac.customer_name||') Date: '||NM.Doc_Date description      
+from AR_NOTE_MASTER NM, all_customers ac     
+where nm.customerid=ac.customerid     
+  and :P_ADF_DOCTYPEID = 'RNM'       
+  and nm.submit = 'Y'       
+  and nm.LocationId = :P_ADF_LOCATIONID]]></SQLQuery>
   <ViewAttribute
     Name="ReceiptNo"
     IsUpdateable="false"

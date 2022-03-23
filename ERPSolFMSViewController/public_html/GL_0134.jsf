@@ -16,7 +16,7 @@
                             <af:panelGridLayout id="pgl1">
                                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                                     <af:gridCell marginStart="5px" width="70%" marginEnd="5px" id="gc1">
-                                        <af:panelFormLayout id="pfl1" maxColumns="2" rows="4">
+                                        <af:panelFormLayout id="pfl1" maxColumns="1" rows="1">
                                             <af:selectOneChoice value="#{bindings.Companyid.inputValue}"
                                                                 label="#{bindings.Companyid.label}"
                                                                 required="#{bindings.Companyid.hints.mandatory}"
@@ -33,45 +33,6 @@
                                                 <f:selectItems value="#{bindings.Regionid.items}" id="si2"/>
                                                 <f:validator binding="#{bindings.Regionid.validator}"/>
                                             </af:selectOneChoice>
-                                            <af:panelLabelAndMessage label="#{bindings.txtCustomerName.hints.label}" id="plam1">
-                                                <af:panelGroupLayout id="pgl2" layout="horizontal">
-                                                    <af:inputComboboxListOfValues id="txtCustomerNameId"
-                                                                                  popupTitle="Search and Select: #{bindings.txtCustomerName.hints.label}"
-                                                                                  value="#{bindings.txtCustomerName.inputValue}"
-                                                                                  label="#{bindings.txtCustomerName.hints.label}"
-                                                                                  model="#{bindings.txtCustomerName.listOfValuesModel}"
-                                                                                  required="#{bindings.txtCustomerName.hints.mandatory}"
-                                                                                  columns="#{bindings.txtCustomerName.hints.displayWidth}"
-                                                                                  shortDesc="#{bindings.txtCustomerName.hints.tooltip}"
-                                                                                  simple="true"
-                                                                                  partialTriggers="txtLocationNameId"
-                                                                                  inlineStyle="voice-volume:medium;"
-                                                                                  autoSubmit="true">
-                                                        <f:validator binding="#{bindings.txtCustomerName.validator}"/>
-                                                        <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetReceiptAutoSuggestedCustomerValues}"/>
-                                                    </af:inputComboboxListOfValues>
-                                                    <af:spacer width="10" height="10" id="s1"/>
-                                                    <af:inputText value="#{bindings.Customerid.inputValue}"
-                                                                  label="#{bindings.Customerid.hints.label}"
-                                                                  required="#{bindings.Customerid.hints.mandatory}"
-                                                                  columns="#{bindings.Customerid.hints.displayWidth}"
-                                                                  maximumLength="#{bindings.Customerid.hints.precision}"
-                                                                  shortDesc="#{bindings.Customerid.hints.tooltip}"
-                                                                  id="it7" simple="true" readOnly="true"
-                                                                  partialTriggers="txtLocationNameId txtCustomerNameId">
-                                                        <f:validator binding="#{bindings.Customerid.validator}"/>
-                                                    </af:inputText>
-                                                </af:panelGroupLayout>
-                                            </af:panelLabelAndMessage>
-                                            <af:inputDate value="#{bindings.txtFromDate.inputValue}"
-                                                          label="#{bindings.txtFromDate.hints.label}"
-                                                          required="#{bindings.txtFromDate.hints.mandatory}"
-                                                          columns="#{bindings.txtFromDate.hints.displayWidth}"
-                                                          shortDesc="#{bindings.txtFromDate.hints.tooltip}" id="id2"
-                                                          autoSubmit="true">
-                                                <f:validator binding="#{bindings.txtFromDate.validator}"/>
-                                                <af:convertDateTime pattern="#{bindings.txtFromDate.format}"/>
-                                            </af:inputDate>
                                             <af:panelLabelAndMessage label="#{bindings.txtLocationName.hints.label}"
                                                                      id="plam5">
                                                 <af:panelGroupLayout id="pgl6" layout="horizontal">
@@ -107,6 +68,44 @@
                                                 <f:selectItems value="#{bindings.txtSalesTerritoryId.items}" id="si3"/>
                                                 <f:validator binding="#{bindings.txtSalesTerritoryId.validator}"/>
                                             </af:selectOneChoice>
+                                            <af:selectOneChoice value="#{bindings.Divid.inputValue}"
+                                                                label="#{bindings.Divid.label}"
+                                                                required="#{bindings.Divid.hints.mandatory}"
+                                                                shortDesc="#{bindings.Divid.hints.tooltip}" id="soc4"
+                                                                autoSubmit="true" contentStyle="width:185px">
+                                                <f:selectItems value="#{bindings.Divid.items}" id="si4"/>
+                                                <f:validator binding="#{bindings.Divid.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:panelLabelAndMessage label="#{bindings.txtCustomerName.hints.label}" id="plam1">
+                                                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                                                    <af:inputComboboxListOfValues id="txtCustomerNameId"
+                                                                                  popupTitle="Search and Select: #{bindings.txtCustomerName.hints.label}"
+                                                                                  value="#{bindings.txtCustomerName.inputValue}"
+                                                                                  label="#{bindings.txtCustomerName.hints.label}"
+                                                                                  model="#{bindings.txtCustomerName.listOfValuesModel}"
+                                                                                  required="#{bindings.txtCustomerName.hints.mandatory}"
+                                                                                  columns="#{bindings.txtCustomerName.hints.displayWidth}"
+                                                                                  shortDesc="#{bindings.txtCustomerName.hints.tooltip}"
+                                                                                  simple="true"
+                                                                                  partialTriggers="txtLocationNameId"
+                                                                                  inlineStyle="voice-volume:medium;"
+                                                                                  autoSubmit="true">
+                                                        <f:validator binding="#{bindings.txtCustomerName.validator}"/>
+                                                        <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetReceiptAutoSuggestedCustomerValues}"/>
+                                                    </af:inputComboboxListOfValues>
+                                                    <af:spacer width="10" height="10" id="s1"/>
+                                                    <af:inputText value="#{bindings.Customerid.inputValue}"
+                                                                  label="#{bindings.Customerid.hints.label}"
+                                                                  required="#{bindings.Customerid.hints.mandatory}"
+                                                                  columns="#{bindings.Customerid.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Customerid.hints.precision}"
+                                                                  shortDesc="#{bindings.Customerid.hints.tooltip}"
+                                                                  id="it7" simple="true" readOnly="true"
+                                                                  partialTriggers="txtLocationNameId txtCustomerNameId">
+                                                        <f:validator binding="#{bindings.Customerid.validator}"/>
+                                                    </af:inputText>
+                                                </af:panelGroupLayout>
+                                            </af:panelLabelAndMessage>
                                             <af:panelLabelAndMessage label="#{bindings.txtSalespersonName.hints.label}"
                                                                      id="plam2">
                                                 <af:panelGroupLayout id="pgl3" layout="horizontal">
@@ -119,10 +118,9 @@
                                                                                   columns="#{bindings.txtSalespersonName.hints.displayWidth}"
                                                                                   shortDesc="#{bindings.txtSalespersonName.hints.tooltip}"
                                                                                   simple="true"
-                                                                                  partialTriggers="txtLocationNameId txtCustomerNameId"
+                                                                                  partialTriggers="txtLocationNameId txtCustomerNameId soc4"
                                                                                   autoSubmit="true">
                                                         <f:validator binding="#{bindings.txtSalespersonName.validator}"/>
-                                                        <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedSalesPersonValues}"/>
                                                     </af:inputComboboxListOfValues>
                                                     <af:spacer width="10" height="10" id="s2"/>
                                                     <af:inputText value="#{bindings.Salespersonid.inputValue}"
@@ -137,6 +135,15 @@
                                                     </af:inputText>
                                                 </af:panelGroupLayout>
                                             </af:panelLabelAndMessage>
+                                            <af:inputDate value="#{bindings.txtFromDate.inputValue}"
+                                                          label="#{bindings.txtFromDate.hints.label}"
+                                                          required="#{bindings.txtFromDate.hints.mandatory}"
+                                                          columns="#{bindings.txtFromDate.hints.displayWidth}"
+                                                          shortDesc="#{bindings.txtFromDate.hints.tooltip}" id="id2"
+                                                          autoSubmit="true">
+                                                <f:validator binding="#{bindings.txtFromDate.validator}"/>
+                                                <af:convertDateTime pattern="#{bindings.txtFromDate.format}"/>
+                                            </af:inputDate>
                                             <af:inputDate value="#{bindings.txtToDate.inputValue}"
                                                           label="#{bindings.txtToDate.hints.label}"
                                                           required="#{bindings.txtToDate.hints.mandatory}"

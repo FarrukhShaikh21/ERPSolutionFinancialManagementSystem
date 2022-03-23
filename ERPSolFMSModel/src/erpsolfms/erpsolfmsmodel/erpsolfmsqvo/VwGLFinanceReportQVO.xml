@@ -35,6 +35,10 @@
       Name="SoSalesPersonsByCustomerVC"
       FullName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.SoSalesPersonsView.SoSalesPersonsByCustomerVC"/>
     <ParameterMap>
+      <PIMap Variable="P_ADF_DIVID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Divid]]></TransientExpression>
+      </PIMap>
       <PIMap Variable="P_ADF_CUSTOMERID">
         <TransientExpression
           trustMode="untrusted"><![CDATA[Customerid==null?"0":Customerid]]></TransientExpression>
@@ -97,6 +101,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="AccAllDivisionsView"
+    ViewObjectName="erpsolfms.erpsolfmsmodel.erpsolfmsvo.AllDivisionsView"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LovCompanyid"
     ListVOName="AccAllCompanyView"
@@ -268,6 +276,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ReceiptNo"/>
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LovDivid"
+    ListVOName="AccAllDivisionsView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Divid"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Divid"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Description"/>
     </AttrArray>
     <DisplayCriteria/>
@@ -667,6 +694,28 @@
       <Item
         Value="txtDocumentId"/>
     </Dependencies>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Divid"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LovDivid">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="erpsolfms.erpsolfmsmodel.erpsolfmsqvo.VwGLFinanceReportQVO.Divid_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Pk"/>
