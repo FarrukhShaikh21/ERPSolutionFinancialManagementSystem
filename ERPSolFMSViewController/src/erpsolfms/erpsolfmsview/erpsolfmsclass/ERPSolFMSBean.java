@@ -145,8 +145,6 @@ public class ERPSolFMSBean {
         vo.setNamedWhereClauseParam("P_ADF_DOCTYPEID", ERPDocType.getInputValue());
         vo.setNamedWhereClauseParam("P_ADF_LOCATIONID", ERPLocid);
         vo.executeQuery();
-        System.out.println("d");
-        System.out.println(ERPLocid);//ERPSolGlobalViewBean.
         ResultList= ERPSolGlobalViewBean.doERPSolGetAutoSuggestedValues(pStringValues, "VwARDocumentIdForUnsubmitAutoSuggestRO",
                                                             " UPPER(CONCAT(Receipt_No,Description))", "ReceiptNo", "Description", 10);
         return ResultList;

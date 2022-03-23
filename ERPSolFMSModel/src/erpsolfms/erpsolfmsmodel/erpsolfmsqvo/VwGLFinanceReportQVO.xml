@@ -99,6 +99,10 @@
         <TransientExpression
           trustMode="untrusted"><![CDATA[txtDoctypeId]]></TransientExpression>
       </PIMap>
+      <PIMap Variable="P_ADF_LOCATIONID">
+        <TransientExpression
+          trustMode="untrusted"><![CDATA[Locationid]]></TransientExpression>
+      </PIMap>
     </ParameterMap>
   </ViewAccessor>
   <ViewAccessor

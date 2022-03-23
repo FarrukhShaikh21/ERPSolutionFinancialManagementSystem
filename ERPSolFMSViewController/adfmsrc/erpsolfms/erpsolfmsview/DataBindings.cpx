@@ -25,6 +25,8 @@
     <page path="/AR_0056.jsf" usageId="erpsolfms_erpsolfmsview_AR_0056PageDef"/>
     <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@ExecuteWithParamsReverseFMS"
           usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1111"/>
+    <page path="/WEB-INF/ERPSOLFMSBTF.xml#ERPSOLFMSBTF@doSetERPSolReportAR_0056"
+          usageId="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_doSetERPSolReportDefault1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="erpsolfms_erpsolfmsview_AR_0047PageDef" path="erpsolfms.erpsolfmsview.pageDefs.AR_0047PageDef"/>
@@ -53,6 +55,8 @@
     <page id="erpsolfms_erpsolfmsview_AR_0056PageDef" path="erpsolfms.erpsolfmsview.pageDefs.AR_0056PageDef"/>
     <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1111"
           path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_ExecuteWithParamsPageDef1111"/>
+    <page id="erpsolfms_erpsolfmsview_ERPSOLFMSBTF_ERPSOLFMSBTF_doSetERPSolReportDefault1PageDef"
+          path="erpsolfms.erpsolfmsview.pageDefs.ERPSOLFMSBTF_ERPSOLFMSBTF_doSetERPSolReportDefault1PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="ERPSolFMSAppModuleDataControl" Package="erpsolfms.erpsolfmsmodel.erpsolfmsam"

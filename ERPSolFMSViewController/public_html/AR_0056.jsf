@@ -9,7 +9,8 @@
                     <af:panelFormLayout id="pfl1">
                         <af:selectOneChoice value="#{bindings.Companyid.inputValue}" label="#{bindings.Companyid.label}"
                                             required="#{bindings.Companyid.hints.mandatory}"
-                                            shortDesc="#{bindings.Companyid.hints.tooltip}" id="soc2">
+                                            shortDesc="#{bindings.Companyid.hints.tooltip}" id="soc2" disabled="true"
+                                            contentStyle="width:220px">
                             <f:selectItems value="#{bindings.Companyid.items}" id="si2"/>
                             <f:validator binding="#{bindings.Companyid.validator}"/>
                         </af:selectOneChoice>
@@ -20,14 +21,15 @@
                                                       model="#{bindings.txtLocationName.listOfValuesModel}"
                                                       required="#{bindings.txtLocationName.hints.mandatory}"
                                                       columns="#{bindings.txtLocationName.hints.displayWidth}"
-                                                      shortDesc="#{bindings.txtLocationName.hints.tooltip}">
+                                                      shortDesc="#{bindings.txtLocationName.hints.tooltip}"
+                                                      disabled="true" contentStyle="width:200px">
                             <f:validator binding="#{bindings.txtLocationName.validator}"/>
                         </af:inputComboboxListOfValues>
                         <af:selectOneChoice value="#{bindings.txtDoctypeId.inputValue}"
                                             label="#{bindings.txtDoctypeId.label}"
                                             required="#{bindings.txtDoctypeId.hints.mandatory}"
                                             shortDesc="#{bindings.txtDoctypeId.hints.tooltip}" id="soc1"
-                                            autoSubmit="true" contentStyle="width:100%">
+                                            autoSubmit="true" contentStyle="width:220px">
                             <f:selectItems value="#{bindings.txtDoctypeId.items}" id="si1"/>
                             <f:validator binding="#{bindings.txtDoctypeId.validator}"/>
                         </af:selectOneChoice>
@@ -39,7 +41,7 @@
                                                       required="#{bindings.txtDocumentId.hints.mandatory}"
                                                       columns="#{bindings.txtDocumentId.hints.displayWidth}"
                                                       shortDesc="#{bindings.txtDocumentId.hints.tooltip}"
-                                                      partialTriggers="soc1" contentStyle="width:100%"
+                                                      partialTriggers="soc1" contentStyle="width:200px"
                                                       autoSubmit="true">
                             <f:validator binding="#{bindings.txtDocumentId.validator}"/>
                             <af:autoSuggestBehavior suggestedItems="#{pageFlowScope.ERPSolFMSPageFlowBean.doERPSolGetAutoSuggestedARUnsubmitDoc}"/>
