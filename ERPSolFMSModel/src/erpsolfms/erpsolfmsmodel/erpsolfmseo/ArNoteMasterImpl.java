@@ -914,12 +914,13 @@ public class ArNoteMasterImpl extends ERPSolGlobalsEntityImpl {
         if (operation==DML_INSERT) {
             String pkValue =
                 " AR_note_ID('" + ERPSolGlobClassModel.doGetUserCompanyCode() + "','" +
-                ERPSolGlobClassModel.doGetUserLocationCode() + "','B',TO_DATE('" + getDocDate() + "','YYYY-MM-DD'))";
+                ERPSolGlobClassModel.doGetUserLocationCode() + "','B',TO_DATE('" + getEntryDate() + "','YYYY-MM-DD'))";
             System.out.println(pkValue + "pk value");
             String result =
                 ERPSolGlobClassModel.doGetERPSolPrimaryKeyValueModel(getDBTransaction(), pkValue, "dual", null, null);
+            populateAttributeAsChanged(DOCDATE, getEntryDate());
             populateAttributeAsChanged(NOTECODE, result);
-
+        
         }      super.doDML(operation, e);
     }
 }

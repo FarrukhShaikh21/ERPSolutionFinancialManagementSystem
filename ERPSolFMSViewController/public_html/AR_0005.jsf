@@ -104,7 +104,7 @@
                                         required="#{bindings.EntryDate.hints.mandatory}"
                                         columns="#{bindings.EntryDate.hints.displayWidth}"
                                         shortDesc="#{bindings.EntryDate.hints.tooltip}" id="id1" simple="true"
-                                        autoSubmit="true">
+                                        autoSubmit="true" readOnly="#{bindings.NoteCode.inputValue!=null}">
                             <f:validator binding="#{bindings.EntryDate.validator}"/>
                             <af:convertDateTime pattern="#{bindings.EntryDate.format}"/>
                           </af:inputDate>
