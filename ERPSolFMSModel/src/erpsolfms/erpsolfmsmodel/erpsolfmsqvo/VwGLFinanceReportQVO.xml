@@ -41,7 +41,7 @@
       </PIMap>
       <PIMap Variable="P_ADF_CUSTOMERID">
         <TransientExpression
-          trustMode="untrusted"><![CDATA[Customerid==null?"0":Customerid]]></TransientExpression>
+          trustMode="untrusted"><![CDATA[Customerid]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>

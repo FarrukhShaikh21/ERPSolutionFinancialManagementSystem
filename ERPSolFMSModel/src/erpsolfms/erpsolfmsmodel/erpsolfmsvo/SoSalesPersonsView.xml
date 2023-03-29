@@ -296,4 +296,8 @@
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.SoSalesPersonArNoteMasterSalesPersonIdLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="Name"/>
+  </SortCriteria>
 </ViewObject>
