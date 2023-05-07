@@ -21,11 +21,25 @@
   <Variable
     Name="P_ADF_DOCTYPEID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <Variable
     Name="P_ADF_LOCATIONID"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <SQLQuery><![CDATA[select m.receipt_no, 'Customer: '||ac.customerid||'('||ac.customer_name||') Date: '||m.receipt_date description      
 from receipt_master_control m, all_customers ac     
 where m.customerid=ac.customerid     
