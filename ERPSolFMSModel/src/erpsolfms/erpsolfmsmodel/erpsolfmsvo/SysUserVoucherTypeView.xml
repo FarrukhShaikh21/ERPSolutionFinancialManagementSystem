@@ -54,10 +54,4 @@
     EntityAttrName="ModifiedDate"
     EntityUsage="SysUserVoucherType"
     AliasName="MODIFIED_DATE"/>
-  <ViewLinkAccessor
-    Name="VoucherTypeView"
-    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VoucherTypeSysUserVoucherTypeVoucherTypeIdLink"
-    Type="oracle.jbo.Row"
-    Reversed="true"
-    IsUpdateable="false"/>
 </ViewObject>

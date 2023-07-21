@@ -76,13 +76,6 @@
     Type="java.sql.Timestamp"
     ColumnType="DATE"
     TableName="SYS_USER_VOUCHER_TYPE"/>
-  <AccessorAttribute
-    Name="VoucherType"
-    Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherTypeSysUserVoucherTypeVoucherTypeIdAssoc"
-    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherTypeSysUserVoucherTypeVoucherTypeIdAssoc.VoucherType"
-    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherTypeSysUserVoucherTypeVoucherTypeIdAssoc.SysUserVoucherType"
-    Type="oracle.jbo.server.EntityImpl"
-    IsUpdateable="true"/>
   <Key
     Name="PkSysUserVoucherType"
     PrimaryKey="true">

@@ -36,11 +36,6 @@
     EntityUsage="VoucherType"
     AliasName="USE_GL"/>
   <ViewLinkAccessor
-    Name="SysUserVoucherTypeView"
-    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VoucherTypeSysUserVoucherTypeVoucherTypeIdLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
     Name="VoucherView"
     ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VoucherTypeVoucherVoucherTypeLink"
     Type="oracle.jbo.RowIterator"

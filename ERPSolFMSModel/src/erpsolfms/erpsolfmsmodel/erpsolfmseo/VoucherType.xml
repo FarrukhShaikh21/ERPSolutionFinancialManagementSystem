@@ -49,13 +49,6 @@
     </DesignTime>
   </Attribute>
   <AccessorAttribute
-    Name="SysUserVoucherType"
-    Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherTypeSysUserVoucherTypeVoucherTypeIdAssoc"
-    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherTypeSysUserVoucherTypeVoucherTypeIdAssoc.SysUserVoucherType"
-    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherTypeSysUserVoucherTypeVoucherTypeIdAssoc.VoucherType"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <AccessorAttribute
     Name="Voucher"
     Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.VoucherTypeVoucherVoucherTypeAssoc"
     AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.VoucherTypeVoucherVoucherTypeAssoc.Voucher"
