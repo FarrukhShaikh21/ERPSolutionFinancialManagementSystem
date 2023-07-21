@@ -654,7 +654,6 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="VOUCHER"
     IsPersistent="false"
     IsQueriable="false">
     <TransientExpression
@@ -718,6 +717,13 @@
     AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.AllLocationsVoucherLocCodeAssoc.Voucher"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="VoucherType1"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.VoucherTypeVoucherVoucherTypeAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.VoucherTypeVoucherVoucherTypeAssoc.VoucherType1"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.VoucherTypeVoucherVoucherTypeAssoc.Voucher"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="SysC0015522"
     PrimaryKey="true">
@@ -759,6 +765,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.LocCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_Voucher1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C0015509"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_VOUCHER1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="erpsolfms.erpsolfmsmodel.erpsolfmseo.Voucher.VoucherType"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

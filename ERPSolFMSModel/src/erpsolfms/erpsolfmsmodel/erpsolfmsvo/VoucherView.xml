@@ -391,4 +391,10 @@
     Type="oracle.jbo.Row"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="VoucherTypeView"
+    ViewLink="erpsolfms.erpsolfmsmodel.erpsolfmslink.VoucherTypeVoucherVoucherTypeLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
 </ViewObject>

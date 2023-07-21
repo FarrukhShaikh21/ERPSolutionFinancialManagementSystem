@@ -48,6 +48,20 @@
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </Attribute>
+  <AccessorAttribute
+    Name="SysUserVoucherType"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherTypeSysUserVoucherTypeVoucherTypeIdAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherTypeSysUserVoucherTypeVoucherTypeIdAssoc.SysUserVoucherType"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmseo.VoucherTypeSysUserVoucherTypeVoucherTypeIdAssoc.VoucherType"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Voucher"
+    Association="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.VoucherTypeVoucherVoucherTypeAssoc"
+    AssociationEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.VoucherTypeVoucherVoucherTypeAssoc.Voucher"
+    AssociationOtherEnd="erpsolfms.erpsolfmsmodel.erpsolfmsassoc.VoucherTypeVoucherVoucherTypeAssoc.VoucherType1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="SysC0015509"
     PrimaryKey="true">
